@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CARZ - Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="header">
+        <a href="index.html"><img src="img/logo.png" class="logo" alt=""></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Autoshop</a></li>
+                <li><a href="signup.html">Register</a></li>
+                <a href="#" id="close"><i class="fas fa-times"></i></a>
+            </ul>
+        </div>
+
+        <div id="mobile">
+        <a href="cart.html"><i class="fas fa-cart-plus"></i></a>
+        <i id="bar" class="fas fa-bars"></i>
+
+    </section>
+
+   <section id="form-details" class="login-section">
+    <form id="login-form">
+        <span>EXOTIC CARS & EXCLUSIVE ACCESS</span>
+        <h2>Member Login</h2>
+        <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="email" id="login-username" placeholder="Email Address" required>
+        </div>
+        <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="login-password" placeholder="Password" required>
+        </div>
+        <button class="normal login-btn" type="submit">Login to Garage</button>
+        <p>New to CARZ? <a href="signup.html">Create an Account</a></p>
+    </form>
+    
+    <div class="login-info">
+        <div class="info-box">
+            <i class="fas fa-key"></i>
+            <div>
+                <span>AUTHENTIC ACCESS</span>
+                <p>Log in to manage your vehicle pre-orders and track your Jesko Absolut delivery status.</p>
+            </div>
+        </div>
+        <div class="info-box">
+            <i class="fas fa-shield-alt"></i>
+            <div>
+                <span>SECURE DATABASE</span>
+                <p>Your data is protected with the same precision we use to tune our engines.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="module">
+  // 1. Import Firebase
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
+  import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-auth.js";
+
+  // 2. Your Firebase Configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyBV6lGkHxwXMyvsGlga4_MWVs4BAGI5SGU",
+    authDomain: "wad---drivemarket.firebaseapp.com",
+    projectId: "wad---drivemarket",
+    storageBucket: "wad---drivemarket.firebasestorage.app",
+    messagingSenderId: "895979359305",
+    appId: "1:895979359305:web:684c43c2b0384308bc4398"
+  };
+
+  // 3. Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  // 4. Login Action
+  const loginForm = document.getElementById('login-form');
+  loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const email = document.getElementById('login-username').value;
+    const password = document.getElementById('login-password').value;
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        alert("Welcome back! Accessing your garage...");
+        window.location.href = "index.html"; // Redirect to homepage on success
+      })
+      .catch((error) => {
+        console.error(error);
+        // This will tell you if the password is wrong or the user doesn't exist
+        alert("Login failed: " + error.message);
+      });
+  });
+</script>
+
+<script>
+    const bar = document.getElementById('bar');
+    const close = document.getElementById('close');
+    const nav = document.getElementById('navbar');
+
+    if (bar) {
+        bar.addEventListener('click', () => {
+            nav.classList.add('active');
+        })
+    }
+
+    if (close) {
+        close.addEventListener('click', () => {
+            nav.classList.remove('active');
+        })
+    }
+
+
+
+    
+</script>
+
+</body>
+</html>

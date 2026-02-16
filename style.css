@@ -1,0 +1,2933 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan',sans-serif;
+}
+
+h1{
+    font-size: 50px;
+    line-height: 64px;
+    color: black;
+}
+
+h2{
+    font-size: 46px;
+    line-height: 54px;
+    color: black;
+}
+
+h4{
+    font-size: 20px;
+    color: black;
+}
+
+h6{
+    font-weight: 700;
+    font-size: 12px;
+}
+
+p{
+    font-size: 16px;
+    color: #465b52;
+    margin: 15px 0 20px 0;
+}
+
+.section-p1{
+    padding: 40px 80px;
+}
+
+.section-m1{
+    margin: 40px 0;
+}
+
+button.normal{
+    font-size: 15x;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+    padding: 15px 30px;
+    color: #181818;
+    background-color: #fff;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.2s;
+}
+
+
+
+
+body{
+    width: 100%;
+}
+
+#header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 80px;
+    background: #a01705;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 06);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+
+}
+
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li{
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+
+#navbar li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(240, 240, 240);
+    transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active{
+    color: rgb(190, 191, 192);
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after{
+    content: "";
+    width: 30%;
+    height: 2px;
+    background:rgb(240, 240, 240) ;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+
+}
+
+#autoshop{
+    background-image: url("img/screen.jpg");
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    height: 52vh;
+}
+
+
+
+.featuretext{
+    height: 90%;
+    position: absolute;
+    bottom:0 ;
+    left: 50px;
+    top: 70px;
+    max-height: 60%;
+    max-width: 60%;
+}
+
+.Button1 {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-family: monospace;
+    border: 3px solid rgb(24, 24, 24);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px #181818;
+    padding: 20px 50px;
+    margin-top: -120px; 
+    margin-left: 95px;
+    font-size: 16px;
+    background: #a01705;
+    position: absolute;
+    cursor: pointer;
+    z-index: 1000; 
+}
+
+#feature {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#feature .featurebox{
+    width: 180px;
+    text-align: center;
+    padding: 25px 15px;
+    box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgb(240, 240, 240);
+    border-radius: 4px;
+    margin: 15px 0;
+}
+
+#feature .featurebox:hover{
+    box-shadow: 10px 10px 54px rgba(70, 62, 221, 0.1);
+
+}
+
+#feature .featurebox img{
+    width: 100%;
+    margin-bottom: 10px;
+
+}
+
+#feature .featurebox  h6{
+    display: inline;
+    padding: 8px 9px 9px 8px;
+    line-height: 1px;
+    border-radius: 4px;
+    color: white;
+    background-color: #a01705;
+}
+
+#automobile1{
+    text-align: center;
+}
+
+#automobile1 .pro-container{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    flex-wrap: wrap;
+}
+
+
+
+#automobile1 .pro{
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid rgb(240, 240, 240);
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    margin: 15px 0;
+    transition: 0.2s ease;
+    position: relative;
+}
+
+
+
+#automobile1 .pro:hover{
+        box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+}
+
+
+#automobile1 .pro img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+#automobile1 .pro .des{
+    text-align: start;
+    padding: 10px 0;
+
+
+}
+
+#automobile1 .pro .des span{
+    color: #60606063;
+    font-size: 12px;
+
+}
+
+
+@font-face {
+    font-family: 'MyBrandFont3';
+    src: url('nfs/NFS_by_JLTV.ttf') format('opentype'); 
+}
+
+
+@font-face {
+    font-family: 'MyBrandFont4';           
+    src: url('LeagueSpartan-VariableFont_wght.ttf') format('opentype'); 
+}
+
+
+
+@font-face {
+    font-family: 'MyBrandFont1';           
+    src: url('milker/Milker.otf') format('opentype'); 
+}
+
+
+
+@font-face {
+    font-family: 'MyBrandFont';           
+    src: url('priestacy/Priestacy.otf') format('truetype'); 
+}
+
+#automobile1 h2 {
+    font-family: 'MyBrandFont3', sans-serif ; 
+    letter-spacing: 3px;
+}
+
+#automobile1 .pro .des h5{
+    padding-top: 7px;
+    color: #181818;
+    font-size: 14px;
+}
+
+#automobile1 .pro .des i{
+    font-size: 12px;
+    padding-top: 10px;
+    color: #ffd700;
+}
+
+#automobile1 .pro .des h4{
+    padding-top: 7px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #088178;
+}
+
+
+#automobile1 .pro .des h6{
+    padding-top: 7px;
+    color: #181818;
+    font-size: 14px;
+}
+
+#automobile1 .pro .cart{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50px;
+    background-color:#e8f6ea;
+    font-weight: 500;
+    color: #088178;
+    border: 1px solid #e8f6ea;
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+
+}
+
+
+#newsletter{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    background-image: url('img/banner/b14.png');
+    background-repeat: no-repeat;
+    background-position: 20% 30%;
+    background-color: #a01705;
+}
+
+#newsletter h4{
+    font-family: 'MyBrandFont3';
+    font-size: 30px;
+    font-weight: 1000;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+#newsletter p{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: 1000;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+#newsletter span{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: 1000;
+    letter-spacing: 2px;
+    color: gold;
+}
+
+#newsletter .form{
+    display: flex;
+    width: 40%;
+}
+
+#newsletter input{
+
+    height: 3.125rem;
+    padding: 0 1.25em;
+    font-size: 14px;
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    outline: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    
+
+}
+
+#newsletter button{
+    background-color: #e8f6ea;
+    color: #a01705;
+    white-space: nowrap;
+    border-radius: 4px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+footer .col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+} 
+
+footer .logo{
+    margin-bottom: 30px;
+}
+
+footer h4{
+    font-size: 14px;
+    padding-bottom: 20px;
+
+}
+
+footer p{
+    font-size: 13px;
+    margin: 0 0 8px 0;
+    
+}
+
+footer a{
+    font-size: 13px;
+    text-decoration: none;
+    color: #465b52;
+    margin-bottom: 10px;
+    
+}
+
+footer .follow{
+    margin-top: 20px;
+
+}
+
+
+footer .follow i{
+    color: #465b52;
+    padding-right: 4px;
+    cursor: pointer;
+
+}
+
+footer .install .row img{
+    border: 1px solid #465b52;
+    border-radius: 6px;
+}
+
+footer .install img{
+    margin: 10px 0 15px 0;
+}
+
+footer .follow i:hover,
+footer a:hover{
+        color: #465b52;
+
+}
+
+footer .copyright{
+    width: 100%;
+    text-align: center;
+
+}
+
+
+#smbanner .banner-box2 {
+    background-image: url("img/banner/spbanner.jpeg");
+}
+
+
+#smbanner h4 {
+    color: #a01705;
+    font-size: 40px;
+    font-weight: 800;
+    font-family: 'MyBrandFont';
+    transform: translateY(-10px);
+}
+
+#smbanner h2 {
+    color: #fff;
+    font-size: 48px;
+    font-weight: 800;
+    font-family: 'MyBrandFont';
+    transform: translateY(-150px);
+}
+
+
+#smbanner button.white {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 11px 18px;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid white;
+    outline: none;
+    transition: 0.3s ease;
+    transform: translateY(100px);
+}
+
+#smbanner button.white2 {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 15px 18px;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid white;
+    outline: none;
+    transition: 0.3s ease;
+    transform: translateY(180px);
+    margin-left: 80%;
+
+}
+
+#smbanner .banner-box:hover button.white {
+    background: #a01705;
+    border: 1px solid #a01705;
+
+}
+
+#smbanner .banner-box:hover button.white2 {
+    background: #a01705;
+    border: 1px solid #a01705;
+
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 800px) {
+    #smbanner .banner-box {
+        min-width: 100%; /* Stack on top of each other on small screens */
+        height: 30vh;
+    }
+}
+
+.double-banner-container {
+    display: flex;
+    justify-content: center; 
+    gap: 15px;               
+    padding: 20px 20px 0 20px; /* Padding on sides, 0 on bottom to touch the next section */
+    width: 100%;
+    max-width: 1600px;       
+    margin: 0 auto;         
+}
+
+/* We reuse your .banner-img class for aspect ratio and styling */
+.top-banner-1 {
+    background-image: url('img/banner/BLACK\ EDITIONS.jpg'); /* Change to your image path */
+}
+
+.top-banner-2 {
+    background-image: url('img/banner/spbanner.jpeg'); /* Change to your image path */
+}
+
+/* Responsive: Stack them on mobile so they don't get too small */
+@media (max-width: 799px) {
+    .double-banner-container {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+    
+    .double-banner-container .banner-img {
+        width: 100%;
+    }
+}
+
+
+.banner-container {
+    display: flex;
+    justify-content: center; 
+    gap: 15px;               
+    padding: 20px;
+    width: 100%;
+    max-width: 1600px;       
+    margin: 0 auto;         
+}
+
+.banner-img {
+    flex: 1; 
+    aspect-ratio: 520 / 280; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+/* Individual Background Images */
+.banner-1 {
+    background-image: url('img/banner/bgs.jpeg');
+}
+
+.banner-2 {
+    background-image: url('img/banner/RESTORATION.jpg');
+}
+
+.banner-3 {
+    background-image: url('img/banner/black.jpeg');
+}
+
+
+    
+    .banner-img {
+        width: 100%;
+        max-width: 520px; /* Maintains original size on mobile */
+    }
+
+
+
+   /* Banner Info */ 
+
+   #banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* Replace the URL below with your actual vehicle/product image */
+    background-image:  
+                      url('img/banner/banner2.png');
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 20px;
+}
+
+#banner h4 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+#banner h2 {
+    font-size: 2.5rem;
+    max-width: 800px;
+    line-height: 1.2;
+    font-family: '';
+}
+
+#banner h2 span {
+    color: #ff4d4d; /* High-contrast red for the discount */
+    font-weight: 800;
+}
+
+.btn-main {
+    margin-top: 20px;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #fff;
+    color: #222;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-main:hover {
+    background-color: #ff4d4d;
+    color: #fff;
+}
+
+
+
+
+
+
+
+#smbanner .bannerbox{
+    min-width: 100%;
+    height: 30vh;
+    padding: 30px;
+}
+
+
+@media (max-width: 477px) {
+    #header {
+        padding: 10px 30px;
+    }
+    
+}
+
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: white;
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar li{
+    width: 100%;
+}
+
+.sidebar a{
+    width: 100%;
+}
+
+
+
+.cars{
+    height: 90%;
+    position: absolute;
+    bottom:0 ;
+    left: 50px;
+    top: 108px;
+    max-height: 150%;
+    max-width: 120%;
+}
+
+
+
+#banner2{
+    background-image: url('img/banner/banner\ cus.jpg');
+    height: 40vh;
+    background-size: cover;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 14px;
+}
+
+
+
+#autoshop .featuretext{
+    height: 90%;
+    position: absolute;
+    bottom:0 ;
+    left: 50px;
+    top: 70px;
+    max-height: 60%;
+    max-width: 60%;
+}
+
+
+#pagination{
+    text-align: center;
+}
+
+#pagination a{
+    text-decoration: none;
+    background-color: #a01705;
+    padding: 18px 20px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 600;
+}
+
+#pagination a img {
+    width: 28px;            
+    height: auto;           
+    vertical-align: middle; 
+    margin-left: 5px;      
+}
+
+#prodetails {
+    display: flex;
+    margin-top: 20px;
+}
+
+#prodetails .single-pro-image {
+    width: 40%;
+    margin-right: 50px;
+}
+
+.small-img-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.small-img-col {
+    flex-basis: 24%;
+    cursor: pointer;
+}
+
+/* Right Side Styling */
+#prodetails .single-pro-details {
+    width: 50%;
+    padding-top: 30px;
+}
+
+#prodetails .single-pro-details h4 {
+    padding: 40px 0 20px 0;
+}
+
+#prodetails .single-pro-details h2 {
+    font-size: 26px;
+}
+
+#prodetails .single-pro-details select {
+    display: block;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+#prodetails .single-pro-details input {
+    width: 50px;
+    height: 47px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+#prodetails .single-pro-details button {
+    background: #a01705;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+}
+
+#prodetails .single-pro-details span {
+    line-height: 25px;
+}
+
+
+.price-container {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.price-box {
+    background-color: #f3f3f3;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    min-width: 150px;
+}
+
+.price-box small {
+    color: #666;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.price-box h2{
+    margin: 0;
+    color: #a01705; /* Your theme color */
+}
+
+.price-box h3 {
+    margin: 0;
+    color: #088178;
+
+}
+
+
+:root {
+    --accent-color: #b71c1c; /* Ferrari Red */
+    --text-main: #333;
+    --text-muted: #666;
+}
+
+.vehicle-specs-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* 4 Key Points Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.feature-item i {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.feature-item h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.feature-item p {
+    font-weight: bold;
+    color: var(--text-muted);
+}
+
+.section-divider {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 40px 0;
+}
+
+/* Overview and Slider */
+.overview-section {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.overview-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.overview-text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.overview-text p {
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.overview-slider {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    width: 100%;
+    display: none; /* Controlled by JS or simplified for static */
+}
+
+.slide.active {
+    display: block;
+}
+
+.slider-dots {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: var(--accent-color);
+}
+
+
+.product-info h4 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.description {
+    color: #555;
+    margin-bottom: 25px;
+    display: block;
+}
+
+.product-history {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-left: 4px solid #b71c1c; /* Ferrari Red accent */
+    margin-top: 20px;
+}
+
+.product-history h5 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.product-history p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+.history-highlights {
+    margin-top: 15px;
+    padding-left: 20px;
+    list-style: square;
+}
+
+.history-highlights li {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+/* --- PREMIUM OVERVIEW DESIGN ONLY --- */
+
+.premium-overview-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding: 40px 0;
+    flex-wrap: wrap;
+}
+
+.overview-visual-box {
+    flex: 1.2;
+    min-width: 300px;
+}
+
+.image-accent-frame {
+    position: relative;
+    padding: 10px;
+}
+
+/* Red L-shaped accent behind the image */
+.image-accent-frame::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 100px;
+    height: 100px;
+    border-top: 5px solid #a01705;
+    border-left: 5px solid #a01705;
+    z-index: 0;
+}
+
+.image-accent-frame img {
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 20px 20px 40px rgba(0,0,0,0.15);
+}
+
+.overview-text-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.overview-tag {
+    color: #a01705;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.red-line {
+    width: 50px;
+    height: 4px;
+    background: #a01705;
+    margin: 15px 0 25px 0;
+}
+
+.highlight-list {
+    margin-top: 30px;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 15px;
+    color: #333;
+}
+
+.list-item i {
+    color: #a01705;
+    font-size: 18px;
+}
+
+@media (max-width: 991px) {
+    .premium-overview-row {
+        flex-direction: column;
+        gap: 40px;
+    }
+}
+
+
+
+
+/* Container Layout */
+.premium-overview-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 40px 0;
+}
+
+.overview-visual-box {
+    flex: 1;
+    max-width: 550px; /* Limits the size of the image area */
+}
+
+.overview-text-content {
+    flex: 1;
+}
+
+/* Slider Image Sizing */
+.overview-slider-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.ov-thumb {
+    width: 80px; /* Forced small size */
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.ov-thumb:hover {
+    border-color: #a01705;
+}
+
+/* Text elements */
+.overview-tag { color: #a01705; font-weight: 700; text-transform: uppercase; font-size: 13px; }
+.red-line { width: 50px; height: 3px; background: #a01705; margin: 15px 0; }
+
+
+
+#bannerblog{
+    background-image: url('img/banner/banner\ cus.jpg');
+    height: 40vh;
+    background-size: cover;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 14px;
+}
+
+#blog {
+    padding: 150px 150px 0 150px; /* Adjust padding for your page layout */
+}
+
+#blog .blog-box {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    padding-bottom: 90px;
+}
+
+#blog .blog-img {
+    width: 50%;
+    margin-right: 40px;
+    position: relative;
+}
+
+#blog .blog-img img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    position: relative;
+    z-index: 10; /* Keeps image on top of the date */
+}
+
+#blog .blog-img h1 {
+    position: absolute;
+    top: -45px;
+    left: 0;
+    font-size: 75px;
+    font-weight: 700;
+    color: #c9cbce; /* Light gray for the large date */
+    z-index: -9; /* Places text behind the image */
+}
+
+#blog .blog-details {
+    width: 50%;
+}
+
+#blog .blog-details h4 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #222;
+}
+
+#blog .blog-details p {
+    font-size: 15px;
+    color: #465b52;
+    margin: 15px 0 20px 0;
+}
+
+#blog .blog-details a {
+    text-decoration: none;
+    font-size: 11px;
+    color: #000;
+    font-weight: 700;
+    position: relative;
+    transition: 0.3s;
+}
+
+#blog .blog-details a::after {
+    content: "";
+    width: 50px;
+    height: 1.5px;
+    background-color: #000;
+    position: absolute;
+    top: 4px;
+    right: -60px;
+}
+
+#blog .blog-details a:hover {
+    color: #088178; /* Primary theme color */
+}
+
+#blog .blog-details a:hover::after {
+    background-color: #088178;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 799px) {
+    #blog .blog-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #blog .blog-img {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+    #blog .blog-details {
+        width: 100%;
+    }
+}
+
+
+
+#bannerblog1{
+    background-image: url('img/banner/BLOGBANNER2.png');
+    height: 40vh;
+    background-size: cover;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 14px;
+}
+
+
+.cars{
+    margin-top: -120px;
+    margin-left: 760px;
+    transform:translateX(30%);
+}
+
+/* 1. Global Styles & Variables */
+:root {
+    --primary: #e63946; /* Racing Red */
+    --secondary: #1d3557; /* Deep Navy */
+    --bg-light: #f8f9fa;
+    --text-main: #2b2d42;
+    --white: #ffffff;
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    line-height: 1.6;
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+/* 2. Layout Components */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* 3. Hero Section */
+.hero {
+    height: 70vh;
+    background:
+                url('img/banner/banner2.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-bottom: 15px;
+}
+
+/* 4. Cards & Content */
+.section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px;
+}
+
+.badge {
+    color: var(--secondary);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+.card {
+    background: var(--bg-light);
+    padding: 40px;
+    border-radius: 15px;
+    transition: var(--transition);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background: var(--white);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+/* 5. Stats Bar */
+.stats-bar {
+    background-color: var(--secondary);
+    color: var(--white);
+    padding: 40px 0;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item .number {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--primary);
+}
+
+.stat-item .label {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* 6. Buttons & CTA */
+.cta-section {
+    text-align: center;
+    background-color: var(--bg-light);
+}
+
+.btn {
+    display: inline-block;
+    padding: 16px 32px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: var(--transition);
+    margin: 10px;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.btn-secondary {
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+/* 7. Responsive Fixes */
+@media (max-width: 768px) {
+    .container { padding: 50px 20px; }
+    .hero { height: 50vh; }
+}/* 1. Global Styles & Variables */
+:root {
+    --primary: #dbdbdb; /* Racing Red */
+    --secondary: #a30606; /* Deep Navy */
+    --bg-light: #f8f9fa;
+    --text-main: #2b2d42;
+    --white: #ffffff;
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    line-height: 1.6;
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+/* 2. Layout Components */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-bottom: 15px;
+}
+
+
+.section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px;
+}
+
+.badge {
+    color: var(--secondary);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+.card {
+    background: var(--bg-light);
+    padding: 40px;
+    border-radius: 15px;
+    transition: var(--transition);
+    border: 1px solid rgba(207, 0, 0, 0.822);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background: var(--white);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--secondary);
+}
+
+/* 5. Stats Bar */
+.stats-bar {
+    background-color: var(--secondary);
+    color: var(--white);
+    padding: 40px 0;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item .number {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--primary);
+}
+
+.stat-item .label {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* 6. Buttons & CTA */
+.cta-section {
+    text-align: center;
+    background-color: var(--bg-light);
+}
+
+.btn {
+    display: inline-block;
+    padding: 16px 32px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: var(--transition);
+    margin: 10px;
+}
+
+.btn-primary {
+    background-color: var(--secondary);
+    color: var(--white);
+}
+
+.btn-secondary {
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+/* 7. Responsive Fixes */
+@media (max-width: 768px) {
+    .container { padding: 50px 20px; }
+    .hero { height: 50vh; }
+}
+
+
+
+#contact-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px; /* Adjust based on your section-p1 class */
+}
+
+#contact-details .details {
+    width: 40%;
+}
+
+#contact-details .details span {
+    font-size: 12px;
+    font-weight: 200;
+}
+
+#contact-details .details h2 {
+    font-size: 26px;
+   font-family: 'MyBrandFont3', sans-serif ; 
+   letter-spacing: 3px;
+    line-height: 35px;
+    padding: 20px 0;
+    color: #a30606;
+}
+
+#contact-details .details h3 {
+    font-size: 16px;
+    padding-bottom: 15px;
+    font-weight: 600;
+}
+
+#contact-details .details ul {
+    padding: 0;
+}
+
+#contact-details .details li {
+    list-style: none;
+    display: flex;
+    padding: 10px 0;
+    align-items: center; /* Keeps icon and text aligned */
+}
+
+#contact-details .details i {
+    font-size: 14px;
+    padding-right: 22px;
+}
+
+#contact-details .details p {
+    margin: 0;
+    font-size: 14px;
+    color: #465b52; /* Subtle grey-green typical of this template */
+}
+
+#contact-details .map {
+    width: 55%;
+    height: 400px;
+}
+
+#contact-details .map iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive adjustment for mobile */
+@media (max-width: 799px) {
+    #contact-details {
+        flex-direction: column;
+    }
+    #contact-details .details {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    #contact-details .map {
+        width: 100%;
+    }
+
+}
+
+
+
+#form-details {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+    padding: 80px;
+    border: 1px solid #e1e1e1;
+}
+
+#form-details form {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#form-details form span {
+    font-size: 12px;
+}
+
+#form-details form h2 {
+    font-size: 26px;
+    line-height: 35px;
+    padding: 20px 0;
+}
+
+#form-details form input, 
+#form-details form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    outline: none;
+    margin-bottom: 20px;
+    border: 1px solid #e1e1e1;
+}
+
+#form-details form button {
+    background-color: #8d0e0e;
+    color: #fff;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+#form-details form button:hover {
+    background-color: #066b64;
+}
+
+/* Right side people styling */
+#form-details .people div {
+    padding-bottom: 25px;
+    display: flex;
+    align-items: flex-start;
+}
+
+#form-details .people div img {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+#form-details .people div p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 25px;
+}
+
+#form-details .people div p span {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+}
+
+/* --- Login Section Styling --- */
+
+.login-section {
+    background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
+                url('img/banner/banner2.jpeg'); /* Reusing your existing banner image */
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+#form-details form.login-form {
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.05);
+}
+
+#form-details .input-group {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#form-details .input-group i {
+    position: absolute;
+    left: 15px;
+    color: #a01705; /* Your theme red */
+    font-size: 14px;
+}
+
+#form-details .input-group input {
+    padding-left: 45px !important; /* Move text over for the icon */
+    transition: 0.3s ease;
+}
+
+#form-details .input-group input:focus {
+    border: 1px solid #a01705;
+    box-shadow: 0 0 8px rgba(160, 23, 5, 0.2);
+}
+
+.login-btn {
+    width: 100%;
+    background-color: #a01705 !important;
+    color: #fff !important;
+    font-family: 'MyBrandFont3', sans-serif !important; /* Your racing font */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.login-btn:hover {
+    background-color: #181818 !important;
+    transform: translateY(-3px);
+}
+
+/* Info Side Panel */
+.login-info {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-box {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+
+.info-box i {
+    font-size: 24px;
+    color: #a01705;
+    background: #f0f0f0;
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.info-box span {
+    font-weight: 700;
+    font-size: 14px;
+    color: #181818;
+}
+
+/* Mobile Tweak */
+@media (max-width: 799px) {
+    .login-section {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+    #form-details form, .login-info {
+        width: 100%;
+    }
+}
+
+/* Styling for the Register page specifically */
+#signup-form input {
+    margin-bottom: 15px; /* Slightly tighter spacing for more fields */
+}
+
+#signup-form h2 {
+    color: #a01705; /* CARZ Red for the heading */
+
+}
+
+
+
+
+
+
+
+/* Profile Picture Styling */
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #a01705; /* Matching your red theme */
+    cursor: pointer;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(160, 23, 5, 0.5);
+}
+
+/* Dropdown Menu (Optional) */
+.profile-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.profile-wrapper:hover .profile-dropdown {
+    display: block;
+}
+
+#logout-btn {
+    background: #a01705;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+.profile-wrapper { position: relative; display: inline-block; }
+.profile-dropdown { display: none; position: absolute; right: 0; background: white; border: 1px solid #ddd; padding: 10px; z-index: 999; width: 150px; text-align: center; }
+.profile-wrapper:hover .profile-dropdown { display: block; }
+
+
+
+    /* The Hamburger Menu */
+    #mobile {
+        display: flex;
+        align-items: center;
+    }
+
+    #mobile i {
+        color: #fff;
+        font-size: 22px;
+        padding-left: 15px;
+    }
+
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        height: 100vh;
+        width: 250px;
+        background-color: #a01705;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        padding: 60px 0 0 10px;
+        transition: 0.3s;
+        z-index: 1001;
+    }
+
+    #navbar.active { right: 0; }
+
+    #navbar li { margin-bottom: 20px; }
+
+    #lg-bag { display: none; }
+
+    #close {
+        display: initial;
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        color: #fff;
+        font-size: 22px;
+    }
+
+  /* --- 1. HIDE MOBILE ELEMENTS ON DESKTOP --- */
+#mobile-hero {
+    display: none;
+}
+
+/* --- 2. MOBILE SPECIFIC STYLES --- */
+@media (max-width: 799px) {
+    /* Hide the old desktop background and floating car/text */
+    #autoshop, .cars, .featuretext, .Button1 {
+        display: none !important;
+    }
+
+    /* Show the new custom banner */
+    #mobile-hero {
+        display: block;
+        width: 100%;
+        background-color: #f0f2f5; /* Matches your site background */
+        padding: 0;
+        margin-top: -1px; /* Removes any tiny white gaps */
+    }
+
+    .mobile-banner-content {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* The custom made image with car and text inside it */
+    .mobile-banner-content img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* The Button - Positioned exactly where you want on top of the image */
+    .mobile-cta {
+        position: absolute;
+        transform: scale(0.8);
+        bottom: 45%; /* Moves button up or down over the image */
+        background-color: #a01705;
+        color: white;
+        text-decoration: none;
+        left: 2px;
+        padding: 10px 40px;
+        border-radius: 8px;
+        font-family:'Times New Roman', Times, serif;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        border: 2px solid #181818;
+
+
+        
+    }
+
+/* --- PERFECT MOBILE & TABLET OPTIMIZATION (UP TO 799PX) --- */
+@media (max-width: 799px) {
+    /* 1. Fix the main container padding to create space for 2 columns */
+    .section-p1 {
+        padding: 40px 20px !important; 
+    }
+
+    /* 2. Force the 2-column grid */
+    #automobile1 .pro-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    #automobile1 .pro {
+        width: 48% !important; /* Forces two per row */
+        min-width: unset !important;
+        margin: 10px 0 !important;
+        padding: 10px !important;
+        border-radius: 15px;
+    }
+
+    /* 3. Adjust Card Typography for the 799px width */
+    #automobile1 .pro .des span {
+        font-size: 11px; 
+    }
+
+    #automobile1 .pro .des h5 {
+        font-size: 12px; /* Prevents long names from breaking the card height */
+        line-height: 1.2;
+        padding-top: 5px;
+    }
+
+    #automobile1 .pro .des h6 {
+        font-size: 10px;
+        margin-top: 5px;
+        color: #888;
+    }
+
+    #automobile1 .pro .des h4 {
+        font-size: 14px;
+        padding-top: 2px;
+    }
+
+    /* 4. Fix Button & Icon Overlaps */
+    #automobile1 .pro .cart {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        bottom: 10px;
+        right: 10px;
+        font-size: 13px;
+    }
+
+    /* 5. Header & Hero scaling */
+    #automobile1 h2 {
+        font-size: 28px;
+    }
+
+    #header {
+        padding: 15px 20px;
+    }
+
+    .logo {
+        width: 90px;
+    }
+
+    /* 6. Feature box fix (Shipping, Tax, etc.) */
+    #feature .featurebox {
+        width: 140px; /* Ensures they don't look weirdly stretched on tablet */
+        margin: 5px;
+    }
+}
+}
+/* --- FULL 799PX BREAKPOINT REPAIR --- */
+@media (max-width: 799px) {
+    
+    /* NAV FIX: Show hamburger, but keep navbar structure ready */
+    #mobile {
+        display: flex; /* Hamburger shows up here */
+        align-items: center;
+    }
+
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 300px;
+        height: 100vh;
+        background-color: #f3f3f3;
+        box-shadow: 0 40px 60px rgba(0,0,0,0.1);
+        padding: 80px 0 0 10px;
+        transition: 0.3s;
+        z-index: 999;
+    }
+
+    #navbar.active {
+        right: 0px;
+    }
+
+    /* FEATURE SECTION FIX: Force 2 per row */
+    #feature {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important; /* Centers the boxes */
+        padding: 20px 10px !important;
+    }
+
+    #feature .featurebox {
+        /* Force width to fit two items with a small gap */
+        width: 160px !important; 
+        margin: 10px !important; /* Spacing around each box */
+        flex: unset !important; /* Prevents stretching */
+    }
+
+    #feature .featurebox img {
+        width: 100% !important;
+        height: auto;
+    }
+
+    /* Section Padding Fix */
+    .section-p1 {
+        padding: 40px 20px !important;
+    }
+}
+
+/* PC FIX: Explicitly hide hamburger and show list */
+@media (min-width: 800px) {
+    #mobile {
+        display: none !important;
+    }
+    #navbar {
+        display: flex !important;
+        position: static; /* Removes fixed positioning from mobile */
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        flex-direction: row;
+        padding: 0;
+        box-shadow: none;
+    }
+}
+
+/* --- NAVIGATION & HEADER FIX --- */
+
+/* 1. PC Settings (800px and above) */
+@media (min-width: 800px) {
+    #mobile {
+        display: none !important; /* Forces hamburger to hide on PC */
+    }
+
+    #navbar {
+        display: flex !important; /* Ensures text list is visible */
+        flex-direction: row;
+        position: static;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    #navbar li {
+        padding: 0 20px;
+    }
+}
+
+/* 2. Mobile/Tablet Settings (Up to 799px) */
+@media (max-width: 799px) {
+    #mobile {
+        display: flex;
+        align-items: center;
+    }
+
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px; /* Sidebar hidden off-screen */
+        width: 300px;
+        height: 100vh;
+        background-color: #a30606;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        padding: 80px 0 0 10px;
+        transition: 0.3s;
+        z-index: 1000;
+    }
+
+    #navbar.active {
+        right: -100px; /* Slides in when clicked */
+    }
+}
+
+/* --- FEATURE SECTION: 2 PER ROW FIX --- */
+@media (max-width: 799px) {
+    #feature {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important; /* Centers the two boxes */
+        padding: 20px 10px !important;
+    }
+
+    #feature .featurebox {
+        /* This creates exactly two columns by taking 50% minus margins */
+        width: 45% !important; 
+        min-width: 140px !important; /* Prevents them from getting too skinny */
+        margin: 10px 2% !important;
+        padding: 15px 5px !important;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05) !important;
+    }
+
+    #feature .featurebox img {
+        width: 100% !important;
+        max-width: 70px !important; /* Shrinks icons to make room for text */
+        margin-bottom: 8px !important;
+    }
+
+    #feature .featurebox h6 {
+        display: inline-block !important; /* Better for text wrapping */
+        font-size: 11px !important; 
+        padding: 5px 8px !important;
+        line-height: 1.2 !important;
+        width: 90% !important; /* Keeps text within the colored box */
+        text-align: center !important;
+    }
+}
+
+/* Container for the small images */
+.small-img-group {
+    display: flex;
+    justify-content: center; /* This centers the images */
+    gap: 10px;               /* Space between images */
+    width: 100%;
+}
+
+/* Individual columns */
+.small-img-col {
+    flex-basis: 24%;         /* Keeps them roughly 4-per-row size */
+    cursor: pointer;
+}
+
+/* Hide the column entirely if the image inside it is hidden */
+.small-img-col:has(img[style*="display: none"]) {
+    display: none;
+}
+
+/* Fallback for older browsers: hide empty images */
+img[src=""], img:not([src]) {
+    display: none;
+}
+
+
+/* Product Specs Section */
+#pro-specs {
+    padding: 40px 80px;
+    background-color: #f9f9f9;
+}
+
+.spec-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.spec-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.spec-box i {
+    font-size: 32px;
+    color: #9b1b1b;
+    margin-bottom: 12px;
+}
+
+.spec-box h5 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.spec-box p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #555;
+    margin: 0;
+}
+
+/* Responsive Specs */
+@media (max-width: 799px) {
+    .spec-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+    #pro-specs {
+        padding: 40px 20px;
+    }
+}
+
+
+
+#car-story-hub {
+    background-color: #ffffff;
+    border-top: 1px solid #eeeeee;
+    padding: 60px 80px;
+}
+
+.story-container {
+    max-width: 900px; /* Narrower for better reading comfort */
+    margin: 0 auto;
+}
+
+.story-item {
+    margin-bottom: 50px;
+}
+
+.story-item h2 {
+    font-size: 26px;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #9b1b1b; /* Red accent matching your theme */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.story-item p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #444;
+    text-align: justify;
+}
+
+/* Mobile Fix */
+@media (max-width: 799px) {
+    #car-story-hub {
+        padding: 40px 20px;
+    }
+}
+
+/* Newsletter Main Styling */
+#newsletter {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #9b1b1b; /* Matches your brand red */
+    background-image: url("img/banner/b14.png"); /* Red pattern */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 40px 80px;
+}
+
+#newsletter h1 {
+    font-size: 50px;
+    font-weight: 900;
+    color: #fff;
+    font-style: italic; /* Matches the slanted text in your image */
+    line-height: 1;
+    margin: 5px 0;
+}
+
+#newsletter p {
+    color: #fff;
+    font-weight: 600;
+}
+
+#newsletter p span {
+    color: #ffbd27; /* Yellow highlight for 'special deals' */
+}
+
+/* --- MOBILE RESPONSIVE QUERIES --- */
+@media (max-width: 799px) {
+    #newsletter {
+        padding: 40px 20px;
+        flex-direction: column; /* Stack text on top of input */
+        text-align: left;
+    }
+
+    #newsletter .newstext {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #newsletter h1 {
+        font-size: 35px; /* Shrink text for mobile screens */
+    }
+
+    #newsletter .form {
+        width: 100% !important; /* Form takes full width on mobile */
+        display: flex;
+    }
+    
+    #newsletter input {
+        width: 70%;
+    }
+    
+    #newsletter button {
+        width: 30%;
+        padding: 0 10px;
+        font-size: 14px;
+    }
+}
+
+
+
+ /* Product Page Responsive */
+
+
+@media (max-width: 799px) {
+
+    #banner2, #bannerblog, #bannerblog1 {
+    background-image: url('img/banner/bannee3.jpg'); /* Your current image */
+    width: 100%;
+
+    
+    
+    /* key fix: 'contain' shows the WHOLE image without cropping */
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    /* key fix: maintain original shape so it doesn't get cut off */
+    height: auto;
+    aspect-ratio: 16 / 4; /* Standard wide banner ratio; adjust if your image is taller */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 0;
+}
+
+   
+    .section-p1 {
+        padding: 40px 40px;
+    }
+
+    /* Stack Header/Navbar */
+    #header {
+        padding: 15px 30px;
+        justify-content: space-between;
+    }
+
+    #navbar {
+        display: none; /* Hide standard navbar on mobile; consider adding a burger menu */
+    }
+
+    /* Product Container Adjustments */
+    #automobile1 .pro-container {
+        justify-content: center;
+    }
+
+    #automobile1 .pro {
+        width: 100%; /* Make products full width on small screens */
+        margin: 15px;
+    }
+
+    /* Newsletter Layout */
+    #newsletter .form {
+        width: 100%; /* Make subscription box full width */
+    }
+
+    /* Footer adjustments */
+    footer .col {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+
+
+/* products fix--- */
+
+@media (max-width: 799px) {
+    /* 1. Move products up by reducing space at the top */
+    .section-p1 {
+        padding: 20px 20px !important;
+    }
+
+    #automobile1 {
+        padding-top: 0 !important;
+        margin-top: -20px; /* Pulls the products closer to the banner */
+    }
+
+    /* 2. Configure the 2-column grid */
+    #automobile1 .pro-container {
+        display: flex;
+        justify-content: space-between; /* Spreads the two items to the edges */
+        flex-wrap: wrap;
+        gap: 10px; /* This creates the equal spacing/gap between the two images */
+    }
+
+    /* 3. Force products to take up half the width */
+    #automobile1 .pro {
+        width: 48% !important; /* Slightly less than 50% to allow for the gap */
+        min-width: unset !important; /* Removes the 250px restriction */
+        margin: 5px 0 !important;
+        padding: 8px !important; /* Slightly smaller padding for small screens */
+    }
+
+    /* 4. Shrink text slightly so it fits the two-column layout */
+    #automobile1 .pro .des h5 {
+        font-size: 13px;
+        line-height: 1.2;
+    }
+
+    #automobile1 .pro .des h4 {
+        font-size: 14px;
+    }
+
+    /* 5. Adjust the cart icon size for the smaller cards */
+    #automobile1 .pro .cart {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 12px;
+        bottom: 5px;
+        right: 5px;
+    }
+}
+
+ /* 5.Feature text missing fix */
+
+@media (max-width: 799px) {
+    #feature {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap; /* Allows boxes to wrap if they run out of space */
+        gap: 15px; /* Adds space between the boxes */
+    }
+
+    #feature .fe-box {
+        width: 140px; /* Smaller width for mobile */
+        text-align: center;
+        padding: 15px 10px;
+        margin: 5px;
+    }
+
+    #feature .fe-box img {
+        width: 100%; /* Ensures image fits the box */
+        margin-bottom: 10px;
+    }
+
+    #feature .fe-box h6 {
+        display: inline-block; /* Forces text to show */
+        padding: 5px 8px;
+        line-height: 1;
+        border-radius: 4px;
+        color: #088178;
+        background-color: #fddde4;
+        font-size: 12px; /* Adjusted size for mobile readability */
+        margin: 0;
+    }
+
+  
+    @media (max-width: 799px) {
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px; /* Hide menu to the right */
+        height: 100vh;
+        width: 300px;
+        background-color: #a01705; /* Matches your brand red */
+        box-shadow: 0 40px 60px rgba(0,0,0,0.1);
+        padding: 80px 0 0 10px;
+        transition: 0.3s;
+    }
+
+    #navbar.active {
+        right: 0px; /* Slide in when active */
+    }
+
+    #navbar li {
+        margin-bottom: 25px;
+    }
+
+    #mobile {
+        display: flex;
+        align-items: center;
+    }
+
+    #mobile i {
+        color: #fff;
+        font-size: 24px;
+        padding-left: 20px;
+        cursor: pointer;
+    }
+
+    #lg-bag {
+        display: none; /* Hide desktop cart icon */
+    }
+
+    #close {
+        display: initial;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        color: #fff;
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 799px) {
+    #mobile {
+        display: flex;
+        align-items: center;
+        /* Adds the gap between the icons */
+        gap: 15px; 
+    }
+
+    #mobile i {
+        color: #fff;
+        /* Makes icons smaller */
+        font-size: 18px; 
+        cursor: pointer;
+        /* Removes old padding to let 'gap' handle spacing */
+        padding-left: 0; 
+    }
+
+    #mobile a {
+        text-decoration: none;
+        /* Ensures the link area doesn't add extra invisible space */
+        line-height: 0; 
+    }
+}
+}
+
+/* CONNECT PAGE MOBILE RESPONSIVE  */
+@media (max-width: 799px) {
+    /* 1. Stack Contact Details and Map */
+    #contact-details {
+        flex-direction: column;
+    }
+
+    #contact-details .details {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    #contact-details .map {
+        width: 100%;
+        height: 300px;
+    }
+
+    /* 2. Stack Form and People/Staff Section */
+    #form-details {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    #form-details form {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    #form-details .people {
+        width: 100%;
+    }
+
+    /* 3. Adjust Form Inputs */
+    #form-details form input,
+    #form-details form textarea {
+        width: 100%;
+    }
+}
+
+
+/*  LOGIN PAGE MOBILE ONLY  */
+@media (max-width: 799px) {
+    #form-details.login-section {
+        flex-direction: column; /* Stacks form and info vertically */
+        padding: 40px 20px;
+        align-items: center;
+    }
+
+    #form-details.login-section form {
+        width: 100%; /* Form expands to full phone width */
+        margin-bottom: 50px; /* Space between form and info boxes */
+    }
+
+    #form-details.login-section .login-info {
+        width: 100%; /* Info section expands to full width */
+    }
+
+    .login-info .info-box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+
+    .login-info .info-box i {
+        font-size: 20px;
+        margin-right: 15px;
+    }
+
+    .login-btn {
+        width: 100%; /* Larger button for easier tapping */
+        padding: 15px 0;
+        font-size: 16px;
+    }
+
+    #form-details h2 {
+        font-size: 28px; /* Scales down title for smaller screens */
+        line-height: 38px;
+    }
+}
+
+
+
+
+/* FEED/BLOG PAGE MOBILE RESPONSIVE */
+@media (max-width: 799px) {
+    #blog {
+        padding: 100px 20px 0 20px; /* Reduced side padding */
+    }
+
+    #blog .blog-box {
+        flex-direction: column; /* Stacks image and text vertically */
+        align-items: flex-start;
+        padding-bottom: 50px;
+    }
+
+   /* --- FEED PAGE IMAGE FIX --- */
+@media (max-width: 799px) {
+    #blog .blog-img {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+        /* Create a "Box" container for the image */
+        background: #f0f0f0; 
+        border-radius: 8px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #blog .blog-img img {
+        width: 100% !important;
+        height: auto !important; /* Forces the full image to show */
+        max-height: 250px; /* Limits the box height */
+        object-fit: contain; /* Prevents cropping; shows full image in the box */
+        position: relative;
+        z-index: 10;
+    }
+
+    #blog .blog-img h1 {
+        /* Move the large background date so it doesn't overlap the car */
+        font-size: 40px;
+        top: -25px;
+        opacity: 0.5;
+    }
+}
+
+    #blog .blog-details {
+        width: 100%; /* Text takes full width */
+    }
+
+    #blog .blog-details h4 {
+        font-size: 20px;
+    }
+
+    #blog .blog-details p {
+        font-size: 14px;
+    }
+
+    #bannerblog1 {
+        height: 30vh; /* Shorter banner on mobile */
+    }
+
+@media (max-width: 799px) {
+
+    #banner2, #bannerblog, #bannerblog1 {
+    background-image: url('img/banner/bannee3.jpg'); /* Your current image */
+    width: 100%;
+
+    
+    
+    /* key fix: 'contain' shows the WHOLE image without cropping */
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    /* key fix: maintain original shape so it doesn't get cut off */
+    height: auto;
+    aspect-ratio: 16 / 4; /* Standard wide banner ratio; adjust if your image is taller */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 0;
+}
+    
+}
+}
+
+
+/* Mobile Responsiveness For Singleproduct page */
+
+/* For Tablets and smaller (991px and down) */
+@media (max-width: 991px) {
+    #prodetails {
+        flex-direction: column; /* Stack image and text vertically */
+    }
+    .single-pro-image {
+        width: 100% !important;
+        margin-right: 0 !important;
+    }
+    .single-pro-details {
+        width: 100% !important;
+        padding-top: 30px;
+    }
+}
+
+/* For Mobile Phones (768px and down) */
+@media (max-width: 768px) {
+    .section-p1 {
+        padding: 40px 20px;
+    }
+
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px; /* Hide off-screen */
+        height: 100vh;
+        width: 300px;
+        background-color: #a01705;
+        box-shadow: 0 40px 60px rgba(0,0,0,0.1);
+        padding: 80px 0 0 10px;
+        transition: 0.3s;
+    }
+
+    #navbar.active {
+        right: 0px;
+    }
+
+    #navbar li {
+        margin-bottom: 25px;
+    }
+
+    #mobile {
+        display: flex;
+        align-items: center;
+    }
+
+    #mobile i {
+        color: #1a1a1a;
+        font-size: 24px;
+        padding-left: 20px;
+        cursor: pointer;
+    }
+
+    /* Adjust Specs Grid */
+    .spec-container {
+        grid-template-columns: 1fr 1fr; /* 2x2 grid for specs */
+        gap: 15px;
+    }
+
+    /* Adjust Story/History Hub */
+    .story-container {
+        flex-direction: column;
+    }
+
+    /* Product Grid for New Arrivals */
+    .pro-container {
+        justify-content: center;
+    }
+    .pro {
+        width: 100%; /* Full width on small mobile */
+        margin: 15px 0;
+    }
+    
+    /* Newsletter Section */
+    #newsletter {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #newsletter .form {
+        width: 100%;
+    }
+}
+
+
+/* --- Close icon Desktop View (Hide Mobile Elements) --- */
+#close {
+    display: none; /* Hidden by default on large screens */
+}
+
+/* --- close icon mobile Mobile View (Screens 799px and smaller) --- */
+@media (max-width: 799px) {
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px; /* Hidden off-screen by default */
+        height: 100vh;
+        width: 300px;
+        box-shadow: 0 40px 60px rgba(0,0,0,0.1);
+        padding: 80px 0 0 10px;
+        transition: 0.3s;
+    }
+
+    #navbar.active {
+        right: 0px; /* Slides in when active */
+    }
+
+    #close {
+        display: initial; /* Show the icon only on mobile */
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        color: #222;
+        font-size: 24px;
+        cursor: pointer;
+    }
+}
+
+
+
+

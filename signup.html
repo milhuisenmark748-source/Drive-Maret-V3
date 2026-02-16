@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CARZ - Join the Club</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <section id="header">
+        <a href="index.html"><img src="img/logo.png" class="logo" alt=""></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Autoshop</a></li>
+                <li><a href="login.html">Login</a></li>
+                <a href="#" id="close"><i class="fas fa-times"></i></a>
+            </ul>
+        </div>
+    </div>
+    
+    <div id="mobile">
+        <a href="cart.html"><i class="fas fa-cart-plus"></i></a>
+        <i id="bar" class="fas fa-outdent"></i>
+    </div>
+
+    </section>
+
+
+    <section id="form-details" class="login-section">
+        <form id="signup-form">
+            <span>START YOUR JOURNEY</span>
+            <h2>Create Account</h2>
+            <input type="text" id="reg-name" placeholder="Full Name" required>
+            <input type="email" id="reg-email" placeholder="Email Address" required>
+            <input type="text" id="reg-user" placeholder="Choose Username" required>
+            <input type="password" id="reg-pass" placeholder="Password" required>
+            <input type="password" id="reg-pass-confirm" placeholder="Confirm Password" required>
+            
+            <button type="submit" class="normal login-btn">Register Now</button>
+            <p>Already a member? <a href="login.html">Login here</a></p>
+        </form>
+
+        <div class="login-info">
+            <div class="info-box">
+                <i class="fas fa-car"></i>
+                <div>
+                    <span>VIRTUAL GARAGE</span>
+                    <p>Save your favorite builds and compare specs across our entire exotic collection.</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <i class="fas fa-bell"></i>
+                <div>
+                    <span>INSTANT UPDATES</span>
+                    <p>Be the first to know when limited edition models like the <strong>Jesko</strong> become available.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<script type="module">
+  // 1. Import Firebase
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-auth.js";
+
+  // 2. Your Config
+  const firebaseConfig = {
+    apiKey: "AIzaSyBV6lGkHxwXMyvsGlga4_MWVs4BAGI5SGU",
+    authDomain: "wad---drivemarket.firebaseapp.com",
+    projectId: "wad---drivemarket",
+    storageBucket: "wad---drivemarket.firebasestorage.app",
+    messagingSenderId: "895979359305",
+    appId: "1:895979359305:web:684c43c2b0384308bc4398"
+  };
+
+  // 3. Initialize
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  // 4. Signup Action
+  const signupForm = document.getElementById('signup-form');
+  signupForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const email = document.getElementById('reg-email').value;
+    const pass = document.getElementById('reg-pass').value;
+    const confirmPass = document.getElementById('reg-pass-confirm').value;
+
+    if (pass !== confirmPass) {
+      alert("Passwords do not match!");
+      return;
+    }
+
+    createUserWithEmailAndPassword(auth, email, pass)
+      .then((userCredential) => {
+        alert("Account created! Welcome to CARZ.");
+        window.location.href = "login.html"; // Success redirect
+      })
+      .catch((error) => {
+        // This will tell you EXACTLY why it failed (e.g. Email already in use)
+        console.error(error);
+        alert("Error: " + error.message);
+      });
+  });
+</script>
+
+<script>
+    const bar = document.getElementById('bar');
+    const close = document.getElementById('close');
+    const nav = document.getElementById('navbar');
+
+    if (bar) {
+        bar.addEventListener('click', () => {
+            nav.classList.add('active');
+        })
+    }
+
+    if (close) {
+        close.addEventListener('click', () => {
+            nav.classList.remove('active');
+        })
+    }
+
+
+
+    
+</script>
+
+</body>
+</html>
