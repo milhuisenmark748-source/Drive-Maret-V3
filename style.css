@@ -867,25 +867,25 @@ footer .copyright{
 }
 
 
-/* Mobile Responsiveness for price boxes */
 @media (max-width: 477px) {
+    #cart-add {
+        flex-direction: column; /* This stacks the boxes vertically */
+        align-items: center;    /* Optional: centers them */
+    }
+}
+
+@media (max-width: 477px) {
+    /* Target the coupon/apply section */
+    #coupon {
+        width: 100% !important;
+        margin-bottom: 30px; /* Adds space before the next box */
+    }
+
+    /* Target the subtotal section */
     #subtotal {
-        width: 100%; 
-        padding: 20px; 
+        width: 100% !important;
+        padding: 20px; /* Adjust padding for better fit on small screens */
     }
-
-    @media (max-width: 477px) {
-    #subtotal table {
-        width: 100%;
-    }
-}
-
-#cart-add { 
-    flex-direction: column; 
-    padding: 10px; 
-}
-
-
 }
 
 #prodetails .single-pro-details h4 {
