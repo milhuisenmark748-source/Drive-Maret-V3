@@ -866,6 +866,28 @@ footer .copyright{
     padding-top: 30px;
 }
 
+
+/* Mobile Responsiveness for price boxes */
+@media (max-width: 477px) {
+    #subtotal {
+        width: 100%; 
+        padding: 20px; 
+    }
+
+    @media (max-width: 477px) {
+    #subtotal table {
+        width: 100%;
+    }
+}
+
+#cart-add { 
+    flex-direction: column; 
+    padding: 10px; 
+}
+
+
+}
+
 #prodetails .single-pro-details h4 {
     padding: 40px 0 20px 0;
 }
