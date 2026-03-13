@@ -1187,25 +1187,36 @@ if (currentCar.history) {
     }
 }
 
-window.onload = function() {
+document.addEventListener("DOMContentLoaded", function() {
     const carID = localStorage.getItem('carID');
     const currentCar = carData.find(car => car.id == carID);
     const select = document.getElementById('edition-select');
+    const mainImg = document.getElementById("MainImg");
 
-    if (currentCar && select) {
-        select.innerHTML = "";
-        const availableEditions = Object.keys(currentCar.editions || {"standard": {}});
-        availableEditions.forEach(editionKey => {
-            const option = document.createElement("option");
-            option.value = editionKey;
-            option.text = editionKey.charAt(0).toUpperCase() + editionKey.slice(1);
-            select.appendChild(option);
-        });
-        select.value = availableEditions[0];
-        updatePrices(select);
+    if (currentCar) {
+        // This updates the image immediately when the script runs
+        if (mainImg) {
+            mainImg.src = currentCar.image;
+        }
+
+        if (select) {
+            select.innerHTML = "";
+            const availableEditions = Object.keys(currentCar.editions || {"standard": {}});
+            availableEditions.forEach(editionKey => {
+                const option = document.createElement("option");
+                option.value = editionKey;
+                option.text = editionKey.charAt(0).toUpperCase() + editionKey.slice(1);
+                select.appendChild(option);
+            });
+            select.value = availableEditions[0];
+            updatePrices(select);
+        }
+
+        document.querySelector(".single-pro-details h4").innerText = currentCar.brand;
+        document.querySelector(".single-pro-details h2").innerText = currentCar.name;
+        document.querySelector(".single-pro-details span").innerText = currentCar.description;
     }
-};
-
+});
 // Function to add a car to the cart
 function addToCart(buttonElement) {
     // 1. Get data from the specific button clicked
