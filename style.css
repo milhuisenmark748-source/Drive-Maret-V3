@@ -186,7 +186,7 @@ body{
 /* Cover Image Adjustments   */
 
 #autoshop{
-    background-image: url("img/screen.jpg");
+    background-image: url("img/banner/FINAL\ COVER.png");
     width: 100%;
     background-position: center;
     background-size: cover;
@@ -214,8 +214,8 @@ body{
     border-radius: 12px;
     box-shadow: 0 4px 12px #181818;
     padding: 20px 50px;
-    margin-top: -120px; 
-    margin-left: 95px;
+    margin-top: -130px; 
+    margin-left: 815px;
     font-size: 16px;
     background: #a01705;
     position: absolute;
@@ -1991,7 +1991,7 @@ body {
 
 @media (max-width: 799px) {
 
-    #autoshop, .cars, .featuretext, .Button1 {
+    #autoshop, .Button1 {
         display: none !important;
     }
 
@@ -2021,12 +2021,12 @@ body {
 
     .mobile-cta {
         position: absolute;
-        transform: scale(0.8);
-        bottom: 45%; 
+        transform: scale(0.6);
+        bottom: 10%; 
         background-color: #a01705;
         color: white;
         text-decoration: none;
-        left: 2px;
+        left: 90px;
         padding: 10px 40px;
         border-radius: 8px;
         font-family:'Times New Roman', Times, serif;
