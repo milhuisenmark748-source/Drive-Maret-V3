@@ -867,26 +867,6 @@ footer .copyright{
 }
 
 
-@media (max-width: 477px) {
-    #cart-add {
-        flex-direction: column; /* This stacks the boxes vertically */
-        align-items: center;    /* Optional: centers them */
-    }
-}
-
-@media (max-width: 477px) {
-    /* Target the coupon/apply section */
-    #coupon {
-        width: 100% !important;
-        margin-bottom: 30px; /* Adds space before the next box */
-    }
-
-    /* Target the subtotal section */
-    #subtotal {
-        width: 100% !important;
-        padding: 20px; /* Adjust padding for better fit on small screens */
-    }
-}
 
 #prodetails .single-pro-details h4 {
     padding: 40px 0 20px 0;
@@ -920,6 +900,24 @@ footer .copyright{
 
 #prodetails .single-pro-details span {
     line-height: 25px;
+}
+
+/*Only for For Mobile Response*/
+
+@media (max-width: 477px) {
+    .price-container {
+        flex-direction: column; 
+        align-items: center;    
+        gap: 15px;             
+        margin: 20px auto;      
+    }
+
+    .price-box {
+        width: 100%;            
+        max-width: 300px;     
+        text-align: center;     
+        min-width: unset;       
+    }
 }
 
 
