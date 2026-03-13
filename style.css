@@ -19,6 +19,71 @@ h2{
     color: black;
 }
 
+/*Main logo adjustments to the web */
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px; /* Removed vertical padding */
+    height: 106px;    /* Fixed height keeps the header slim */
+    background: #e3e6f3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+#header .logo {
+    height: 120px;       /* Maximize this value until you're happy */
+    width: auto;
+    object-fit: contain;
+    
+    /* These lines keep the header from growing */
+    margin-top: 10px;   
+    margin-bottom: -10px;
+    
+    transition: 0.3s ease;
+}
+
+/* Mobile Responsiveness for Logo */
+@media (max-width: 477px) {
+    #header .logo {
+        width: 100px;   
+        max-width: 120px; 
+        height: auto;
+    }
+
+}
+
+/* Floating Home Button Styling */
+.floating-home {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #a30606; /* Your brand red */
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 1000; /* Ensures it stays above the footer */
+}
+
+.floating-home:hover {
+    background-color: #088178; /* Teal hover color from your design */
+    transform: scale(1.1); /* Slight grow effect */
+    color: #fff;
+}
+
+
 h4{
     font-size: 20px;
     color: black;
@@ -43,6 +108,8 @@ p{
     margin: 40px 0;
 }
 
+/* View Autoshop Button */
+
 button.normal{
     font-size: 15x;
     font-family: 'Times New Roman', Times, serif;
@@ -62,6 +129,8 @@ button.normal{
 body{
     width: 100%;
 }
+
+/* Navigation Bar + Few Header Section Adjustments  */
 
 #header{
     display: flex;
@@ -113,6 +182,8 @@ body{
     left: 20px;
 
 }
+
+/* Cover Image Adjustments   */
 
 #autoshop{
     background-image: url("img/screen.jpg");
@@ -189,6 +260,10 @@ body{
     background-color: #a01705;
 }
 
+
+
+/* The Offer Banner Adjustments   */
+
 #automobile1{
     text-align: center;
 }
@@ -240,6 +315,8 @@ body{
 
 }
 
+
+/* The Fonts that Used to build the website  */
 
 @font-face {
     font-family: 'MyBrandFont3';
@@ -312,6 +389,7 @@ body{
 
 }
 
+/* News Letter Section Adjustments   */
 
 #newsletter{
     display: flex;
@@ -377,6 +455,10 @@ body{
     border-bottom-left-radius: 0;
 }
 
+
+
+/* The Footer Section  */
+
 footer{
     display: flex;
     flex-wrap: wrap;
@@ -391,8 +473,13 @@ footer .col{
     margin-bottom: 20px;
 } 
 
-footer .logo{
-    margin-bottom: 30px;
+
+.logo-footer {
+    width: 140px;      /* Adjust this number until it looks right to you */
+    height: auto;
+    margin-bottom: 20px;
+    object-fit: contain;
+    display: block;
 }
 
 footer h4{
@@ -448,6 +535,8 @@ footer .copyright{
     text-align: center;
 
 }
+
+/* The Small Banner Section Adjustments   */
 
 
 #smbanner .banner-box2 {
@@ -512,10 +601,11 @@ footer .copyright{
 
 }
 
-/* Mobile Responsiveness */
+
+/* Mobile Responsiveness  (Small Banner Section) */
 @media (max-width: 800px) {
     #smbanner .banner-box {
-        min-width: 100%; /* Stack on top of each other on small screens */
+        min-width: 100%; 
         height: 30vh;
     }
 }
@@ -524,22 +614,23 @@ footer .copyright{
     display: flex;
     justify-content: center; 
     gap: 15px;               
-    padding: 20px 20px 0 20px; /* Padding on sides, 0 on bottom to touch the next section */
+    padding: 20px 20px 0 20px; 
     width: 100%;
     max-width: 1600px;       
     margin: 0 auto;         
 }
 
-/* We reuse your .banner-img class for aspect ratio and styling */
+
 .top-banner-1 {
-    background-image: url('img/banner/BLACK\ EDITIONS.jpg'); /* Change to your image path */
+    background-image: url('img/banner/BLACK\ EDITIONS.jpg'); 
 }
 
 .top-banner-2 {
-    background-image: url('img/banner/spbanner.jpeg'); /* Change to your image path */
+    background-image: url('img/banner/spbanner.jpeg'); 
 }
 
-/* Responsive: Stack them on mobile so they don't get too small */
+/* Mobile Responsiveness (Small Banner Section first two banners) */
+
 @media (max-width: 799px) {
     .double-banner-container {
         flex-direction: column;
@@ -571,7 +662,7 @@ footer .copyright{
     cursor: pointer;
 }
 
-/* Individual Background Images */
+/* The Images for Banner Section  */
 .banner-1 {
     background-image: url('img/banner/bgs.jpeg');
 }
@@ -588,12 +679,11 @@ footer .copyright{
     
     .banner-img {
         width: 100%;
-        max-width: 520px; /* Maintains original size on mobile */
+        max-width: 520px;
     }
 
+    /* The Offer Banner Adjustments   */
 
-
-   /* Banner Info */ 
 
    #banner {
     display: flex;
@@ -601,7 +691,7 @@ footer .copyright{
     justify-content: center;
     align-items: center;
     text-align: center;
-    /* Replace the URL below with your actual vehicle/product image */
+
     background-image:  
                       url('img/banner/banner2.png');
     width: 100%;
@@ -627,7 +717,7 @@ footer .copyright{
 }
 
 #banner h2 span {
-    color: #ff4d4d; /* High-contrast red for the discount */
+    color: #ff4d4d; 
     font-weight: 800;
 }
 
@@ -650,17 +740,13 @@ footer .copyright{
 
 
 
-
-
-
-
 #smbanner .bannerbox{
     min-width: 100%;
     height: 30vh;
     padding: 30px;
 }
 
-
+ /* Header Mobile Responsiveness  */
 @media (max-width: 477px) {
     #header {
         padding: 10px 30px;
@@ -668,6 +754,7 @@ footer .copyright{
     
 }
 
+ /* SideBar for mobile Adjustments   */
 
 .sidebar{
     position: fixed;
@@ -693,7 +780,7 @@ footer .copyright{
     width: 100%;
 }
 
-
+ /* Extra Adjustments   */
 
 .cars{
     height: 90%;
@@ -729,6 +816,7 @@ footer .copyright{
     max-width: 60%;
 }
 
+ /* News Letter Adjustments   */
 
 #pagination{
     text-align: center;
@@ -749,6 +837,8 @@ footer .copyright{
     vertical-align: middle; 
     margin-left: 5px;      
 }
+
+ /* Product Details Page Adjustments   */
 
 #prodetails {
     display: flex;
@@ -771,7 +861,6 @@ footer .copyright{
     cursor: pointer;
 }
 
-/* Right Side Styling */
 #prodetails .single-pro-details {
     width: 50%;
     padding-top: 30px;
@@ -836,7 +925,7 @@ footer .copyright{
 
 .price-box h2{
     margin: 0;
-    color: #a01705; /* Your theme color */
+    color: #a01705; 
 }
 
 .price-box h3 {
@@ -847,7 +936,7 @@ footer .copyright{
 
 
 :root {
-    --accent-color: #b71c1c; /* Ferrari Red */
+    --accent-color: #b71c1c; 
     --text-main: #333;
     --text-muted: #666;
 }
@@ -859,7 +948,8 @@ footer .copyright{
     font-family: 'Arial', sans-serif;
 }
 
-/* 4 Key Points Grid */
+/* 4 Grid Section Adjestment */
+
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -892,7 +982,7 @@ footer .copyright{
     margin: 40px 0;
 }
 
-/* Overview and Slider */
+
 .overview-section {
     display: flex;
     align-items: center;
@@ -931,7 +1021,7 @@ footer .copyright{
 
 .slide {
     width: 100%;
-    display: none; /* Controlled by JS or simplified for static */
+    display: none; 
 }
 
 .slide.active {
@@ -973,7 +1063,7 @@ footer .copyright{
 .product-history {
     background-color: #f9f9f9;
     padding: 20px;
-    border-left: 4px solid #b71c1c; /* Ferrari Red accent */
+    border-left: 4px solid #b71c1c; 
     margin-top: 20px;
 }
 
@@ -1001,7 +1091,7 @@ footer .copyright{
     color: #333;
 }
 
-/* --- PREMIUM OVERVIEW DESIGN ONLY --- */
+/*  Overview Adjestment */
 
 .premium-overview-row {
     display: flex;
@@ -1021,7 +1111,7 @@ footer .copyright{
     padding: 10px;
 }
 
-/* Red L-shaped accent behind the image */
+
 .image-accent-frame::before {
     content: "";
     position: absolute;
@@ -1081,6 +1171,8 @@ footer .copyright{
     font-size: 18px;
 }
 
+ /* Overview Section Mobile Responsiveness  */
+
 @media (max-width: 991px) {
     .premium-overview-row {
         flex-direction: column;
@@ -1091,7 +1183,6 @@ footer .copyright{
 
 
 
-/* Container Layout */
 .premium-overview-row {
     display: flex;
     align-items: flex-start;
@@ -1101,39 +1192,24 @@ footer .copyright{
 
 .overview-visual-box {
     flex: 1;
-    max-width: 550px; /* Limits the size of the image area */
+    max-width: 550px; 
 }
 
 .overview-text-content {
     flex: 1;
 }
 
-/* Slider Image Sizing */
-.overview-slider-row {
-    display: flex;
-    gap: 10px;
-    margin-top: 15px;
-}
 
-.ov-thumb {
-    width: 80px; /* Forced small size */
-    height: 100px;
-    object-fit: cover;
-    border-radius: 4px;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: 0.3s;
-}
 
 .ov-thumb:hover {
     border-color: #a01705;
 }
 
-/* Text elements */
+
 .overview-tag { color: #a01705; font-weight: 700; text-transform: uppercase; font-size: 13px; }
 .red-line { width: 50px; height: 3px; background: #a01705; margin: 15px 0; }
 
-
+ /* The  Banner Adjustments   */
 
 #bannerblog{
     background-image: url('img/banner/banner\ cus.jpg');
@@ -1145,8 +1221,11 @@ footer .copyright{
     padding: 14px;
 }
 
+
+ /* The Blog Page Adjestment */
+
 #blog {
-    padding: 150px 150px 0 150px; /* Adjust padding for your page layout */
+    padding: 150px 150px 0 150px; 
 }
 
 #blog .blog-box {
@@ -1168,7 +1247,7 @@ footer .copyright{
     height: 500px;
     object-fit: cover;
     position: relative;
-    z-index: 10; /* Keeps image on top of the date */
+    z-index: 10; 
 }
 
 #blog .blog-img h1 {
@@ -1177,8 +1256,8 @@ footer .copyright{
     left: 0;
     font-size: 75px;
     font-weight: 700;
-    color: #c9cbce; /* Light gray for the large date */
-    z-index: -9; /* Places text behind the image */
+    color: #c9cbce; 
+    z-index: -9; 
 }
 
 #blog .blog-details {
@@ -1217,14 +1296,14 @@ footer .copyright{
 }
 
 #blog .blog-details a:hover {
-    color: #088178; /* Primary theme color */
+    color: #088178; 
 }
 
 #blog .blog-details a:hover::after {
     background-color: #088178;
 }
 
-/* Responsive for Mobile */
+/* Responsive for Mobile For Blog Box Section */
 @media (max-width: 799px) {
     #blog .blog-box {
         flex-direction: column;
@@ -1241,6 +1320,7 @@ footer .copyright{
 }
 
 
+ /* The Banner Blog Adjustments   */
 
 #bannerblog1{
     background-image: url('img/banner/BLOGBANNER2.png');
@@ -1259,10 +1339,10 @@ footer .copyright{
     transform:translateX(30%);
 }
 
-/* 1. Global Styles & Variables */
+/*  Styles & Variables */
 :root {
-    --primary: #e63946; /* Racing Red */
-    --secondary: #1d3557; /* Deep Navy */
+    --primary: #e63946; 
+    --secondary: #1d3557; 
     --bg-light: #f8f9fa;
     --text-main: #2b2d42;
     --white: #ffffff;
@@ -1283,7 +1363,7 @@ body {
     overflow-x: hidden;
 }
 
-/* 2. Layout Components */
+/*  Layout Elements */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -1296,7 +1376,7 @@ body {
     gap: 30px;
 }
 
-/* 3. Hero Section */
+/* 3. Hero Section Adjustments  */
 .hero {
     height: 70vh;
     background:
@@ -1318,7 +1398,7 @@ body {
     margin-bottom: 15px;
 }
 
-/* 4. Cards & Content */
+/* Car Cards & Content Adjustments  */
 .section-header {
     text-align: center;
     max-width: 700px;
@@ -1353,7 +1433,7 @@ body {
     color: var(--primary);
 }
 
-/* 5. Stats Bar */
+/* Stats Bar Adjustments  */
 .stats-bar {
     background-color: var(--secondary);
     color: var(--white);
@@ -1377,7 +1457,7 @@ body {
     opacity: 0.8;
 }
 
-/* 6. Buttons & CTA */
+/* 6. Buttons & CTA Adjestment */
 .cta-section {
     text-align: center;
     background-color: var(--bg-light);
@@ -1408,14 +1488,15 @@ body {
     transform: scale(1.05);
 }
 
-/* 7. Responsive Fixes */
+/*  Responsive Fixes For Banner Containers and Hero Section */
+
 @media (max-width: 768px) {
     .container { padding: 50px 20px; }
     .hero { height: 50vh; }
-}/* 1. Global Styles & Variables */
+}
 :root {
-    --primary: #dbdbdb; /* Racing Red */
-    --secondary: #a30606; /* Deep Navy */
+    --primary: #dbdbdb; 
+    --secondary: #a30606; 
     --bg-light: #f8f9fa;
     --text-main: #2b2d42;
     --white: #ffffff;
@@ -1436,13 +1517,14 @@ body {
     overflow-x: hidden;
 }
 
-/* 2. Layout Components */
+/*  Layout Elements Adjustments  */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 80px 20px;
 }
 
+ /* Grid, Cards, Hero Adjustments  */
 .grid-3 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1493,7 +1575,7 @@ body {
     color: var(--secondary);
 }
 
-/* 5. Stats Bar */
+/* 5. Stats Bar Adjustments   */
 .stats-bar {
     background-color: var(--secondary);
     color: var(--white);
@@ -1517,7 +1599,7 @@ body {
     opacity: 0.8;
 }
 
-/* 6. Buttons & CTA */
+/* 6. Buttons & CTA  Adjustments  */
 .cta-section {
     text-align: center;
     background-color: var(--bg-light);
@@ -1548,7 +1630,7 @@ body {
     transform: scale(1.05);
 }
 
-/* 7. Responsive Fixes */
+ /* Improved More Responsiveness from the Adjustments   */
 @media (max-width: 768px) {
     .container { padding: 50px 20px; }
     .hero { height: 50vh; }
@@ -1560,7 +1642,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 80px; /* Adjust based on your section-p1 class */
+    padding: 80px; 
 }
 
 #contact-details .details {
@@ -1595,7 +1677,7 @@ body {
     list-style: none;
     display: flex;
     padding: 10px 0;
-    align-items: center; /* Keeps icon and text aligned */
+    align-items: center; 
 }
 
 #contact-details .details i {
@@ -1606,7 +1688,7 @@ body {
 #contact-details .details p {
     margin: 0;
     font-size: 14px;
-    color: #465b52; /* Subtle grey-green typical of this template */
+    color: #465b52; 
 }
 
 #contact-details .map {
@@ -1619,7 +1701,7 @@ body {
     height: 100%;
 }
 
-/* Responsive adjustment for mobile */
+/* Responsive adjustment for mobile contact details section */
 @media (max-width: 799px) {
     #contact-details {
         flex-direction: column;
@@ -1635,6 +1717,7 @@ body {
 }
 
 
+ /* Form Details Adjustments   */
 
 #form-details {
     display: flex;
@@ -1685,7 +1768,7 @@ body {
     background-color: #066b64;
 }
 
-/* Right side people styling */
+
 #form-details .people div {
     padding-bottom: 25px;
     display: flex;
@@ -1712,11 +1795,11 @@ body {
     color: #000;
 }
 
-/* --- Login Section Styling --- */
+/* --- Login Section Styling  Adjustments --- */
 
 .login-section {
     background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
-                url('img/banner/banner2.jpeg'); /* Reusing your existing banner image */
+                url('img/banner/banner2.jpeg'); 
     background-size: cover;
     background-position: center;
     border-radius: 20px;
@@ -1740,12 +1823,12 @@ body {
 #form-details .input-group i {
     position: absolute;
     left: 15px;
-    color: #a01705; /* Your theme red */
+    color: #a01705; 
     font-size: 14px;
 }
 
 #form-details .input-group input {
-    padding-left: 45px !important; /* Move text over for the icon */
+    padding-left: 45px !important; 
     transition: 0.3s ease;
 }
 
@@ -1754,11 +1837,13 @@ body {
     box-shadow: 0 0 8px rgba(160, 23, 5, 0.2);
 }
 
+/* LOGIN Info Adjustments  for CSS */
+
 .login-btn {
     width: 100%;
     background-color: #a01705 !important;
     color: #fff !important;
-    font-family: 'MyBrandFont3', sans-serif !important; /* Your racing font */
+    font-family: 'MyBrandFont3', sans-serif !important; 
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-top: 10px;
@@ -1769,7 +1854,7 @@ body {
     transform: translateY(-3px);
 }
 
-/* Info Side Panel */
+
 .login-info {
     width: 30%;
     display: flex;
@@ -1798,7 +1883,7 @@ body {
     color: #181818;
 }
 
-/* Mobile Tweak */
+/* LOGIN Info Adjustments (Mobile Responsiveness) */
 @media (max-width: 799px) {
     .login-section {
         flex-direction: column;
@@ -1809,58 +1894,17 @@ body {
     }
 }
 
-/* Styling for the Register page specifically */
+/* Signup Info Adjustments (Mobile Responsiveness) */
+
 #signup-form input {
-    margin-bottom: 15px; /* Slightly tighter spacing for more fields */
+    margin-bottom: 15px; 
 }
 
 #signup-form h2 {
-    color: #a01705; /* CARZ Red for the heading */
+    color: #a01705; 
 
 }
 
-
-
-
-
-
-
-/* Profile Picture Styling */
-.profile-pic {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 2px solid #a01705; /* Matching your red theme */
-    cursor: pointer;
-    object-fit: cover;
-    transition: 0.3s;
-}
-
-.profile-pic:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 10px rgba(160, 23, 5, 0.5);
-}
-
-/* Dropdown Menu (Optional) */
-.profile-wrapper {
-    position: relative;
-    display: inline-block;
-}
-
-.profile-dropdown {
-    display: none;
-    position: absolute;
-    right: 0;
-    background: #fff;
-    border: 1px solid #ddd;
-    padding: 10px;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.profile-wrapper:hover .profile-dropdown {
-    display: block;
-}
 
 #logout-btn {
     background: #a01705;
@@ -1872,13 +1916,8 @@ body {
 }
 
 
-.profile-wrapper { position: relative; display: inline-block; }
-.profile-dropdown { display: none; position: absolute; right: 0; background: white; border: 1px solid #ddd; padding: 10px; z-index: 999; width: 150px; text-align: center; }
-.profile-wrapper:hover .profile-dropdown { display: block; }
 
-
-
-    /* The Hamburger Menu */
+    /* The Hamburger Menu (Only for Mobile)*/
     #mobile {
         display: flex;
         align-items: center;
@@ -1889,6 +1928,8 @@ body {
         font-size: 22px;
         padding-left: 15px;
     }
+
+    /* Improved Nav Bar Adjustments */
 
     #navbar {
         display: flex;
@@ -1922,25 +1963,24 @@ body {
         font-size: 22px;
     }
 
-  /* --- 1. HIDE MOBILE ELEMENTS ON DESKTOP --- */
+  /* HIDE MOBILE ELEMENTS ON DESKTOP */
 #mobile-hero {
     display: none;
 }
 
-/* --- 2. MOBILE SPECIFIC STYLES --- */
+
 @media (max-width: 799px) {
-    /* Hide the old desktop background and floating car/text */
+
     #autoshop, .cars, .featuretext, .Button1 {
         display: none !important;
     }
 
-    /* Show the new custom banner */
     #mobile-hero {
         display: block;
         width: 100%;
-        background-color: #f0f2f5; /* Matches your site background */
+        background-color: #f0f2f5; 
         padding: 0;
-        margin-top: -1px; /* Removes any tiny white gaps */
+        margin-top: -1px; 
     }
 
     .mobile-banner-content {
@@ -1951,18 +1991,18 @@ body {
         align-items: center;
     }
 
-    /* The custom made image with car and text inside it */
+
     .mobile-banner-content img {
         width: 100%;
         height: auto;
         display: block;
     }
 
-    /* The Button - Positioned exactly where you want on top of the image */
+
     .mobile-cta {
         position: absolute;
         transform: scale(0.8);
-        bottom: 45%; /* Moves button up or down over the image */
+        bottom: 45%; 
         background-color: #a01705;
         color: white;
         text-decoration: none;
@@ -1980,14 +2020,14 @@ body {
         
     }
 
-/* --- PERFECT MOBILE & TABLET OPTIMIZATION (UP TO 799PX) --- */
+/* --- ELEMENT PERFECTION FOR MOBILE & TABLET OPTIMIZATION (UP TO 799PX) --- */
 @media (max-width: 799px) {
-    /* 1. Fix the main container padding to create space for 2 columns */
+
+
     .section-p1 {
         padding: 40px 20px !important; 
     }
 
-    /* 2. Force the 2-column grid */
     #automobile1 .pro-container {
         display: flex;
         justify-content: space-between;
@@ -1995,20 +2035,20 @@ body {
     }
 
     #automobile1 .pro {
-        width: 48% !important; /* Forces two per row */
+        width: 48% !important; 
         min-width: unset !important;
         margin: 10px 0 !important;
         padding: 10px !important;
         border-radius: 15px;
     }
 
-    /* 3. Adjust Card Typography for the 799px width */
+
     #automobile1 .pro .des span {
         font-size: 11px; 
     }
 
     #automobile1 .pro .des h5 {
-        font-size: 12px; /* Prevents long names from breaking the card height */
+        font-size: 12px; 
         line-height: 1.2;
         padding-top: 5px;
     }
@@ -2024,7 +2064,7 @@ body {
         padding-top: 2px;
     }
 
-    /* 4. Fix Button & Icon Overlaps */
+
     #automobile1 .pro .cart {
         width: 35px;
         height: 35px;
@@ -2034,7 +2074,6 @@ body {
         font-size: 13px;
     }
 
-    /* 5. Header & Hero scaling */
     #automobile1 h2 {
         font-size: 28px;
     }
@@ -2044,22 +2083,22 @@ body {
     }
 
     .logo {
-        width: 90px;
+        width: 100%;
     }
 
-    /* 6. Feature box fix (Shipping, Tax, etc.) */
+
     #feature .featurebox {
-        width: 140px; /* Ensures they don't look weirdly stretched on tablet */
+        width: 140px;
         margin: 5px;
     }
 }
 }
-/* --- FULL 799PX BREAKPOINT REPAIR --- */
+/* FULL 799PX BREAKPOINT REPAIR */
 @media (max-width: 799px) {
     
-    /* NAV FIX: Show hamburger, but keep navbar structure ready */
+
     #mobile {
-        display: flex; /* Hamburger shows up here */
+        display: flex; 
         align-items: center;
     }
 
@@ -2084,19 +2123,19 @@ body {
         right: 0px;
     }
 
-    /* FEATURE SECTION FIX: Force 2 per row */
+    /* FEATURE SECTION FIX: Force 2 cars per row (Mobile) */
     #feature {
         display: flex !important;
         flex-wrap: wrap !important;
-        justify-content: center !important; /* Centers the boxes */
+        justify-content: center !important; 
         padding: 20px 10px !important;
     }
 
     #feature .featurebox {
-        /* Force width to fit two items with a small gap */
+
         width: 160px !important; 
-        margin: 10px !important; /* Spacing around each box */
-        flex: unset !important; /* Prevents stretching */
+        margin: 10px !important; 
+        flex: unset !important;
     }
 
     #feature .featurebox img {
@@ -2104,7 +2143,7 @@ body {
         height: auto;
     }
 
-    /* Section Padding Fix */
+
     .section-p1 {
         padding: 40px 20px !important;
     }
@@ -2117,7 +2156,7 @@ body {
     }
     #navbar {
         display: flex !important;
-        position: static; /* Removes fixed positioning from mobile */
+        position: static; 
         width: auto;
         height: auto;
         background-color: transparent;
@@ -2136,7 +2175,7 @@ body {
     }
 
     #navbar {
-        display: flex !important; /* Ensures text list is visible */
+        display: flex !important; 
         flex-direction: row;
         position: static;
         width: auto;
@@ -2151,7 +2190,7 @@ body {
     }
 }
 
-/* 2. Mobile/Tablet Settings (Up to 799px) */
+
 @media (max-width: 799px) {
     #mobile {
         display: flex;
@@ -2165,7 +2204,7 @@ body {
         justify-content: flex-start;
         position: fixed;
         top: 0;
-        right: -300px; /* Sidebar hidden off-screen */
+        right: -300px; 
         width: 300px;
         height: 100vh;
         background-color: #a30606;
@@ -2176,23 +2215,23 @@ body {
     }
 
     #navbar.active {
-        right: -100px; /* Slides in when clicked */
+        right: -100px; 
     }
 }
 
-/* --- FEATURE SECTION: 2 PER ROW FIX --- */
+
 @media (max-width: 799px) {
     #feature {
         display: flex !important;
         flex-wrap: wrap !important;
-        justify-content: center !important; /* Centers the two boxes */
+        justify-content: center !important;
         padding: 20px 10px !important;
     }
 
     #feature .featurebox {
-        /* This creates exactly two columns by taking 50% minus margins */
+
         width: 45% !important; 
-        min-width: 140px !important; /* Prevents them from getting too skinny */
+        min-width: 140px !important; 
         margin: 10px 2% !important;
         padding: 15px 5px !important;
         box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05) !important;
@@ -2200,46 +2239,47 @@ body {
 
     #feature .featurebox img {
         width: 100% !important;
-        max-width: 70px !important; /* Shrinks icons to make room for text */
+        max-width: 70px !important; 
         margin-bottom: 8px !important;
     }
 
     #feature .featurebox h6 {
-        display: inline-block !important; /* Better for text wrapping */
+        display: inline-block !important; 
         font-size: 11px !important; 
         padding: 5px 8px !important;
         line-height: 1.2 !important;
-        width: 90% !important; /* Keeps text within the colored box */
+        width: 90% !important; 
         text-align: center !important;
     }
 }
 
-/* Container for the small images */
+
 .small-img-group {
     display: flex;
-    justify-content: center; /* This centers the images */
-    gap: 10px;               /* Space between images */
+    justify-content: center; 
+    gap: 10px;               
     width: 100%;
 }
 
-/* Individual columns */
+
 .small-img-col {
-    flex-basis: 24%;         /* Keeps them roughly 4-per-row size */
+    flex-basis: 24%;       
     cursor: pointer;
 }
 
-/* Hide the column entirely if the image inside it is hidden */
+
 .small-img-col:has(img[style*="display: none"]) {
     display: none;
 }
 
-/* Fallback for older browsers: hide empty images */
+
 img[src=""], img:not([src]) {
     display: none;
 }
 
 
-/* Product Specs Section */
+/* Product Specs Section  */
+
 #pro-specs {
     padding: 40px 80px;
     background-color: #f9f9f9;
@@ -2281,7 +2321,7 @@ img[src=""], img:not([src]) {
     margin: 0;
 }
 
-/* Responsive Specs */
+/* Responsive Specs For */
 @media (max-width: 799px) {
     .spec-container {
         display: grid;
@@ -2302,7 +2342,7 @@ img[src=""], img:not([src]) {
 }
 
 .story-container {
-    max-width: 900px; /* Narrower for better reading comfort */
+    max-width: 900px; 
     margin: 0 auto;
 }
 
@@ -2314,7 +2354,7 @@ img[src=""], img:not([src]) {
     font-size: 26px;
     color: #1a1a1a;
     margin-bottom: 20px;
-    border-bottom: 2px solid #9b1b1b; /* Red accent matching your theme */
+    border-bottom: 2px solid #9b1b1b; 
     display: inline-block;
     padding-bottom: 5px;
 }
@@ -2326,7 +2366,7 @@ img[src=""], img:not([src]) {
     text-align: justify;
 }
 
-/* Mobile Fix */
+/* Mobile Fix Responsiveness */
 @media (max-width: 799px) {
     #car-story-hub {
         padding: 40px 20px;
@@ -2339,8 +2379,8 @@ img[src=""], img:not([src]) {
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
-    background-color: #9b1b1b; /* Matches your brand red */
-    background-image: url("img/banner/b14.png"); /* Red pattern */
+    background-color: #9b1b1b; 
+    background-image: url("img/banner/b14.png"); 
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -2351,7 +2391,7 @@ img[src=""], img:not([src]) {
     font-size: 50px;
     font-weight: 900;
     color: #fff;
-    font-style: italic; /* Matches the slanted text in your image */
+    font-style: italic; 
     line-height: 1;
     margin: 5px 0;
 }
@@ -2362,14 +2402,14 @@ img[src=""], img:not([src]) {
 }
 
 #newsletter p span {
-    color: #ffbd27; /* Yellow highlight for 'special deals' */
+    color: #ffbd27; 
 }
 
-/* --- MOBILE RESPONSIVE QUERIES --- */
+/* MOBILE RESPONSIVE (NEWS LETTER SECTION)  */
 @media (max-width: 799px) {
     #newsletter {
         padding: 40px 20px;
-        flex-direction: column; /* Stack text on top of input */
+        flex-direction: column; 
         text-align: left;
     }
 
@@ -2379,11 +2419,11 @@ img[src=""], img:not([src]) {
     }
 
     #newsletter h1 {
-        font-size: 35px; /* Shrink text for mobile screens */
+        font-size: 35px; 
     }
 
     #newsletter .form {
-        width: 100% !important; /* Form takes full width on mobile */
+        width: 100% !important; 
         display: flex;
     }
     
@@ -2406,19 +2446,18 @@ img[src=""], img:not([src]) {
 @media (max-width: 799px) {
 
     #banner2, #bannerblog, #bannerblog1 {
-    background-image: url('img/banner/bannee3.jpg'); /* Your current image */
+    background-image: url('img/banner/bannee3.jpg'); 
     width: 100%;
 
     
     
-    /* key fix: 'contain' shows the WHOLE image without cropping */
     background-size: contain; 
     background-repeat: no-repeat;
     background-position: center;
     
-    /* key fix: maintain original shape so it doesn't get cut off */
+
     height: auto;
-    aspect-ratio: 16 / 4; /* Standard wide banner ratio; adjust if your image is taller */
+    aspect-ratio: 16 / 4; 
     
     display: flex;
     justify-content: center;
@@ -2433,14 +2472,14 @@ img[src=""], img:not([src]) {
         padding: 40px 40px;
     }
 
-    /* Stack Header/Navbar */
+
     #header {
         padding: 15px 30px;
         justify-content: space-between;
     }
 
     #navbar {
-        display: none; /* Hide standard navbar on mobile; consider adding a burger menu */
+        display: none; 
     }
 
     /* Product Container Adjustments */
@@ -2449,13 +2488,13 @@ img[src=""], img:not([src]) {
     }
 
     #automobile1 .pro {
-        width: 100%; /* Make products full width on small screens */
+        width: 100%; 
         margin: 15px;
     }
 
-    /* Newsletter Layout */
+    /* Newsletter Css */
     #newsletter .form {
-        width: 100%; /* Make subscription box full width */
+        width: 100%; 
     }
 
     /* Footer adjustments */
@@ -2470,33 +2509,33 @@ img[src=""], img:not([src]) {
 /* products fix--- */
 
 @media (max-width: 799px) {
-    /* 1. Move products up by reducing space at the top */
+ 
     .section-p1 {
         padding: 20px 20px !important;
     }
 
     #automobile1 {
         padding-top: 0 !important;
-        margin-top: -20px; /* Pulls the products closer to the banner */
+        margin-top: -20px; 
     }
 
-    /* 2. Configure the 2-column grid */
+
     #automobile1 .pro-container {
         display: flex;
-        justify-content: space-between; /* Spreads the two items to the edges */
+        justify-content: space-between; 
         flex-wrap: wrap;
-        gap: 10px; /* This creates the equal spacing/gap between the two images */
+        gap: 10px; 
     }
 
-    /* 3. Force products to take up half the width */
+
     #automobile1 .pro {
-        width: 48% !important; /* Slightly less than 50% to allow for the gap */
-        min-width: unset !important; /* Removes the 250px restriction */
+        width: 48% !important; 
+        min-width: unset !important; 
         margin: 5px 0 !important;
-        padding: 8px !important; /* Slightly smaller padding for small screens */
+        padding: 8px !important; 
     }
 
-    /* 4. Shrink text slightly so it fits the two-column layout */
+
     #automobile1 .pro .des h5 {
         font-size: 13px;
         line-height: 1.2;
@@ -2506,7 +2545,7 @@ img[src=""], img:not([src]) {
         font-size: 14px;
     }
 
-    /* 5. Adjust the cart icon size for the smaller cards */
+
     #automobile1 .pro .cart {
         width: 30px;
         height: 30px;
@@ -2517,37 +2556,37 @@ img[src=""], img:not([src]) {
     }
 }
 
- /* 5.Feature text missing fix */
+
 
 @media (max-width: 799px) {
     #feature {
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-wrap: wrap; /* Allows boxes to wrap if they run out of space */
-        gap: 15px; /* Adds space between the boxes */
+        flex-wrap: wrap;
+        gap: 15px; 
     }
 
     #feature .fe-box {
-        width: 140px; /* Smaller width for mobile */
+        width: 140px; 
         text-align: center;
         padding: 15px 10px;
         margin: 5px;
     }
 
     #feature .fe-box img {
-        width: 100%; /* Ensures image fits the box */
+        width: 100%; 
         margin-bottom: 10px;
     }
 
     #feature .fe-box h6 {
-        display: inline-block; /* Forces text to show */
+        display: inline-block; 
         padding: 5px 8px;
         line-height: 1;
         border-radius: 4px;
         color: #088178;
         background-color: #fddde4;
-        font-size: 12px; /* Adjusted size for mobile readability */
+        font-size: 12px; 
         margin: 0;
     }
 
@@ -2560,17 +2599,17 @@ img[src=""], img:not([src]) {
         justify-content: flex-start;
         position: fixed;
         top: 0;
-        right: -300px; /* Hide menu to the right */
+        right: -300px; 
         height: 100vh;
         width: 300px;
-        background-color: #a01705; /* Matches your brand red */
+        background-color: #a01705; 
         box-shadow: 0 40px 60px rgba(0,0,0,0.1);
         padding: 80px 0 0 10px;
         transition: 0.3s;
     }
 
     #navbar.active {
-        right: 0px; /* Slide in when active */
+        right: 0px; 
     }
 
     #navbar li {
@@ -2590,7 +2629,7 @@ img[src=""], img:not([src]) {
     }
 
     #lg-bag {
-        display: none; /* Hide desktop cart icon */
+        display: none; 
     }
 
     #close {
@@ -2607,30 +2646,30 @@ img[src=""], img:not([src]) {
     #mobile {
         display: flex;
         align-items: center;
-        /* Adds the gap between the icons */
+
         gap: 15px; 
     }
 
     #mobile i {
         color: #fff;
-        /* Makes icons smaller */
         font-size: 18px; 
         cursor: pointer;
-        /* Removes old padding to let 'gap' handle spacing */
+ 
         padding-left: 0; 
     }
 
     #mobile a {
         text-decoration: none;
-        /* Ensures the link area doesn't add extra invisible space */
+
         line-height: 0; 
     }
 }
 }
 
 /* CONNECT PAGE MOBILE RESPONSIVE  */
+
 @media (max-width: 799px) {
-    /* 1. Stack Contact Details and Map */
+
     #contact-details {
         flex-direction: column;
     }
@@ -2645,7 +2684,7 @@ img[src=""], img:not([src]) {
         height: 300px;
     }
 
-    /* 2. Stack Form and People/Staff Section */
+
     #form-details {
         flex-direction: column;
         padding: 40px 20px;
@@ -2661,6 +2700,7 @@ img[src=""], img:not([src]) {
     }
 
     /* 3. Adjust Form Inputs */
+
     #form-details form input,
     #form-details form textarea {
         width: 100%;
@@ -2669,20 +2709,21 @@ img[src=""], img:not([src]) {
 
 
 /*  LOGIN PAGE MOBILE ONLY  */
+
 @media (max-width: 799px) {
     #form-details.login-section {
-        flex-direction: column; /* Stacks form and info vertically */
+        flex-direction: column; 
         padding: 40px 20px;
         align-items: center;
     }
 
     #form-details.login-section form {
-        width: 100%; /* Form expands to full phone width */
-        margin-bottom: 50px; /* Space between form and info boxes */
+        width: 100%;
+        margin-bottom: 50px; 
     }
 
     #form-details.login-section .login-info {
-        width: 100%; /* Info section expands to full width */
+        width: 100%; 
     }
 
     .login-info .info-box {
@@ -2698,13 +2739,13 @@ img[src=""], img:not([src]) {
     }
 
     .login-btn {
-        width: 100%; /* Larger button for easier tapping */
+        width: 100%; 
         padding: 15px 0;
         font-size: 16px;
     }
 
     #form-details h2 {
-        font-size: 28px; /* Scales down title for smaller screens */
+        font-size: 28px; 
         line-height: 38px;
     }
 }
@@ -2715,11 +2756,11 @@ img[src=""], img:not([src]) {
 /* FEED/BLOG PAGE MOBILE RESPONSIVE */
 @media (max-width: 799px) {
     #blog {
-        padding: 100px 20px 0 20px; /* Reduced side padding */
+        padding: 100px 20px 0 20px; 
     }
 
     #blog .blog-box {
-        flex-direction: column; /* Stacks image and text vertically */
+        flex-direction: column; 
         align-items: flex-start;
         padding-bottom: 50px;
     }
@@ -2730,7 +2771,6 @@ img[src=""], img:not([src]) {
         width: 100%;
         margin-right: 0;
         margin-bottom: 20px;
-        /* Create a "Box" container for the image */
         background: #f0f0f0; 
         border-radius: 8px;
         overflow: hidden;
@@ -2741,15 +2781,15 @@ img[src=""], img:not([src]) {
 
     #blog .blog-img img {
         width: 100% !important;
-        height: auto !important; /* Forces the full image to show */
-        max-height: 250px; /* Limits the box height */
-        object-fit: contain; /* Prevents cropping; shows full image in the box */
+        height: auto !important; 
+        max-height: 250px;
+        object-fit: contain; 
         position: relative;
         z-index: 10;
     }
 
     #blog .blog-img h1 {
-        /* Move the large background date so it doesn't overlap the car */
+
         font-size: 40px;
         top: -25px;
         opacity: 0.5;
@@ -2757,7 +2797,7 @@ img[src=""], img:not([src]) {
 }
 
     #blog .blog-details {
-        width: 100%; /* Text takes full width */
+        width: 100%; 
     }
 
     #blog .blog-details h4 {
@@ -2769,25 +2809,24 @@ img[src=""], img:not([src]) {
     }
 
     #bannerblog1 {
-        height: 30vh; /* Shorter banner on mobile */
+        height: 30vh; 
     }
 
 @media (max-width: 799px) {
 
     #banner2, #bannerblog, #bannerblog1 {
-    background-image: url('img/banner/bannee3.jpg'); /* Your current image */
+    background-image: url('img/banner/bannee3.jpg'); 
     width: 100%;
 
     
     
-    /* key fix: 'contain' shows the WHOLE image without cropping */
     background-size: contain; 
     background-repeat: no-repeat;
     background-position: center;
     
-    /* key fix: maintain original shape so it doesn't get cut off */
+ 
     height: auto;
-    aspect-ratio: 16 / 4; /* Standard wide banner ratio; adjust if your image is taller */
+    aspect-ratio: 16 / 4; 
     
     display: flex;
     justify-content: center;
@@ -2803,10 +2842,9 @@ img[src=""], img:not([src]) {
 
 /* Mobile Responsiveness For Singleproduct page */
 
-/* For Tablets and smaller (991px and down) */
 @media (max-width: 991px) {
     #prodetails {
-        flex-direction: column; /* Stack image and text vertically */
+        flex-direction: column;
     }
     .single-pro-image {
         width: 100% !important;
@@ -2831,7 +2869,7 @@ img[src=""], img:not([src]) {
         justify-content: flex-start;
         position: fixed;
         top: 0;
-        right: -300px; /* Hide off-screen */
+        right: -300px; 
         height: 100vh;
         width: 300px;
         background-color: #a01705;
@@ -2860,9 +2898,9 @@ img[src=""], img:not([src]) {
         cursor: pointer;
     }
 
-    /* Adjust Specs Grid */
+    /* Adjust Specs Grid  */
     .spec-container {
-        grid-template-columns: 1fr 1fr; /* 2x2 grid for specs */
+        grid-template-columns: 1fr 1fr; 
         gap: 15px;
     }
 
@@ -2876,11 +2914,11 @@ img[src=""], img:not([src]) {
         justify-content: center;
     }
     .pro {
-        width: 100%; /* Full width on small mobile */
+        width: 100%; 
         margin: 15px 0;
     }
     
-    /* Newsletter Section */
+    /* Newsletter Section Fix */
     #newsletter {
         flex-direction: column;
         align-items: flex-start;
@@ -2891,12 +2929,12 @@ img[src=""], img:not([src]) {
 }
 
 
-/* --- Close icon Desktop View (Hide Mobile Elements) --- */
+/*  Close icon Desktop View (Hide Mobile Elements)  */
 #close {
     display: none; /* Hidden by default on large screens */
 }
 
-/* --- close icon mobile Mobile View (Screens 799px and smaller) --- */
+/*  close icon mobile Mobile View (Screens 799px and smaller) */
 @media (max-width: 799px) {
     #navbar {
         display: flex;
@@ -2905,7 +2943,7 @@ img[src=""], img:not([src]) {
         justify-content: flex-start;
         position: fixed;
         top: 0;
-        right: -300px; /* Hidden off-screen by default */
+        right: -300px; 
         height: 100vh;
         width: 300px;
         box-shadow: 0 40px 60px rgba(0,0,0,0.1);
@@ -2914,11 +2952,11 @@ img[src=""], img:not([src]) {
     }
 
     #navbar.active {
-        right: 0px; /* Slides in when active */
+        right: 0px; 
     }
 
     #close {
-        display: initial; /* Show the icon only on mobile */
+        display: initial; 
         position: absolute;
         top: 30px;
         left: 30px;
@@ -2927,6 +2965,341 @@ img[src=""], img:not([src]) {
         cursor: pointer;
     }
 }
+
+
+
+/* --- Cart Page Specific Styles --- */
+
+#cart {
+    overflow-x: auto; /* Makes table scrollable on small mobile screens */
+}
+
+#cart table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    white-space: nowrap;
+}
+
+#cart table img {
+    width: 80px; /* Consistent size for vehicle thumbnails */
+    border-radius: 5px;
+}
+
+#cart table td {
+    padding: 20px 5px;
+    text-align: center;
+}
+
+#cart table thead {
+    border: 1px solid #e2e2e2;
+    border-left: none;
+    border-right: none;
+}
+
+#cart table thead td {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+#cart table tbody tr {
+    border-bottom: 1px solid #eee;
+}
+
+#cart table td:nth-child(1) {
+    width: 100px; /* Width for 'Remove' column */
+}
+
+#cart table td:nth-child(1) i {
+    color: #ff4d4d; /* Red for the remove icon */
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#cart table td:nth-child(5) input {
+    width: 50px;
+    padding: 8px 5px;
+    outline: none;
+    border: 1px solid #e2e2e2;
+}
+
+/* --- Cart Totals / Checkout Sidebar --- */
+
+#cart-add {
+    display: flex;
+    justify-content: flex-end; /* Aligns total box to the right */
+    padding: 40px 80px;
+}
+
+#subtotal {
+    width: 50%;
+    border: 1px solid #e2e2e2;
+    padding: 30px;
+    background-color: #f9f9f9;
+}
+
+#subtotal h3 {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #333;
+    margin-bottom: 20px;
+}
+
+#subtotal table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#subtotal table td {
+    width: 50%;
+    border: 1px solid #e2e2e2;
+    padding: 15px;
+    font-size: 14px;
+}
+
+/* The Final "Proceed" Button */
+#subtotal button.normal {
+    background-color: #088178; /* Matching your theme's teal/dark green */
+    color: #fff;
+    padding: 14px 30px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    border-radius: 4px;
+    border: none;
+    transition: 0.3s;
+}
+
+#subtotal button.normal:hover {
+    background-color: #066b64;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 799px) {
+    #subtotal {
+        width: 100%;
+    }
+    #cart {
+        padding: 20px;
+    }
+}
+
+
+/* --- Premium Button Design --- */
+.normal {
+    position: relative;
+    padding: 14px 35px;
+    background-color: #088178;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden; /* For the shimmer effect */
+}
+
+/* Luxury Shimmer Effect */
+.normal::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 50%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.normal:hover::after {
+    left: 100%;
+}
+
+.normal:active {
+    transform: scale(0.96);
+}
+
+/* Loading State */
+.normal.loading {
+    color: transparent;
+    pointer-events: none;
+}
+
+.normal.loading::before {
+    content: "";
+    position: absolute;
+    width: 18px; height: 18px;
+    top: 50%; left: 50%;
+    margin: -9px 0 0 -9px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.8s ease infinite;
+}
+
+/* Success State - Perfect Slide */
+.normal.added {
+    background-color: #000; /* Sleek Black Success */
+    width: auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+#navbar li a i.bump {
+    animation: bump 0.4s ease-out;
+}
+
+@keyframes bump {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.4); color: #088178; }
+    100% { transform: scale(1); }
+}
+
+
+
+/* --- High-End Cart Section --- */
+#cart {
+    padding: 60px 80px;
+    background: #fcfcfc;
+}
+
+#cart table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 15px; /* Creates the "card" look for rows */
+    table-layout: fixed;
+}
+
+#cart table thead td {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #888;
+    padding-bottom: 20px;
+    border: none;
+}
+
+#cart table tbody tr {
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03); /* Soft shadow */
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+#cart table tbody tr:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+}
+
+#cart table td {
+    padding: 20px;
+    border: none;
+}
+
+/* Rounding the corners of the "card" rows */
+#cart table tbody tr td:first-child { border-radius: 10px 0 0 10px; }
+#cart table tbody tr td:last-child { border-radius: 0 10px 10px 0; }
+
+#cart table img {
+    width: 100px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Quantity Input Styling */
+#cart table input {
+    width: 50px;
+    padding: 8px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* --- Cart Totals (The Sidebar) --- */
+#cart-add {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px 80px;
+    gap: 40px;
+}
+
+#subtotal {
+    width: 40%;
+    background: #e9e9e9; /* Dark Luxury Theme */
+    color: #4b4b4b;
+    padding: 40px;
+    border-radius: 15px;
+}
+
+#subtotal h3 {
+    margin-bottom: 25px;
+    font-size: 22px;
+}
+
+#subtotal table {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+#subtotal table td {
+    padding: 15px 0;
+    border-bottom: 1px solid #c4c4c4;
+}
+
+#subtotal button.normal {
+    width: 100%;
+    background: #a30606;
+    padding: 18px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    border-radius: 8px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 799px) {
+    #cart { padding: 20px; }
+    #cart-add { flex-direction: column; padding: 10px; }
+    #subtotal { width: 100%; }
+}
+
+@media (max-width: 768px) {
+  /* 1. Hide the table headers that are overlapping */
+  thead, .cart-headers { 
+    display: none; 
+  }
+
+  /* 2. Force the cart item to be a vertical stack */
+  .cart-item, tr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  /* 3. Give elements breathing room */
+  .cart-item div, td {
+    margin-bottom: 10px;
+    width: 100% !important;
+  }
+
+  /* 4. Fix the image size so it doesn't overflow */
+  .cart-item img {
+    max-width: 150px;
+    height: auto;
+  }
+}
+
+
+
 
 
 

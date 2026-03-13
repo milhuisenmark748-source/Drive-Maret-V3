@@ -11,7 +11,7 @@
 
 <body>
     <section id="header">
-    <a href="index.html"><img src="img/logo.png" class="logo" alt="CARZ"></a>
+    <a href="index.html"><img src="img/new logos.png" class="logo" alt="BIFU LOGO"></a>
     <div>
         <ul id="navbar">
             <li><a class="active" href="index.html">Home</a></li>
@@ -437,7 +437,7 @@
 </section>
 
 <script>
-        // 1. Map your classes to your local .html files
+        // Links the banner images to the pages //
         const bannerLinks = {
             ".top-banner-1": "blackeditionpage.html",
             ".top-banner-2": "jdmcar.html",
@@ -453,11 +453,11 @@
             const target = bannerLinks[selector];
 
             if (typeof target === 'object') {
-                // If it's the product banner, set the ID first
+ 
                 localStorage.setItem('carID', target.id);
                 window.location.href = target.url;
             } else {
-                // Regular page navigation
+
                 window.location.href = target;
             }
         });
@@ -479,7 +479,7 @@
 
 <footer class="section-p1">
     <div class="col">
-        <img class="logo" src="img/logo.png" alt="">
+        <img class="logo-footer" src="img/logo red.png" alt="CARZ LOGO">
         <h4>Contact</h4>
         <p><strong>Address: </strong> 526, Darmapala Road, Colombo</p>
         <p><strong>Phone: </strong> 0711236890</p>

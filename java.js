@@ -870,8 +870,222 @@ editions: {
     editions: {
         "JDM": { m: 25000, p: 2500, img: "img/products/kdh jdm.jpg" }
     }
-}
+},
 
+
+  {
+    id: 55,
+    brand: "DeLorean",
+    name: "DeLorean DMC-12 (1981)",
+    fullPrice: "$541,200",
+    preOrderPrice: "$54,120",
+    category: "Movie Icons",
+    image: "img/products/backtofuturecar.jpg",
+    description: "A stainless-steel sports car with gull-wing doors that travels through time.",
+    history: "Modified by Doc Brown with a Flux Capacitor; it only needs to hit 142 km/h (88 mph) to make history.",
+    specs: {
+      speed: "209 km/h",
+      accel: "10.5s",
+      engine: "2.85L V6 PRV",
+      weight: "1,230 kg"
+    },
+    editions: {
+      "MOVIE ICONS": { m: 541200, p: 54120, img: "img/products/backtofuturecar.jpg" }
+    }
+  },
+  {
+    id: 56,
+    brand: "Aston Martin",
+    name: "Aston Martin DB5 (1964)",
+    fullPrice: "$6,400,000",
+    preOrderPrice: "$640,000",
+    category: "Movie Icons",
+    image: "img/products/JB DB2.jpg",
+    description: "The quintessential spy car, equipped with gadgets for the world's most famous secret agent.",
+    history: "First debuting in Goldfinger, this vehicle set the gold standard for cinematic spy gadgets.",
+    specs: {
+      speed: "233 km/h",
+      accel: "8.2s",
+      engine: "4.0L Inline-6",
+      weight: "1,502 kg"
+    },
+    editions: {
+      "MOVIE ICONS": { m: 6400000, p: 640000, img: "img/products/JB DB2.jpg" }
+    }
+  },
+  {
+    id: 57,
+    brand: "Dodge",
+    name: "Dodge Charger R/T (1970)",
+    fullPrice: "$1,500,000",
+    preOrderPrice: "$150,000",
+    category: "Movie Icons",
+    image: "img/products/DOM FF.jpg",
+    description: "A supercharged beast of a muscle car that became the symbol of family and street racing.",
+    history: "Hand-built by Dominic Toretto and his father, known for its massive torque and iconic wheelies.",
+    specs: {
+      speed: "322 km/h",
+      accel: "3.1s",
+      engine: "900hp Supercharged Chrysler 426 Hemi V8",
+      weight: "1,724 kg"
+    },
+    editions: {
+      "MOVIE ICONS": { m: 1500000, p: 150000, img: "img/products/DOM FF.jpg" }
+    }
+  },
+  {
+    id: 58,
+    brand: "GMC",
+    name: "The Rust Bucket (1973)",
+    fullPrice: "$1,200,000",
+    preOrderPrice: "$120,000",
+    category: "Movie Icons",
+    image: "img/products/ben 1- rv.jpg",
+    description: "A classic motorhome hiding advanced Plumber technology and alien defense systems.",
+    history: "The mobile base for Max, Ben, and Gwen Tennyson during their summer road trip adventures.",
+    specs: {
+      speed: "483 km/h",
+      accel: "4.3s",
+      engine: "7.5L V8 + Jet Propulsion",
+      weight: "5,670 kg"
+    },
+    editions: {
+      "MOVIE ICONS": { m: 1200000, p: 120000, img: "img/products/ben 1- rv.jpg" }
+    }
+  },
+  {
+    id: 59,
+    brand: "British Leyland",
+    name: "Mini 1000 Mark IV (1977)",
+    fullPrice: "$85,000",
+    preOrderPrice: "$8,500",
+    category: "Movie Icons",
+    image: "img/products/mr bean car.jpg",
+    description: "A nimble, bright green city car famous for its external padlock and rooftop driving.",
+    history: "The loyal, if frequently battered, companion to Mr. Bean through his many comedic mishaps.",
+    specs: {
+      speed: "132 km/h",
+      accel: "18.5s",
+      engine: "998cc Inline-4",
+      weight: "617 kg"
+    },
+    editions: {
+      "MOVIE ICONS": { m: 85000, p: 8500, img: "img/products/mr bean car.jpg" }
+    }
+  },
+  {
+    id: 60,
+    brand: "Dodge",
+    name: "The Mystery Machine",
+    fullPrice: "$250,000",
+    preOrderPrice: "$25,000",
+    category: "Movie Icons",
+    image: "img/products/scoob van.jpg",
+    description: "A brightly colored van used by Mystery Inc. to travel between haunted locations.",
+    history: "The primary transport for Scooby and the gang, equipped with various detective tools.",
+    specs: {
+      speed: "153 km/h",
+      accel: "12.5s",
+      engine: "3.7L Slant-6",
+      weight: "1,588 kg"
+    },
+    editions: {
+      "MOVIE ICONS": { m: 250000, p: 25000, img: "img/products/scoob van.jpg" }
+    }
+  },
+  {
+    id: 61,
+    brand: "Custom",
+    name: "Burton Batmobile (1989)",
+    fullPrice: "$1,500,000",
+    preOrderPrice: "$150,000",
+    category: "Movie Icons",
+    image: "img/products/BATMOBILE.jpg",
+    description: "A long, jet-turbine-powered interceptor designed for high-speed pursuit in Gotham City.",
+    history: "This sleek, gothic design redefined Batman’s transport for a more serious, cinematic era.",
+    specs: {
+      speed: "531 km/h",
+      accel: "3.8s",
+      engine: "Jet Turbine Engine",
+      weight: "1,361 kg"
+    },
+    editions: {
+      "MOVIE ICONS": { m: 1500000, p: 150000, img: "img/products/BATMOBILE.jpg" }
+    }
+  },
+  {
+    id: 62,
+    brand: "Ford",
+    name: "Falcon XB GT Interceptor (1973)",
+    fullPrice: "$550,000",
+    preOrderPrice: "$55,000",
+    category: "Movie Icons",
+    image: "img/products/MAD MAX.jpg",
+    description: "A battle-hardened V8 Interceptor built for survival in the post-apocalyptic wasteland.",
+    history: "Known as the 'Last of the V8s,' this car is as legendary as Max Rockatansky himself.",
+    specs: {
+      speed: "225 km/h",
+      accel: "5.9s",
+      engine: "351 Cleveland V8",
+      weight: "1,497 kg"
+    },
+    editions: {
+      "MOVIE ICONS": { m: 550000, p: 55000, img: "img/products/MAD MAX.jpg" }
+    }
+  },
+  {
+    id: 63,
+    brand: "Cadillac",
+    name: "Ecto-1 (1959)",
+    fullPrice: "$350,000",
+    preOrderPrice: "$35,000",
+    category: "Movie Icons",
+    image: "img/products/Ghost busters.jpg",
+    description: "A heavily modified ambulance used for responding to paranormal emergencies.",
+    history: "A derelict vehicle found by Ray Stantz and converted into the Ghostbusters' signature mobile unit.",
+    specs: {
+      speed: "177 km/h",
+      accel: "11.8s",
+      engine: "6.4L V8",
+      weight: "3,311 kg"
+    },
+    editions: {
+      "MOVIE ICONS": { m: 350000, p: 35000, img: "img/products/Ghost busters.jpg" }
+    }
+  },
+
+  {
+    id: 64, brand: "Nissan", name: "Nissan Sky-line GTR R34 (2002)", fullPrice: "$$3,000,000", preOrderPrice: "$3,000,000",
+    category: ["JDM","Sportscar,Movie Icon,Movie Icons"],
+    image: "img/products/r34 paul walker.jpg", description: "The icon of JDM culture, known as Godzilla.",
+    specs: { speed: "250 km/h", accel: "4.7s", engine: "2.6L Twin-Turbo I6", weight: "1,560 kg" },
+    editions: {
+    "MOVIE ICONS": { m: 3000000, p: 300000, img: "img/products/r34 paul walker.jpg" },
+    "MOVIE ICONS2": { m: 3900000, p: 390000, img: "img/products/r34 paul 2.jpg"}
+    }
+},
+
+
+{
+    id: 65, brand: "BMW", name: "BMW M3 GTR (2001)", fullPrice: "$2,000,000", preOrderPrice: "$200,000",
+    category: "Movie Icons",
+    image: "img/products/nfs mw.jpg", description: "The hero car of Need for Speed: Most Wanted.",
+    specs: { speed: "295 km/h", accel: "4.0s", engine: "4.0L V8", weight: "1,350 kg" },
+    editions: {
+        "MOVIE ICONS": { m: 2000000, p: 200000, img: "img/products/nfs mw.jpg" }
+    }
+},
+
+
+{
+    id: 66, brand: "Fleetwood", name: "Bounder Breaking Bad Edition (1986)", fullPrice: "$85,000", preOrderPrice: "$8,500",
+    category: "Movie Icons",
+    image: "img/products/breaking bad rv for mvo.jpg", description: "A piece of television history.",
+    specs: { speed: "120 km/h", accel: "25s", engine: "V8 Gas Engine", weight: "6,500 kg" },
+    editions: {
+        "MOVIE ICONS": { m: 85000, p: 8500, img: "img/products/breaking bad rv for mvo.jpg" }
+    }
+},
 
 ];
 
@@ -992,3 +1206,148 @@ window.onload = function() {
     }
 };
 
+// Function to add a car to the cart
+function addToCart(buttonElement) {
+    // 1. Get data from the specific button clicked
+    const vehicleName = buttonElement.getAttribute('data-name');
+    const vehiclePrice = buttonElement.getAttribute('data-price');
+
+    // 2. Find the popup elements
+    const popup = document.getElementById('cart-popup');
+    const message = document.getElementById('popup-message');
+
+    // 3. Update the popup text dynamically
+    message.innerHTML = `
+        <div style="font-size: 0.9em; color: #666;">Success!</div>
+        <strong style="display:block; margin: 5px 0;">${vehicleName}</strong>
+        <span style="color: #a00d12; font-weight: bold;">$${Number(vehiclePrice).toLocaleString()}</span> 
+        added to your cart.
+    `;
+
+    // 4. Show the popup
+    popup.style.display = 'block';
+
+    // 5. Logic to actually "add" it (optional)
+    console.log(`Adding ${vehicleName} to the database at $${vehiclePrice}`);
+}
+
+
+// Function to display items on the Cart Page
+function displayCart() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let cartTable = document.querySelector('#cart tbody');
+    let subtotalElement = document.getElementById('cart-subtotal');
+    let totalElement = document.getElementById('cart-total');
+    let totalAmount = 0;
+
+    if (!cartTable) return;
+
+    cartTable.innerHTML = "";
+
+    if (cart.length === 0) {
+        cartTable.innerHTML = "<tr><td colspan='6'>Your showroom is empty.</td></tr>";
+    }
+
+    cart.forEach((item, index) => {
+        // Clean price: remove symbols and commas
+        let priceNum = parseFloat(item.price.replace(/[$,]/g, ''));
+        let subtotal = priceNum * item.quantity;
+        totalAmount += subtotal;
+
+        cartTable.innerHTML += `
+            <tr>
+                <td><i class="far fa-times-circle" onclick="removeItem(${index})" style="cursor:pointer; color:#e74c3c;"></i></td>
+                <td><img src="${item.image}" alt=""></td>
+                <td>
+                    <strong>${item.name}</strong><br>
+                    <small style="color:#888;">${item.edition} Edition</small>
+                </td>
+                <td>${item.price}</td>
+                <td><input type="number" value="${item.quantity}" onchange="updateQuantity(${index}, this.value)"></td>
+                <td style="font-weight:700;">$${subtotal.toLocaleString()}</td>
+            </tr>
+        `;
+    });
+
+    if(subtotalElement) subtotalElement.innerText = `$${totalAmount.toLocaleString()}`;
+    if(totalElement) totalElement.innerText = `$${totalAmount.toLocaleString()}`;
+}
+
+// Helper functions for the UI
+function removeItem(index) {
+    let cart = JSON.parse(localStorage.getItem('cart'));
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    displayCart();
+}
+
+function updateQuantity(index, val) {
+    let cart = JSON.parse(localStorage.getItem('cart'));
+    cart[index].quantity = parseInt(val);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    displayCart();
+}
+
+// Run displayCart if we are on the cart page
+if (window.location.pathname.includes('cart.html')) {
+    window.onload = displayCart;
+}
+
+
+
+function addToCartFromProductPage() {
+    const btn = document.querySelector(".normal");
+    const carID = localStorage.getItem('carID');
+    const currentCar = carData.find(car => car.id == carID);
+    
+    // Start Loading Animation
+    btn.classList.add("loading");
+
+    // Simulate a high-end server check (1 second delay)
+    setTimeout(() => {
+        const select = document.getElementById('edition-select');
+        const editionKey = select.value;
+        const editionDetails = currentCar.editions[editionKey];
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push({
+            id: carID,
+            name: currentCar.name,
+            edition: editionKey,
+            price: `$${editionDetails.p.toLocaleString()}`, // Pre-order price
+            image: editionDetails.img,
+            quantity: 1
+        });
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Switch to Success State
+        btn.classList.remove("loading");
+        btn.classList.add("added");
+        btn.innerHTML = `<i class="fas fa-check"></i> DEPOSIT SECURED`;
+
+        // Reset after 4 seconds
+        setTimeout(() => {
+            btn.classList.remove("added");
+            btn.innerHTML = "Add To Cart";
+        }, 4000);
+        
+    }, 8000); // 0.8 seconds of loading for "premium" feel
+}
+
+    // --- UI Visual Change ---
+    const btn = document.querySelector(".normal"); // Select the button
+    const originalText = btn.innerText;
+    
+    btn.classList.add("added"); // Apply the new green design
+    btn.innerText = "Secured in Cart"; // Change the text
+    
+    // Optional: Reset button back to normal after 3 seconds
+    setTimeout(() => {
+        btn.classList.remove("added");
+        btn.innerText = originalText;
+    }, 3000);
+
+const cartIcon = document.querySelector(".fa-cart-plus");
+cartIcon.classList.add("bump");
+setTimeout(() => cartIcon.classList.remove("bump"), 400);
