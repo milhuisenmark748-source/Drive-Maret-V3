@@ -1084,8 +1084,21 @@ editions: {
     specs: { speed: "120 km/h", accel: "25s", engine: "V8 Gas Engine", weight: "6,500 kg" },
     editions: {
         "MOVIE ICONS": { m: 85000, p: 8500, img: "img/products/breaking bad rv for mvo.jpg" }
-    }
+    },
+
 },
+
+{
+    id: 67, brand: "Lancia", name: "Rally 037 (1983)", fullPrice: "$1,850,000", preOrderPrice: "$185,000",
+    category: "Rally Legends",
+    image: "img/products/lancia rally.jpeg", description: "A legendary mid-engine RWD monster built to conquer the brutal Group B rally era.",
+    history: "Designed by Abarth and Pininfarina, it famously defeated the all-wheel-drive Audi Quattros to win the 1983 World Rally Championship.",
+    specs: { speed: "249 km/h", accel: "4.0s", engine: "2.0L Supercharged Inline-4", weight: "960 kg" },
+    editions: {
+        "Rally Legend": { m: 1850000, p: 185000, img: "img/products/lancia rally.jpeg" }
+    }
+
+}
 
 ];
 
