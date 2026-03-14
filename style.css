@@ -108,6 +108,20 @@ p{
     margin: 40px 0;
 }
 
+/*Feature Text "Welcome to Autoshop Css"*/
+.featuretext{
+    height: 90%;
+    position: absolute;
+    bottom:0 ;
+    left: 50px;
+    top: 70px;
+    max-height: 60%;
+    max-width: 60%;
+}
+
+
+
+
 /* View Autoshop Button */
 
 button.normal{
@@ -188,22 +202,22 @@ body{
 #autoshop{
     background-image: url("img/banner/FINAL\ COVER.png");
     width: 100%;
+    /* This matches the shape of a standard banner */
+    aspect-ratio: 16 / 7; 
+    background-size: 100% 100%;
     background-position: center;
-    background-size: cover;
-    height: 52vh;
-}
+    background-repeat: no-repeat;
+    
+    /* Remove the fixed 52vh height so it doesn't force a zoom */
+    height: auto; 
 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 80px;
+}   
 
-
-.featuretext{
-    height: 90%;
-    position: absolute;
-    bottom:0 ;
-    left: 50px;
-    top: 70px;
-    max-height: 60%;
-    max-width: 60%;
-}
 
 .Button1 {
     display: inline-block;
@@ -214,13 +228,13 @@ body{
     border-radius: 12px;
     box-shadow: 0 4px 12px #181818;
     padding: 20px 50px;
-    margin-top: -100px; 
-    margin-left: 815px;
-    font-size: 16px;
     background: #a01705;
-    position: absolute;
     cursor: pointer;
-    z-index: 1000; 
+    z-index: 1000;
+    position: absolute;
+    bottom: 15%; 
+    margin-left: 815px; 
+    font-size: 16px;
 }
 
 #feature {
@@ -693,7 +707,24 @@ footer .copyright{
     text-align: center;
 
     background-image:  
-                      url('img/banner/banner2.png');
+    url('img/banner/banner2.png');
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 20px;
+}
+
+   #banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background-image:  
+    url('img/banner/banner2.png');
     width: 100%;
     height: 40vh;
     background-size: cover;
@@ -793,7 +824,7 @@ footer .copyright{
 }
 
 
-
+/*Banner for welcome to autoshop */
 #banner2{
     background-image: url('img/banner/banner\ cus.jpg');
     height: 40vh;
@@ -803,6 +834,40 @@ footer .copyright{
     flex-direction: column;
     padding: 14px;
 }
+
+
+
+
+#bannerjdm{
+    background-image: url('img/banner/jdm\ banner\ hero.png');
+    height: 40vh;
+    background-size: cover;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 14px;
+}
+
+#bannerblacked{
+    background-image: url('img/banner/black\ editon\ hero\ cover.png');
+    height: 40vh;
+    background-size: cover;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 14px;
+}
+
+#bannermovieed{
+    background-image: url('img/banner/movie\ cars\ \ cover.png');
+    height: 40vh;
+    background-size: cover;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 14px;
+}
+
 
 
 
@@ -2462,6 +2527,8 @@ img[src=""], img:not([src]) {
 
  /* Product Page Responsive */
 
+ 
+/*Mobile Responsive for main autoshop hero banner*/
 
 @media (max-width: 799px) {
 
@@ -2487,7 +2554,79 @@ img[src=""], img:not([src]) {
     padding: 0;
 }
 
-   
+}
+
+/*Mobile Responsive for jdm hero banner*/
+
+@media (max-width: 799px) {
+
+    #bannerjdm{
+    background-image: url('img/banner/banneemobilejdm.png'); 
+    width: 100%;
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+    
+
+    height: auto;
+    aspect-ratio: 16 / 4; 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 0;
+}
+}
+
+/*Mobile Responsive for black editon hero banner*/
+
+@media (max-width: 799px) {
+
+    #bannerblacked{
+    background-image: url('img/banner/black\ editon\ hero\ cover\ mobile.png'); 
+    width: 100%;
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+    
+
+    height: auto;
+    aspect-ratio: 16 / 4; 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 0;
+}
+
+}
+
+/*Mobile Responsive for movie editon hero banner*/
+
+@media (max-width: 799px) {
+
+    #bannermovieed{
+    background-image: url('img/banner/movie\ cars\ \ cover\ mobile.png'); 
+    width: 100%;
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+    
+
+    height: auto;
+    aspect-ratio: 16 / 4; 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 0;
+}
     .section-p1 {
         padding: 40px 40px;
     }
