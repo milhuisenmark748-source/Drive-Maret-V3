@@ -49,8 +49,8 @@ const carData = [
     editions: {
         "standard": { m: 4500000, p: 450000, img: "img/products/Lambo.jpeg" },
         "Premium":  { m: 4800000, p: 480000, img: "img/products/LAMBOPRED.png" },
-        "Collector":  { m: 5500000, p: 550000, img: "img/products/LAMBOSPED.png" },
-        "Special": { m: 6200000, p: 620000, img: "img/products/LAMBOCOLLECTED.png" }
+        "Special":  { m: 5500000, p: 550000, img: "img/products/LAMBOSPED.png" },
+        "Collector": { m: 6200000, p: 620000, img: "img/products/LAMBOCOLLECTED.png" }
     }
 },
 {
@@ -67,8 +67,8 @@ const carData = [
     editions: {
         "standard": { m: 1200000, p: 120000, img: "img/products/senna.jpeg" },
         "Premium":  { m: 1800000, p: 180000, img: "img/products/SENNAPRED.png" },
-        "Special":  { m: 2300000, p: 230000, img: "img/products/SENNASPED.png" },
-        "Collector": { m: 3000000, p: 300000, img: "img/products/SENNACOLLECTED.png" }
+        "Collector":  { m: 2300000, p: 230000, img: "img/products/SENNASPED.png" },
+        "Special": { m: 3000000, p: 300000, img: "img/products/SENNACOLLECTED.png" }
     }
 },
 {
