@@ -2296,6 +2296,49 @@ body {
         right: 0px;
     }
 
+/*Cart fixes for pc*/
+
+    #cart {
+    padding: 40px 80px;
+    max-width: 1200px; /* Limits width on big screens */
+    margin: 0 auto;    /* Centers the container */
+}
+
+#cart-add {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px 80px;
+    gap: 40px;
+    max-width: 1200px; /* Match the cart width */
+    margin: 0 auto;
+}
+
+#subtotal {
+    width: 35%; /* Slightly smaller for a tighter look */
+    background: #e9e9e9;
+    color: #4b4b4b;
+    padding: 30px; /* Reduced slightly */
+    border-radius: 15px;
+    border: 1px solid #ddd; /* Added a subtle border for definition */
+}
+
+#cart table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Keeps columns consistent */
+}
+
+#cart table td {
+    padding: 20px 5px;
+}
+
+#cart table img {
+    width: 70px;
+    height: auto;
+    object-fit: contain;
+}
+
     /* FEATURE SECTION FIX: Force 2 cars per row (Mobile) */
     #feature {
         display: flex !important;
