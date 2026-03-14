@@ -49,8 +49,8 @@ const carData = [
     editions: {
         "standard": { m: 4500000, p: 450000, img: "img/products/Lambo.jpeg" },
         "Premium":  { m: 4800000, p: 480000, img: "img/products/LAMBOPRED.png" },
-        "Special":  { m: 5500000, p: 550000, img: "img/products/LAMBOSPED.png" },
-        "Collector": { m: 6200000, p: 620000, img: "img/products/LAMBOCOLLECTED.png" }
+        "Collector":  { m: 5500000, p: 550000, img: "img/products/LAMBOSPED.png" },
+        "Special": { m: 6200000, p: 620000, img: "img/products/LAMBOCOLLECTED.png" }
     }
 },
 {
