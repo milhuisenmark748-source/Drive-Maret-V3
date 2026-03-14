@@ -12,7 +12,6 @@ const carData = [
     // Specific images and prices for Jesko
     editions: {
         "standard": { m: 3000000, p: 300000, img: "img/products/f1 jesko.jpeg" },
-        "premium":  { m: 3500000, p: 350000, img: "img/products/kpremiumed.png" },
         "special":  { m: 4000000, p: 400000, img: "img/products/kjspecialed.png" },
         "Collector":  { m: 5100000, p: 510000, img: "img/products/kjcollectored.png" } 
     }
