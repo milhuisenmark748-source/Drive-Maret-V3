@@ -869,6 +869,17 @@ footer .copyright{
 }
 
 
+#bannersupercars{
+    background-image: url('img/banner/supercarshero.jpg');
+    height: 40vh;
+    background-size: cover;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 14px;
+}
+
+
 
 
 #autoshop .featuretext{
@@ -2627,6 +2638,29 @@ img[src=""], img:not([src]) {
     flex-direction: column;
     padding: 0;
 }
+
+/*Mobile Responsive for movie editon hero banner*/
+
+@media (max-width: 799px) {
+
+    #bannersupercars{
+    background-image: url('img/banner/supercarsheromob.jpg'); 
+    width: 100%;
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+    
+
+    height: auto;
+    aspect-ratio: 16 / 4; 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 0;
+}
     .section-p1 {
         padding: 40px 40px;
     }
@@ -3459,7 +3493,4 @@ img[src=""], img:not([src]) {
 
 
 
-
-
-
-
+}
