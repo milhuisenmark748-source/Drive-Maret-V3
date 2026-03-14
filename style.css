@@ -835,6 +835,22 @@ footer .copyright{
     
 }
 
+
+/* Mobile Responsiveness - Forces a nice stack on phones */
+@media (max-width: 799px) {
+    .double-banner-container, 
+    .banner-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .banner-img {
+        width: 100%;
+        max-width: 100%;
+        min-width: unset;
+    }
+}
+
  /* SideBar for mobile Adjustments   */
 
 .sidebar{
