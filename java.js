@@ -28,8 +28,8 @@ const carData = [
     // Specific images and prices for Bugatti
     editions: {
         "standard": { m: 4300000, p: 430000, img: "img/products/Bugatti.jpeg" },
-        "premium":  { m: 5100000, p: 510000, img: "img/products/buggatipremiumed.jpg" },
-        "special":  { m: 6200000, p: 620000, img: "img/products/specialedition.jpg" },
+        "premium":  { m: 5100000, p: 510000, img: "img/products/buggatipremiumed.jpeg" },
+        "special":  { m: 6200000, p: 620000, img: "img/products/specialedition.jpeg" },
         "Collector":  { m: 7200000, p: 720000, img: "img/products/kjcollectored.png" }
     }
 },
