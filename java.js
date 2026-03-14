@@ -12,8 +12,8 @@ const carData = [
     // Specific images and prices for Jesko
     editions: {
         "standard": { m: 3000000, p: 300000, img: "img/products/f1 jesko.jpeg" },
-        "Primium":  { m: 3500000, p: 350000, img: "img/products/kprimiumed.png" },
-        "Spacial":  { m: 4000000, p: 400000, img: "img/products/kjspecialed.png" },
+        "premium":  { m: 3500000, p: 350000, img: "img/products/kpremiumed.png" },
+        "special":  { m: 4000000, p: 400000, img: "img/products/kjspecialed.png" },
         "Collector":  { m: 5100000, p: 510000, img: "img/products/kjcollectored.png" } 
     }
 },
@@ -29,8 +29,8 @@ const carData = [
     // Specific images and prices for Bugatti
     editions: {
         "standard": { m: 4300000, p: 430000, img: "img/products/Bugatti.jpeg" },
-        "Primium":  { m: 5100000, p: 510000, img: "img/products/buggatiprimiumed.png" },
-        "Spacial":  { m: 6200000, p: 620000, img: "img/products/spacialedition.png" },
+        "premium":  { m: 5100000, p: 510000, img: "img/products/buggatipremiumed.png" },
+        "special":  { m: 6200000, p: 620000, img: "img/products/specialedition.png" },
         "Collector":  { m: 7200000, p: 720000, img: "img/products/kjcollectored.png" }
     }
 },
@@ -111,7 +111,7 @@ const carData = [
     specs: { speed: "315 km/h", accel: "2.5s", engine: "3.8L V6 Twin-Turbo", weight: "1,703 kg" },
     editions: {
         "standard": { m: 300000, p: 30000, img: "img/products/nissan nismo.jpeg" },
-        "Special":  { m: 620000, p: 62000, img: "img/products/nismo spacial.jpg" }
+        "Special":  { m: 620000, p: 62000, img: "img/products/nismo special.jpg" }
 
     }
 },
@@ -1166,7 +1166,7 @@ id: 72,
     specs: { speed: "85 km/h", accel: "N/A", engine: "145cc 2-Stroke", weight: "284 kg" },
     editions: {
         "standard": { m: 2800, p: 280, img: "img/products/BAJAJ RE.jpg" },
-        "Spacial":  { m: 4800, p: 480, img: "img/products/limited ed rally bajaj.jpg" },
+        "special":  { m: 4800, p: 480, img: "img/products/limited ed rally bajaj.jpg" },
     }
 },
   {
@@ -1221,8 +1221,8 @@ id: 72,
     image: "img/products/limited ed rally bajaj.jpg",
     description: "The classic high-revving 2-stroke three-wheeler that defined an era of transport.",
     history: "A cultural icon in Sri Lanka, renowned for its maneuverability and reliability.",
-    specs: { speed: "135 km/h", accel: "5.2", engine: "145cc 2-Stroke Spacial tune up", weight: "234 kg" },
-    editions: { "Spacial": { m: 2800, p: 280, img: "img/products/limited ed rally bajaj.jpg" } }
+    specs: { speed: "135 km/h", accel: "5.2", engine: "145cc 2-Stroke special tune up", weight: "234 kg" },
+    editions: { "special": { m: 2800, p: 280, img: "img/products/limited ed rally bajaj.jpg" } }
   },
 
 ];
@@ -1250,10 +1250,10 @@ function updatePrices(selectElement) {
             if (selectedEdition === "standard") {
                 marketPrice = basePrice;
                 prePrice = basePre;
-            } else if (selectedEdition === "Primium") {
+            } else if (selectedEdition === "premium") {
                 marketPrice = basePrice * 1.2;
                 prePrice = basePre * 1.2;
-            } else if (selectedEdition === "Spacial") {
+            } else if (selectedEdition === "special") {
                 marketPrice = basePrice * 1.5;
                 prePrice = basePre * 1.5;
             }
