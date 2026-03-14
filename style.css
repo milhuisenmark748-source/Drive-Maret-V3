@@ -689,6 +689,10 @@ footer .copyright{
     background-image: url('img/banner/black.jpeg');
 }
 
+.banner-4 {
+    background-image: url('img/banner/sri\ lanka\ bnner\ home.jpg');
+}
+
 
     
     .banner-img {
@@ -697,6 +701,52 @@ footer .copyright{
     }
 
     /* The Offer Banner Adjustments   */
+
+
+
+.banner-container {
+    display: flex;
+    justify-content: center; 
+    gap: 15px;               
+    padding: 20px;
+    width: 100%;
+    max-width: 1600px;       
+    margin: 0 auto;         
+}
+
+.banner-img {
+    flex: 1; 
+    aspect-ratio: 520 / 280; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+/* The Images for Banner Section  */
+.banner-1 {
+    background-image: url('img/banner/bgs.jpeg');
+}
+
+.banner-2 {
+    background-image: url('img/banner/RESTORATION.jpg');
+}
+
+.banner-3 {
+    background-image: url('img/banner/SRI\ LANKA\ HOME\ BANNER.jpg');
+}
+
+.banner-4 {
+    background-image: url('img/banner/sri\ lanka\ bnner\ home.jpg');
+}
+
+
+    
+    .banner-img {
+        width: 100%;
+        max-width: 520px;
+    }
+
 
 
    #banner {
@@ -860,6 +910,17 @@ footer .copyright{
 
 #bannermovieed{
     background-image: url('img/banner/movie\ cars\ \ cover.png');
+    height: 40vh;
+    background-size: cover;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 14px;
+}
+
+
+#bannerslpage{
+    background-image: url('img/banner/Sri\ Lanka\ Autentics.jpg');
     height: 40vh;
     background-size: cover;
     justify-content: center;
@@ -2639,7 +2700,7 @@ img[src=""], img:not([src]) {
     padding: 0;
 }
 
-/*Mobile Responsive for movie editon hero banner*/
+/*Mobile Responsive for supercar editon hero banner*/
 
 @media (max-width: 799px) {
 
@@ -2661,6 +2722,32 @@ img[src=""], img:not([src]) {
     flex-direction: column;
     padding: 0;
 }
+
+
+/*Mobile Responsive for sl editon hero banner*/
+
+@media (max-width: 799px) {
+
+    #bannerslpage{
+    background-image: url('img/banner/slauthmob.jpg'); 
+    width: 100%;
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+    
+
+    height: auto;
+    aspect-ratio: 16 / 4; 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 0;
+}
+
+
     .section-p1 {
         padding: 40px 40px;
     }
@@ -3492,5 +3579,6 @@ img[src=""], img:not([src]) {
 }
 
 
+}
 
 }

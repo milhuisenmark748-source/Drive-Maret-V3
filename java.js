@@ -1098,7 +1098,132 @@ editions: {
         "Rally Legend": { m: 1850000, p: 185000, img: "img/products/lancia rally.jpeg" }
     }
 
-}
+},
+
+{
+    id: 68,
+    brand: "Vega Innovations",
+    name: "Vega EVX",
+    fullPrice: "$250,000",
+    preOrderPrice: "$25,000",
+    category: "Supercars",
+    image: "img/products/img/products/VEGA EVX.jpg",
+    description: "South Asia's first all-electric supercar, featuring a handcrafted carbon fiber body.",
+    history: "Developed in Sri Lanka, the EVX represents a major milestone in regional EV technology.",
+    specs: { speed: "240 km/h", accel: "3.1s", engine: "Dual-Motor AWD", weight: "2,090 kg" },
+    editions: { "Standard": { m: 250000, p: 25000, img: "img/products/VEGA EVX.jpg" } }
+  },
+  {
+    id: 69,
+    brand: "Dallara",
+    name: "Yevan David F3",
+    fullPrice: "$120,000",
+    preOrderPrice: "$12,000",
+    category: "Racing",
+    image: "img/products/F3 YEVAN.jpg",
+    description: "A high-downforce racer carrying the Sri Lankan flag in global FIA championships.",
+    history: "Driven by Yevan David, the first Sri Lankan to reach this tier of international racing.",
+    specs: { speed: "270 km/h", accel: "3.0s", engine: "3.4L V6", weight: "590 kg" },
+    editions: { "Race Spec": { m: 120000, p: 12000, img: "img/products/F3 YEVAN.jpg" } }
+  },
+  {
+    id: 70,
+    brand: "Rover",
+    name: "Rover 90 (P4 Series)",
+    fullPrice: "$45,000",
+    preOrderPrice: "$4,500",
+    category: "Classics",
+    image: "img/products/ROVER 90.jpg",
+    description: "A dignified British luxury saloon known for its 'suicide' doors and walnut interior.",
+    history: "A symbol of mid-century prestige, frequently preserved in classic collections.",
+    specs: { speed: "145 km/h", accel: "18.9s", engine: "2.6L Straight-Six", weight: "1,475 kg" },
+    editions: { "Collector": { m: 45000, p: 4500, img: "img/products/ROVER 90.jpg" } }
+  },
+  {
+    id: 71,
+    brand: "Morris",
+    name: "Morris Eight",
+    fullPrice: "$30,000",
+    preOrderPrice: "$3,000",
+    category: "Classics",
+    image: "img/products/morris.jpg",
+    description: "The quintessential pre-war 'baby' car that brought motoring to the masses.",
+    history: "A staple of early 20th-century roads, now a prized vintage rally car.",
+    specs: { speed: "93 km/h", accel: "30.0s", engine: "918cc Inline-4", weight: "725 kg" },
+    editions: { "Vintage": { m: 30000, p: 3000, img: "img/products/morris.jpg" } }
+  },
+
+{
+id: 72,
+    brand: "Bajaj",
+    name: "Bajaj RE",
+    fullPrice: "$2,800",
+    preOrderPrice: "$280",
+    category: "Three-Wheelers",
+    image: "img/products/BAJAJ RE.jpg",
+    description: "The classic high-revving 2-stroke three-wheeler that defined an era of transport.",
+    history: "A cultural icon in Sri Lanka, renowned for its maneuverability and reliability.",
+    specs: { speed: "85 km/h", accel: "N/A", engine: "145cc 2-Stroke", weight: "284 kg" },
+    editions: {
+        "standard": { m: 2800, p: 280, img: "img/products/BAJAJ RE.jpg" },
+        "Spacial":  { m: 4800, p: 480, img: "img/products/limited ed rally bajaj.jpg" },
+    }
+},
+  {
+    id: 73,
+    brand: "Vega Innovations",
+    name: "Vega ETX Tuk-Tuk",
+    fullPrice: "$5,500",
+    preOrderPrice: "$550",
+    category: "Electric",
+    image: "img/products/VEGA TUK.jpg",
+    description: "A futuristic, fully electric three-wheeler designed for sustainable urban transport.",
+    history: "A modern reimagining of the traditional tuk-tuk using advanced EV technology.",
+    specs: { speed: "70 km/h", accel: "N/A", engine: "10kW Electric Motor", weight: "450 kg" },
+    editions: { "Electric": { m: 5500, p: 550, img: "img/products/VEGA TUK.jpg" } }
+  },
+  
+  {
+    id: 74,
+    brand: "Mercedes-Benz",
+    name: "Mercedes L-Series Bus",
+    fullPrice: "$65,000",
+    preOrderPrice: "$6,500",
+    category: "Commercial",
+    image: "img/products/BENZE L SER.jpg",
+    description: "The legendary 'bull-nose' bus known for its incredible durability.",
+    history: "The backbone of public transport in Sri Lanka for decades.",
+    specs: { speed: "95 km/h", accel: "N/A", engine: "5.7L Diesel", weight: "4,800 kg" },
+    editions: { "Classic": { m: 65000, p: 6500, img: "img/products/BENZE L SER.jpg" } }
+  },
+  {
+    id: 75,
+    brand: "Mercedes-Benz",
+    name: "Mercedes-Benz OP 312",
+    fullPrice: "$70,000",
+    preOrderPrice: "$7,000",
+    category: "Commercial",
+    image: "img/products/BENZE OP312.jpg",
+    description: "A classic mid-century bus chassis used for premium coach transport.",
+    history: "Favored for its smooth ride and reliable German engineering in the post-war era.",
+    specs: { speed: "90 km/h", accel: "N/A", engine: "4.6L Diesel Inline-6", weight: "4,600 kg" },
+    editions: { "Restored": { m: 70000, p: 7000, img: "img/products/BENZE OP312.jpg" } }
+
+  },
+
+    {
+    id: 76,
+    brand: "Bajaj",
+    name: "Bajaj RE Limited Edition Rally",
+    fullPrice: "$4,800",
+    preOrderPrice: "$480",
+    category: "Three-Wheelers",
+    image: "img/products/limited ed rally bajaj.jpg",
+    description: "The classic high-revving 2-stroke three-wheeler that defined an era of transport.",
+    history: "A cultural icon in Sri Lanka, renowned for its maneuverability and reliability.",
+    specs: { speed: "135 km/h", accel: "5.2", engine: "145cc 2-Stroke Spacial tune up", weight: "234 kg" },
+    editions: { "Spacial": { m: 2800, p: 280, img: "img/products/limited ed rally bajaj.jpg" } }
+  },
 
 ];
 
