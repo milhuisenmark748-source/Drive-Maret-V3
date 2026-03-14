@@ -178,7 +178,7 @@ const carData = [
     specs: { speed: "145 km/h", accel: "14s", engine: "2.2L Diesel", weight: "2,050 kg" },
     editions: {
 "Standard": { m: 110000, p: 11000, img: "img/products/suv land rover.png" },
-"Premium":  { m: 250000, p: 25000, img: "img/products/suv land rovercoled.jpg" }
+"Collector":  { m: 250000, p: 25000, img: "img/products/suv land rovercoled.jpg" }
     }
 },
 {
