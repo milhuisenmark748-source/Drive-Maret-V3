@@ -2238,15 +2238,7 @@ body {
     }
 
 
-    #automobile1 .pro .cart {
-        width: 35px;
-        height: 35px;
-        line-height: 35px;
-        bottom: 10px;
-        right: 10px;
-        font-size: 13px;
-    }
-
+ 
     #automobile1 h2 {
         font-size: 28px;
     }
@@ -2296,36 +2288,6 @@ body {
         right: 0px;
     }
 
-/* PC Specific Fixes - Add to the bottom of style.css */
-@media (min-width: 1025px) {
-    #cart {
-        padding: 40px 0; /* Remove the 80px side padding */
-        max-width: 1200px; /* Limits how wide the table can go */
-        margin: 0 auto;    /* Centers the table on the screen */
-    }
-
-    #cart table {
-        width: 100%;
-        border: 1px solid #ddd;
-    }
-
-    #cart-add {
-        padding: 40px 0;
-        max-width: 1200px; /* Limits the subtotal section width */
-        margin: 0 auto;    /* Centers it */
-        display: flex;
-        justify-content: space-between;
-        gap: 60px; /* Adds a nice gap between coupon and subtotal */
-    }
-
-    #coupon {
-        width: 50%;
-    }
-
-    #subtotal {
-        width: 40%; /* Prevents the subtotal box from being too wide */
-    }
-}
     /* FEATURE SECTION FIX: Force 2 cars per row (Mobile) */
     #feature {
         display: flex !important;
@@ -2872,14 +2834,6 @@ img[src=""], img:not([src]) {
     }
 
 
-    #automobile1 .pro .cart {
-        width: 30px;
-        height: 30px;
-        line-height: 30px;
-        font-size: 12px;
-        bottom: 5px;
-        right: 5px;
-    }
 }
 
 
@@ -3293,11 +3247,12 @@ img[src=""], img:not([src]) {
 }
 
 
+/*cart css*/
 
-/* --- Cart Page Specific Styles --- */
-
+/* --- New Cart Table Design --- */
 #cart {
-    overflow-x: auto; /* Makes table scrollable on small mobile screens */
+    overflow-x: auto;
+    padding: 40px 80px; /* Matching your section-p1 class */
 }
 
 #cart table {
@@ -3308,15 +3263,16 @@ img[src=""], img:not([src]) {
 }
 
 #cart table img {
-    width: 80px; /* Consistent size for vehicle thumbnails */
-    border-radius: 5px;
+    width: 70px;
+    border-radius: 10px;
 }
 
 #cart table td {
-    padding: 20px 5px;
+    padding: 15px 0;
     text-align: center;
 }
 
+/* Specific styling for table headers to match your brand red */
 #cart table thead {
     border: 1px solid #e2e2e2;
     border-left: none;
@@ -3327,226 +3283,19 @@ img[src=""], img:not([src]) {
     font-weight: 700;
     text-transform: uppercase;
     font-size: 13px;
+    padding: 18px 0;
+    color: #a01705; /* Brand Red from your header */
 }
 
-#cart table tbody tr {
-    border-bottom: 1px solid #eee;
-}
-
-#cart table td:nth-child(1) {
-    width: 100px; /* Width for 'Remove' column */
-}
-
-#cart table td:nth-child(1) i {
-    color: #ff4d4d; /* Red for the remove icon */
-    cursor: pointer;
-    font-size: 18px;
-}
-
-#cart table td:nth-child(5) input {
+/* Styling for input quantities to match your form inputs */
+#cart table tbody td input {
     width: 50px;
-    padding: 8px 5px;
-    outline: none;
-    border: 1px solid #e2e2e2;
-}
-
-/* --- Cart Totals / Checkout Sidebar --- */
-
-#cart-add {
-    display: flex;
-    justify-content: flex-end; /* Aligns total box to the right */
-    padding: 40px 80px;
-}
-
-#subtotal {
-    width: 50%;
-    border: 1px solid #e2e2e2;
-    padding: 30px;
-    background-color: #f9f9f9;
-}
-
-#subtotal h3 {
-    padding-bottom: 15px;
-    border-bottom: 1px solid #333;
-    margin-bottom: 20px;
-}
-
-#subtotal table {
-    border-collapse: collapse;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-#subtotal table td {
-    width: 50%;
-    border: 1px solid #e2e2e2;
-    padding: 15px;
-    font-size: 14px;
-}
-
-/* The Final "Proceed" Button */
-#subtotal button.normal {
-    background-color: #088178; /* Matching your theme's teal/dark green */
-    color: #fff;
-    padding: 14px 30px;
-    cursor: pointer;
-    font-weight: 600;
-    width: 100%;
+    padding: 10px 5px 10px 15px;
+    border: 1px solid #c4c4c4;
     border-radius: 4px;
-    border: none;
-    transition: 0.3s;
 }
 
-#subtotal button.normal:hover {
-    background-color: #066b64;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 799px) {
-    #subtotal {
-        width: 100%;
-    }
-    #cart {
-        padding: 20px;
-    }
-}
-
-
-/* --- Premium Button Design --- */
-.normal {
-    position: relative;
-    padding: 14px 35px;
-    background-color: #088178;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden; /* For the shimmer effect */
-}
-
-/* Luxury Shimmer Effect */
-.normal::after {
-    content: '';
-    position: absolute;
-    top: 0; left: -100%;
-    width: 50%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transition: 0.5s;
-}
-
-.normal:hover::after {
-    left: 100%;
-}
-
-.normal:active {
-    transform: scale(0.96);
-}
-
-/* Loading State */
-.normal.loading {
-    color: transparent;
-    pointer-events: none;
-}
-
-.normal.loading::before {
-    content: "";
-    position: absolute;
-    width: 18px; height: 18px;
-    top: 50%; left: 50%;
-    margin: -9px 0 0 -9px;
-    border: 3px solid rgba(255,255,255,0.3);
-    border-top-color: #fff;
-    border-radius: 50%;
-    animation: spin 0.8s ease infinite;
-}
-
-/* Success State - Perfect Slide */
-.normal.added {
-    background-color: #000; /* Sleek Black Success */
-    width: auto;
-}
-
-@keyframes spin {
-    to { transform: rotate(360deg); }
-}
-
-#navbar li a i.bump {
-    animation: bump 0.4s ease-out;
-}
-
-@keyframes bump {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.4); color: #088178; }
-    100% { transform: scale(1); }
-}
-
-
-
-/* --- High-End Cart Section --- */
-#cart {
-    padding: 60px 80px;
-    background: #fcfcfc;
-}
-
-#cart table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 15px; /* Creates the "card" look for rows */
-    table-layout: fixed;
-}
-
-#cart table thead td {
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 13px;
-    color: #888;
-    padding-bottom: 20px;
-    border: none;
-}
-
-#cart table tbody tr {
-    background: #fff;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.03); /* Soft shadow */
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-#cart table tbody tr:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.06);
-}
-
-#cart table td {
-    padding: 20px;
-    border: none;
-}
-
-/* Rounding the corners of the "card" rows */
-#cart table tbody tr td:first-child { border-radius: 10px 0 0 10px; }
-#cart table tbody tr td:last-child { border-radius: 0 10px 10px 0; }
-
-#cart table img {
-    width: 100px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-/* Quantity Input Styling */
-#cart table input {
-    width: 50px;
-    padding: 8px;
-    border: 1px solid #eee;
-    border-radius: 5px;
-    text-align: center;
-    font-weight: 600;
-}
-
-/* --- Cart Totals (The Sidebar) --- */
+/* --- Cart Totals & Coupon Section --- */
 #cart-add {
     display: flex;
     justify-content: space-between;
@@ -3555,73 +3304,65 @@ img[src=""], img:not([src]) {
     gap: 40px;
 }
 
-#subtotal {
-    width: 40%;
-    background: #e9e9e9; /* Dark Luxury Theme */
-    color: #4b4b4b;
-    padding: 40px;
-    border-radius: 15px;
+#coupon {
+    width: 50%;
+    margin-bottom: 30px;
 }
 
-#subtotal h3 {
-    margin-bottom: 25px;
-    font-size: 22px;
+#coupon h3, #subtotal h3 {
+    padding-bottom: 15px;
+    font-family: 'MyBrandFont3', sans-serif; /* Your brand font */
+}
+
+#coupon input {
+    padding: 10px 20px;
+    outline: none;
+    width: 60%;
+    border: 1px solid #e2e2e2;
+}
+
+#coupon button {
+    background-color: #a01705;
+    color: #fff;
+    padding: 12px 20px;
+    cursor: pointer;
+}
+
+/* Existing #subtotal container updated for premium look */
+#subtotal {
+    width: 40%;
+    background: #e9e9e9; /* Dark Luxury Theme already in your CSS */
+    color: #4b4b4b;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 #subtotal table {
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    border-collapse: collapse;
 }
 
 #subtotal table td {
-    padding: 15px 0;
-    border-bottom: 1px solid #c4c4c4;
+    width: 50%;
+    border: 1px solid #c4c4c4;
+    padding: 10px;
+    font-size: 13px;
 }
 
 #subtotal button.normal {
     width: 100%;
-    background: #a30606;
-    padding: 18px;
-    font-size: 16px;
-    letter-spacing: 1px;
-    border-radius: 8px;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 799px) {
-    #cart { padding: 20px; }
-    #cart-add { flex-direction: column; padding: 10px; }
-    #subtotal { width: 100%; }
-}
-
-@media (max-width: 768px) {
-  /* 1. Hide the table headers that are overlapping */
-  thead, .cart-headers { 
-    display: none; 
-  }
-
-  /* 2. Force the cart item to be a vertical stack */
-  .cart-item, tr {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    border: 1px solid #ddd;
+    background: #a30606; /* Solid brand red */
+    color: white;
     padding: 15px;
-    margin-bottom: 20px;
-  }
+    font-weight: 600;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
 
-  /* 3. Give elements breathing room */
-  .cart-item div, td {
-    margin-bottom: 10px;
-    width: 100% !important;
-  }
-
-  /* 4. Fix the image size so it doesn't overflow */
-  .cart-item img {
-    max-width: 150px;
-    height: auto;
-  }
+#subtotal button.normal:hover {
+    background-color: #088178; /* Teal hover color from your floating button */
 }
 
 
