@@ -110,7 +110,7 @@ const carData = [
     specs: { speed: "315 km/h", accel: "2.5s", engine: "3.8L V6 Twin-Turbo", weight: "1,703 kg" },
     editions: {
         "standard": { m: 300000, p: 30000, img: "img/products/nissan nismo.jpeg" },
-        "Special":  { m: 620000, p: 62000, img: "img/products/nismo special.jpeg" }
+        "Special":  { m: 620000, p: 62000, img: "img/products/nismosped.png" }
 
     }
 },
