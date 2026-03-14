@@ -1437,39 +1437,24 @@ function addToCartFromProductPage() {
     const carID = localStorage.getItem('carID');
     const currentCar = carData.find(car => car.id == carID);
     
-    // 1. Get the quantity from the input field
-    const quantityInput = document.getElementById('quantity-input');
-    const selectedQuantity = parseInt(quantityInput.value) || 1;
-
     // Start Loading Animation
     btn.classList.add("loading");
-    btn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> SECURING...`;
 
-    // Simulate a high-end server check (800ms delay)
+    // Simulate a high-end server check (1 second delay)
     setTimeout(() => {
         const select = document.getElementById('edition-select');
         const editionKey = select.value;
         const editionDetails = currentCar.editions[editionKey];
 
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-        // 2. Check if the same car edition is already in the cart
-        const existingItem = cart.find(item => item.id === carID && item.edition === editionKey);
-
-        if (existingItem) {
-            // Update quantity if it exists
-            existingItem.quantity += selectedQuantity;
-        } else {
-            // Add as a new item if it doesn't
-            cart.push({
-                id: carID,
-                name: currentCar.name,
-                edition: editionKey,
-                price: `$${editionDetails.p.toLocaleString()}`, // Pre-order price
-                image: editionDetails.img,
-                quantity: selectedQuantity // 3. Use the dynamic quantity here
-            });
-        }
+        cart.push({
+            id: carID,
+            name: currentCar.name,
+            edition: editionKey,
+            price: `$${editionDetails.p.toLocaleString()}`, // Pre-order price
+            image: editionDetails.img,
+            quantity: 1
+        });
 
         localStorage.setItem('cart', JSON.stringify(cart));
 
@@ -1478,28 +1463,28 @@ function addToCartFromProductPage() {
         btn.classList.add("added");
         btn.innerHTML = `<i class="fas fa-check"></i> DEPOSIT SECURED`;
 
-        // Cart Icon Animation (Bump effect)
-        const cartIcon = document.querySelector(".fa-cart-plus");
-        if (cartIcon) {
-            cartIcon.classList.add("bump");
-            setTimeout(() => cartIcon.classList.remove("bump"), 400);
-        }
-
-        // Reset button after 4 seconds
+        // Reset after 4 seconds
         setTimeout(() => {
             btn.classList.remove("added");
             btn.innerHTML = "Add To Cart";
         }, 4000);
         
-    }, 800); // 0.8 seconds for a snappy, premium response
+    }, 8000); // 0.8 seconds of loading for "premium" feel
 }
 
-// --- UI Visual Change for Initial Interaction ---
-// This handles the immediate UI feedback when the script loads or the button is first interacted with
-const actionBtn = document.querySelector(".normal"); 
-if (actionBtn) {
-    const originalText = actionBtn.innerText;
+    // --- UI Visual Change ---
+    const btn = document.querySelector(".normal"); // Select the button
+    const originalText = btn.innerText;
     
-    // Example: If you want to trigger a visual state immediately on click 
-    // before the timeout starts, you can move this logic into a click listener.
-}
+    btn.classList.add("added"); // Apply the new green design
+    btn.innerText = "Secured in Cart"; // Change the text
+    
+    // Optional: Reset button back to normal after 3 seconds
+    setTimeout(() => {
+        btn.classList.remove("added");
+        btn.innerText = originalText;
+    }, 3000);
+
+const cartIcon = document.querySelector(".fa-cart-plus");
+cartIcon.classList.add("bump");
+setTimeout(() => cartIcon.classList.remove("bump"), 400);
