@@ -2238,7 +2238,15 @@ body {
     }
 
 
- 
+    #automobile1 .pro .cart {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        bottom: 10px;
+        right: 10px;
+        font-size: 13px;
+    }
+
     #automobile1 h2 {
         font-size: 28px;
     }
@@ -2834,6 +2842,14 @@ img[src=""], img:not([src]) {
     }
 
 
+    #automobile1 .pro .cart {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 12px;
+        bottom: 5px;
+        right: 5px;
+    }
 }
 
 
@@ -3245,126 +3261,6 @@ img[src=""], img:not([src]) {
         cursor: pointer;
     }
 }
-
-
-/*cart css*/
-
-/* --- New Cart Table Design --- */
-#cart {
-    overflow-x: auto;
-    padding: 40px 80px; /* Matching your section-p1 class */
-}
-
-#cart table {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
-    white-space: nowrap;
-}
-
-#cart table img {
-    width: 70px;
-    border-radius: 10px;
-}
-
-#cart table td {
-    padding: 15px 0;
-    text-align: center;
-}
-
-/* Specific styling for table headers to match your brand red */
-#cart table thead {
-    border: 1px solid #e2e2e2;
-    border-left: none;
-    border-right: none;
-}
-
-#cart table thead td {
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 13px;
-    padding: 18px 0;
-    color: #a01705; /* Brand Red from your header */
-}
-
-/* Styling for input quantities to match your form inputs */
-#cart table tbody td input {
-    width: 50px;
-    padding: 10px 5px 10px 15px;
-    border: 1px solid #c4c4c4;
-    border-radius: 4px;
-}
-
-/* --- Cart Totals & Coupon Section --- */
-#cart-add {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 40px 80px;
-    gap: 40px;
-}
-
-#coupon {
-    width: 50%;
-    margin-bottom: 30px;
-}
-
-#coupon h3, #subtotal h3 {
-    padding-bottom: 15px;
-    font-family: 'MyBrandFont3', sans-serif; /* Your brand font */
-}
-
-#coupon input {
-    padding: 10px 20px;
-    outline: none;
-    width: 60%;
-    border: 1px solid #e2e2e2;
-}
-
-#coupon button {
-    background-color: #a01705;
-    color: #fff;
-    padding: 12px 20px;
-    cursor: pointer;
-}
-
-/* Existing #subtotal container updated for premium look */
-#subtotal {
-    width: 40%;
-    background: #e9e9e9; /* Dark Luxury Theme already in your CSS */
-    color: #4b4b4b;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-#subtotal table {
-    width: 100%;
-    margin-bottom: 20px;
-    border-collapse: collapse;
-}
-
-#subtotal table td {
-    width: 50%;
-    border: 1px solid #c4c4c4;
-    padding: 10px;
-    font-size: 13px;
-}
-
-#subtotal button.normal {
-    width: 100%;
-    background: #a30606; /* Solid brand red */
-    color: white;
-    padding: 15px;
-    font-weight: 600;
-    border-radius: 8px;
-    transition: 0.3s ease;
-}
-
-#subtotal button.normal:hover {
-    background-color: #088178; /* Teal hover color from your floating button */
-}
-
 
 }
 
