@@ -2296,49 +2296,36 @@ body {
         right: 0px;
     }
 
-/*Cart fixes for pc*/
-
+/* PC Specific Fixes - Add to the bottom of style.css */
+@media (min-width: 1025px) {
     #cart {
-    padding: 40px 80px;
-    max-width: 1200px; /* Limits width on big screens */
-    margin: 0 auto;    /* Centers the container */
-}
+        padding: 40px 0; /* Remove the 80px side padding */
+        max-width: 1200px; /* Limits how wide the table can go */
+        margin: 0 auto;    /* Centers the table on the screen */
+    }
 
-#cart-add {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 40px 80px;
-    gap: 40px;
-    max-width: 1200px; /* Match the cart width */
-    margin: 0 auto;
-}
+    #cart table {
+        width: 100%;
+        border: 1px solid #ddd;
+    }
 
-#subtotal {
-    width: 35%; /* Slightly smaller for a tighter look */
-    background: #e9e9e9;
-    color: #4b4b4b;
-    padding: 30px; /* Reduced slightly */
-    border-radius: 15px;
-    border: 1px solid #ddd; /* Added a subtle border for definition */
-}
+    #cart-add {
+        padding: 40px 0;
+        max-width: 1200px; /* Limits the subtotal section width */
+        margin: 0 auto;    /* Centers it */
+        display: flex;
+        justify-content: space-between;
+        gap: 60px; /* Adds a nice gap between coupon and subtotal */
+    }
 
-#cart table {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed; /* Keeps columns consistent */
-}
+    #coupon {
+        width: 50%;
+    }
 
-#cart table td {
-    padding: 20px 5px;
+    #subtotal {
+        width: 40%; /* Prevents the subtotal box from being too wide */
+    }
 }
-
-#cart table img {
-    width: 70px;
-    height: auto;
-    object-fit: contain;
-}
-
     /* FEATURE SECTION FIX: Force 2 cars per row (Mobile) */
     #feature {
         display: flex !important;
