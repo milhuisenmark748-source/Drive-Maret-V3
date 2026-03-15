@@ -40,7 +40,7 @@
    <section id="header">
     <a href="index.html"><img src="img/new logos.png" class="logo" alt="BIFU LOGO"></a>
     <div>
-        <ul id="navbar">
+<ul id="navbar">
     <li><a class="active" href="index.html">Home</a></li>
     <li><a href="shop.html">Autoshop</a></li>
     <li><a href="feed.html">Feed</a></li>
@@ -50,10 +50,9 @@
     <li class="guest-only"><a href="login.html">Login</a></li>
     <li class="guest-only"><a href="signup.html">Sign Up</a></li>
 
-    <li class="user-only" style="display: none;">
-        <a href="/api/profile.php" id="auth-link">
-            </a>
-    </li>
+<li class="user-only" style="display: none;">
+    <a href="/api/profile.php" id="auth-link"></a>
+</li>
 
     <li id="lg-bag"><a href="cart.html"><i class="fas fa-cart-plus"></i></a></li>
     <a href="#" id="close"><i class="fas fa-times"></i></a>
@@ -571,33 +570,52 @@
 
     <script>
 document.addEventListener("DOMContentLoaded", function() {
-    // 1. Check with the PHP server for a real session
     fetch('/api/check_auth.php')
         .then(response => response.json())
         .then(data => {
+            console.log("Auth Data:", data); 
             if (data.loggedIn) {
-                // 2. Hide Login/Signup links
+                // 1. Hide Login/Signup links
                 document.querySelectorAll('.guest-only').forEach(el => el.style.display = 'none');
                 
-                // 3. Update the Top-Right Nav (id="top-auth-link")
-                const topAuthLink = document.getElementById('top-auth-link');
-                if (topAuthLink) {
-                    topAuthLink.innerHTML = `<img src="${data.avatar}" style="width: 25px; height: 25px; border-radius: 50%; border: 1px solid #ed1c24; object-fit: cover; vertical-align: middle;"> <span style="font-size: 10px;">PROFILE</span>`;
-                    topAuthLink.href = '/api/profile.php';
-                }
-
-                // 4. Update the Main Sidebar Nav (id="auth-link")
+                // 2. Target the Profile link
                 const userOnlyLi = document.querySelector('.user-only');
                 const authLink = document.getElementById('auth-link');
+                
                 if (userOnlyLi && authLink) {
                     userOnlyLi.style.display = 'block';
-                    authLink.innerHTML = `<img src="${data.avatar}" style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #ed1c24; vertical-align: middle; object-fit: cover;">`;
-                    authLink.href = '/api/profile.php';
+                    
+                    /* --- THIS IS THE CHANGE --- */
+                    // We add "img/" before ${data.avatar} so the browser looks in the right folder
+                    authLink.innerHTML = `<img src="img/${data.avatar}" style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #ed1c24; vertical-align: middle; object-fit: cover;">`;
+                    /* --------------------------- */
+                    
+                    authLink.setAttribute('href', '/api/profile.php');
                 }
             }
         })
-        .catch(err => console.log("Browsing as guest"));
+        .catch(err => console.error("Auth check failed:", err));
 });
+
+
+if (data.loggedIn) {
+    // Hide Guest links
+    document.querySelectorAll('.guest-only').forEach(el => el.style.display = 'none');
+    
+    // Update Main Navbar
+    const authLink = document.getElementById('auth-link');
+    if (authLink) {
+        document.querySelector('.user-only').style.display = 'block';
+        authLink.innerHTML = `<img src="img/${data.avatar}" style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #ed1c24; vertical-align: middle; object-fit: cover;">`;
+    }
+
+    // Update Top Right Bar
+    const topAuthLink = document.getElementById('top-auth-link');
+    if (topAuthLink) {
+        topAuthLink.innerHTML = `<img src="img/${data.avatar}" style="width: 20px; height: 20px; border-radius: 50%; vertical-align: middle; margin-right: 5px;"> <span>PROFILE</span>`;
+        topAuthLink.href = "/api/profile.php";
+    }
+}
 </script>
 
 </body>
