@@ -1505,28 +1505,4 @@ if (actionBtn) {
 }
 
 
-// every page avatar displayed //
-
-document.addEventListener("DOMContentLoaded", function() {
-    fetch('check_auth.php')
-        .then(response => response.json())
-        .then(data => {
-            const authLink = document.getElementById('auth-link');
-            const currentPage = window.location.pathname;
-
-            if (data.loggedIn) {
-                // 1. Update the Navbar Icon (for all pages)
-                if (authLink) {
-                    authLink.innerHTML = `<img src="uploads/${data.avatar}" style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #ed1c24; vertical-align: middle; object-fit: cover;">`;
-                    authLink.setAttribute('href', 'profile.php');
-                }
-
-                // 2. REDIRECT Logic: If logged in, don't show Login or Signup pages
-                if (currentPage.includes("login.html") || currentPage.includes("signup.html")) {
-                    window.location.href = 'index.html'; 
-                }
-            }
-        })
-        .catch(err => console.error("Session check failed:", err));
-});
 
