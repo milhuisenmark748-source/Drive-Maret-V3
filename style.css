@@ -3324,99 +3324,117 @@ img[src=""], img:not([src]) {
 
 }
 
-/* --- TOP BAR CUSTOM DESIGN --- */
+/* --- PREMIUM CARBON TOP BAR (PC ONLY) --- */
 #top-bar-custom {
-    background: linear-gradient(180deg, #111111 0%, #080808 100%);
-    border-bottom: 2px solid #ed1c24; /* Red racing line */
-    padding: 10px 80px;
-    display: block; /* Desktop only */
+    /* Deep Carbon Fiber Gradient */
+    background: linear-gradient(180deg, #1a1a1a 0%, #050505 100%);
+    border-bottom: 2px solid #ed1c24; /* Velocity Red Racing Line */
+    padding: 12px 80px;
+    display: block; /* Hidden on mobile via media query below */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .top-bar-row {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* SPLIT: Left, Center, Right */
+    grid-template-columns: 1fr 1fr 1fr; /* Exact Left, Center, Right alignment */
     align-items: center;
 }
 
-/* LEFT ZONE */
+/* LEFT: System Status */
 .top-left-zone .live-indicator {
     color: #ed1c24;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 800;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    font-family: 'Courier New', monospace;
 }
 
 .live-indicator i {
-    margin-right: 5px;
-    animation: pulse 1.5s infinite;
+    margin-right: 8px;
+    animation: pulse-red 2s infinite;
 }
 
-@keyframes pulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.3; }
-    100% { opacity: 1; }
+@keyframes pulse-red {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.1); }
+    100% { opacity: 1; transform: scale(1); }
 }
 
-/* CENTER ZONE */
+/* CENTER: Branding Text */
 .top-center-zone {
     text-align: center;
 }
 
 .top-center-zone p {
-    color: #888;
+    color: #ffffff;
     font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 2px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin: 0;
+    opacity: 0.8;
 }
 
-/* RIGHT ZONE */
+/* RIGHT: User Controls (Profile & Cart) */
 .top-right-zone {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
 }
 
-.divider { width: 1px; height: 15px; background: #333; }
+.divider {
+    width: 1px;
+    height: 15px;
+    background: #333;
+}
 
 #top-auth-link, .top-cart-link {
-    color: #fff;
+    color: #e0e0e0;
     text-decoration: none;
     font-size: 12px;
     font-weight: 700;
     display: flex;
     align-items: center;
-    gap: 8px;
-    transition: 0.3s;
+    gap: 10px;
+    transition: 0.3s ease;
 }
 
-#top-auth-link:hover, .top-cart-link:hover { color: #ed1c24; }
+#top-auth-link:hover, .top-cart-link:hover {
+    color: #ed1c24;
+}
 
-/* Profile Image inside Top Bar */
+/* Profile Image Styling */
 #top-auth-link img {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-    border: 1px solid #ed1c24;
+    border: 2px solid #ed1c24;
     object-fit: cover;
+    box-shadow: 0 0 10px rgba(237, 28, 36, 0.4);
 }
 
-/* Cart Icon with Red Badge */
-.top-cart-link { position: relative; }
+/* Cart Icon & Count Badge */
+.top-cart-link {
+    position: relative;
+}
 
 #cart-count {
     background: #ed1c24;
-    font-size: 9px;
-    padding: 2px 6px;
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 7px;
     border-radius: 50%;
     position: absolute;
-    top: -8px;
-    right: -10px;
-    box-shadow: 0 0 8px rgba(237, 28, 36, 0.5);
+    top: -10px;
+    right: -12px;
+    font-weight: 900;
+    border: 2px solid #080808;
 }
 
-/* HIDE ON MOBILE */
+/* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 799px) {
-    #top-bar-custom { display: none; }
+    #top-bar-custom {
+        display: none; /* Keeps your mobile nav from getting cluttered */
+    }
 }
-
