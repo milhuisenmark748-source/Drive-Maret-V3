@@ -30,4 +30,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<script>alert('No account found.'); window.location.href='/login.html';</script>";
     }
 }
+// Inside login.php after password_verify is true:
+$_SESSION['user_id'] = $user['id'];
+$_SESSION['username'] = $user['username'];
+$_SESSION['avatar'] = $user['avatar']; // This should just be 'default_avatar.png'
+
+session_write_close(); // Force save the session
+header("Location: /index.html");
+exit();
 ?>
