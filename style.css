@@ -3266,3 +3266,41 @@ img[src=""], img:not([src]) {
 
 
 }
+
+/* Styling for the PC Cart Icon within the Navbar */
+#navbar li #lg-bag {
+    display: block; /* Visible on desktop by default */
+}
+
+/* Hide the separate mobile container on desktop */
+#mobile {
+    display: none;
+    align-items: center;
+}
+
+/* --- Mobile Responsiveness (For screens 799px and smaller) --- */
+@media (max-width: 799px) {
+    #navbar {
+        /* Your existing sidebar styles */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        /* ... other existing styles ... */
+    }
+
+    /* Hide the PC Cart icon when the mobile menu is active */
+    #lg-bag {
+        display: none !important;
+    }
+
+    /* Show the mobile-specific cart and hamburger menu */
+    #mobile {
+        display: flex;
+    }
+
+    #mobile i {
+        color: #fff; /* Matches your header text color */
+        font-size: 24px;
+        padding-left: 20px;
+    }
+}
