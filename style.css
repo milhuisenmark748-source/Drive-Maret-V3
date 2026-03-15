@@ -3294,4 +3294,37 @@ img[src=""], img:not([src]) {
 }
 }
 
+#profile-bubble-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px; /* Change to 'right: 20px' if you prefer it on the other side */
+    z-index: 9999;
+    width: 60px;
+    height: 60px;
+    background-color: #ed1c24; /* Your brand red */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    border: 3px solid #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#profile-bubble-container:hover {
+    transform: scale(1.1);
+}
+
+#floating-auth-link i {
+    color: #fff;
+    font-size: 30px;
+}
+
+#floating-auth-link img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
 
