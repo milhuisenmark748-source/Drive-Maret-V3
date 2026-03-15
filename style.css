@@ -19,6 +19,63 @@ h2{
     color: black;
 }
 
+//DOUBLE NAV BAR ADJUSTMENTS//
+
+/* --- TOP BAR STYLING (PC ONLY) --- */
+#top-bar {
+    background-color: #088178; 
+    color: white;
+    padding: 10px 80px;
+    font-size: 13px;
+    display: block; /* Visible on PC by default */
+}
+
+.top-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.top-bar-right a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.nav-profile-img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 8px;
+    border: 1px solid white;
+    vertical-align: middle;
+}
+
+/* --- RESPONSIVE LOGIC --- */
+
+/* Hide Top Bar and PC Cart on Mobile */
+@media (max-width: 799px) {
+    #top-bar {
+        display: none !important;
+    }
+
+    #lg-bag {
+        display: none !important;
+    }
+
+    #header {
+        padding: 0 30px; /* Slimmer padding for mobile */
+    }
+}
+
+
 /*Main logo adjustments to the web */
 
 #header {
