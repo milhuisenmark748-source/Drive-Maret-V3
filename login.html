@@ -2,10 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CARZ - Login</title>
+    <title>CARZ - Member Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ensuring the active profile image looks premium */
+        #auth-link img {
+            transition: 0.3s;
+        }
+        #auth-link img:hover {
+            border-color: #fff !important;
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
     <section id="header">
@@ -18,12 +28,11 @@
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Connect</a></li>
 
-            <li  class="guest-only"><a class="active"  href="login.html">Login</a></li>
+            <li class="guest-only"><a class="active" href="login.html">Login</a></li>
             <li class="guest-only"><a href="signup.html">Sign Up</a></li>
 
             <li class="user-only" style="display: none;">
-                <a href="profile.php" id="auth-link">
-                    </a>
+                <a href="/api/profile.php" id="auth-link"></a>
             </li>
 
             <li id="lg-bag"><a href="cart.html"><i class="fas fa-cart-plus"></i></a></li>
@@ -37,7 +46,7 @@
     </div>
 </section>
 
-   <section id="form-details" class="login-section">
+<section id="form-details" class="login-section">
     <form id="login-form" action="/api/login.php" method="POST">
         <span>EXOTIC CARS & EXCLUSIVE ACCESS</span>
         <h2>Member Login</h2>
@@ -58,7 +67,7 @@
             <i class="fas fa-key"></i>
             <div>
                 <span>AUTHENTIC ACCESS</span>
-                <p>Log in to manage your vehicle pre-orders and track your Jesko Absolut delivery status.</p>
+                <p>Log in to manage your vehicle pre-orders and track your delivery status.</p>
             </div>
         </div>
         <div class="info-box">
@@ -74,92 +83,42 @@
 <footer class="section-p1">
     <div class="col">
         <img class="logo-footer" src="img/logo red.png" alt="CARZ LOGO">
-        <h4>Contact</h4>
-        <p><strong>Address: </strong> 526, Darmapala Road, Colombo</p>
-        <p><strong>Phone: </strong> 0711236890</p>
-        <p><strong>Hours: </strong> 10.00 - 18.00, Mon - Sat</p>
-        <div class="follow">
-            <h4>Follow Us</h4>
-            <div class="icon">
-                <i class="fab fa-facebook-f"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-pinterest"></i>
-                <i class="fab fa-youtube"></i>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <h4>About</h4>
-        <a href="about.html">About us</a>
-        <a href="#">Delivery Information</a>
-        <a href="about.html">Privacy Policy</a>
-        <a href="contact.html">Contact Us</a>
-    </div>
-    <div class="col">
-        <h4>My Account</h4>
-        <a href="login.html">Sign In</a>
-        <a href="#">View Cart</a>
-        <a href="#">My Wishlist</a>
-        <a href="#">Track My Order</a>
-        <a href="contact.html">Help</a>
-    </div>
-    <div class="col install">
-        <h4>Install App</h4>
-        <p>From App Store or Google Play</p>
-        <div class="row">
-            <img src="img/pay/app.jpg" alt="">
-            <img src="img/pay/play.jpg" alt="">
-        </div>
-        <p>Secured Payment Gateways</p>
-        <img src="img/pay/pay.png" alt="">
-    </div>
-    <div class="copyright">
         <p>© 2026, CARZ - The Global Vehicle Ecommerce Platform</p>
     </div>
-</footer>
+    </footer>
 
 <script>
-    // Navbar Toggle Logic
+    // --- Navbar Toggle Logic ---
     const bar = document.getElementById('bar');
     const close = document.getElementById('close');
     const nav = document.getElementById('navbar');
 
-    if (bar) {
-        bar.addEventListener('click', () => {
-            nav.classList.add('active');
-        })
-    }
+    if (bar) { bar.addEventListener('click', () => { nav.classList.add('active'); }) }
+    if (close) { close.addEventListener('click', () => { nav.classList.remove('active'); }) }
 
-    if (close) {
-        close.addEventListener('click', () => {
-            nav.classList.remove('active');
-        })
-    }
-</script>
-
-    <script>
-document.addEventListener("DOMContentLoaded", function() {
-    // Pointing to /api/ for Vercel compatibility
-    fetch('/api/check_auth.php') 
-        .then(response => response.json())
-        .then(data => {
-            if (data.loggedIn) {
-                const authLink = document.getElementById('auth-link');
-                
-                if (authLink) {
-                    // We remove the "uploads/" prefix because in the cloud 
-                    // we usually store full URLs or use a different pathing
-                    authLink.innerHTML = `<img src="${data.avatar}" style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #ed1c24; vertical-align: middle; object-fit: cover;">`;
+    // --- AUTH CHECK: Instant Navbar Update ---
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('/api/check_auth.php') 
+            .then(response => response.json())
+            .then(data => {
+                if (data.loggedIn) {
+                    // 1. Hide Login/Signup links
+                    document.querySelectorAll('.guest-only').forEach(el => el.style.display = 'none');
                     
-                    // Point to the PHP file inside the api folder
-                    authLink.setAttribute('href', '/api/profile.php');
+                    // 2. Show the Profile Avatar
+                    const userOnlyLi = document.querySelector('.user-only');
+                    const authLink = document.getElementById('auth-link');
+                    
+                    if (userOnlyLi && authLink) {
+                        userOnlyLi.style.display = 'block';
+                        // Using the avatar path directly from your database/session
+                        authLink.innerHTML = `<img src="${data.avatar}" style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #ed1c24; vertical-align: middle; object-fit: cover;">`;
+                        authLink.setAttribute('href', '/api/profile.php');
+                    }
                 }
-            }
-        })
-        .catch(err => console.log("Auth check failed: ", err));
-});
-
+            })
+            .catch(err => console.log("Auth check failed: ", err));
+    });
 </script>
     
 </body>

@@ -21,12 +21,11 @@
             <p>PREMIUM VEHICLE SOURCE // COLOMBO 07</p>
         </div>
 
-       <div class="top-right-zone">
-    <div id="top-auth-container">
-        <a href="login.html" id="top-auth-link">
-            <i class="fas fa-user-shield"></i> <span>LOGIN</span>
-        </a>
-    </div>
+       <div id="top-auth-container">
+    <a href="login.html" id="top-auth-link">
+        <i class="fas fa-user-shield"></i> <span>LOGIN</span>
+    </a>
+</div>
             <div class="divider"></div>
             <a href="cart.html" class="top-cart-link">
                 <i class="fas fa-shopping-bag"></i>
@@ -43,13 +42,15 @@
 <ul id="navbar">
     <li><a href="index.html">Home</a></li>
     <li><a href="shop.html">Autoshop</a></li>
+
     <li class="guest-only"><a href="login.html">Login</a></li>
     <li class="guest-only"><a href="signup.html">Sign Up</a></li>
 
     <li class="user-only" style="display: none;">
-        <a href="/api/profile.php" id="auth-link">
-            </a>
+        <a href="/api/profile.php" id="auth-link"></a>
     </li>
+
+    <li id="lg-bag"><a href="cart.html"><i class="fas fa-cart-plus"></i></a></li>
 </ul>
         
         </div>
@@ -561,57 +562,3 @@
 
 
 <script type="module" src="java.js"></script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    // We wait 100ms to ensure the PHP session cookie is fully ready
-    setTimeout(() => {
-        fetch('/api/check_auth.php')
-            .then(response => response.json())
-            .then(data => {
-                console.log("Auth Check:", data); // Check your F12 console for this!
-                if (data.loggedIn) {
-                    // 1. Hide the Login/Signup buttons
-                    document.querySelectorAll('.guest-only').forEach(el => el.style.display = 'none');
-                    
-                    // 2. Show the Profile Picture
-                    const userOnlyLi = document.querySelector('.user-only');
-                    const authLink = document.getElementById('auth-link');
-                    
-                    if (userOnlyLi && authLink) {
-                        userOnlyLi.style.display = 'block';
-                        // IMPORTANT: We use the 'img/' folder path here
-                        authLink.innerHTML = `<img src="img/${data.avatar}" style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #ed1c24; vertical-align: middle; object-fit: cover;">`;
-                        authLink.href = "/api/profile.php";
-                    }
-                }
-            })
-            .catch(err => console.error("Auth System Error:", err));
-    }, 100); 
-});
-
-
-if (data.loggedIn) {
-    // Hide Guest links
-    document.querySelectorAll('.guest-only').forEach(el => el.style.display = 'none');
-    
-    // Update Main Navbar
-    const authLink = document.getElementById('auth-link');
-    if (authLink) {
-        document.querySelector('.user-only').style.display = 'block';
-        authLink.innerHTML = `<img src="img/${data.avatar}" style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #ed1c24; vertical-align: middle; object-fit: cover;">`;
-    }
-
-    // Update Top Right Bar
-    const topAuthLink = document.getElementById('top-auth-link');
-    if (topAuthLink) {
-        topAuthLink.innerHTML = `<img src="img/${data.avatar}" style="width: 20px; height: 20px; border-radius: 50%; vertical-align: middle; margin-right: 5px;"> <span>PROFILE</span>`;
-        topAuthLink.href = "/api/profile.php";
-    }
-}
-</script>
-
-</body>
-</html>
-
-

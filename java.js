@@ -1503,3 +1503,37 @@ if (actionBtn) {
     // Example: If you want to trigger a visual state immediately on click 
     // before the timeout starts, you can move this logic into a click listener.
 }
+
+function checkUserLogin() {
+    fetch('/api/check_auth.php')
+        .then(response => response.json())
+        .then(data => {
+            if (data.loggedIn) {
+                // 1. Hide Guest Elements
+                document.querySelectorAll('.guest-only').forEach(el => el.style.display = 'none');
+                
+                // 2. Show User Elements
+                document.querySelectorAll('.user-only').forEach(el => el.style.display = 'block');
+
+                // 3. Update Main Navbar Avatar
+                const authLink = document.getElementById('auth-link');
+                // 1. For the Main Navbar
+        if (authLink) {
+        // Note the img/ added before ${data.avatar}
+        authLink.innerHTML = `<img src="img/${data.avatar}" style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #ed1c24; vertical-align: middle; object-fit: cover;">`;
+        authLink.href = "/api/profile.php";
+    }
+
+    // 2. For the Top Bar
+    if (topAuthLink) {
+        // Note the img/ added before ${data.avatar}
+        topAuthLink.innerHTML = `<img src="img/${data.avatar}" style="width: 20px; height: 20px; border-radius: 50%; vertical-align: middle; margin-right: 5px;"> <span>PROFILE</span>`;
+        topAuthLink.href = "/api/profile.php";
+}
+            }
+        })
+        .catch(err => console.error("Auth Check Error:", err));
+}
+
+// Make sure this runs on load
+document.addEventListener("DOMContentLoaded", checkUserLogin);

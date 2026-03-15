@@ -24,7 +24,7 @@ $user = $result->fetch_assoc();
 <body>
     <section id="form-details" style="text-align: center; padding: 100px 0;">
         <div style="background: #fff; padding: 40px; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); display: inline-block; width: 350px;">
-            <img src="uploads/<?php echo $user['avatar']; ?>" style="width: 120px; height: 120px; border-radius: 50%; border: 4px solid #ff0000; object-fit: cover;">
+            <img src="img/<?php echo $user['avatar']; ?>" style="width: 120px; height: 120px; border-radius: 50%; border: 4px solid #ff0000; object-fit: cover;">
             <h2 style="margin-top: 15px;"><?php echo $user['name']; ?></h2>
             <p style="color: #ed1c24; font-weight: 600;">@<?php echo $user['username']; ?></p>
             
