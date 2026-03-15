@@ -3264,4 +3264,34 @@ img[src=""], img:not([src]) {
 
 }
 
+
+    /* Ensure the Cart is visible on Desktop */
+#lg-bag {
+    display: flex;
+    align-items: center;
 }
+
+#lg-bag i {
+    color: #1a1a1a;
+    font-size: 20px;
+}
+
+/* Ensure the Login/Avatar is visible */
+#auth-link {
+    display: flex;
+    align-items: center;
+}
+
+/* Mobile adjustments */
+@media (max-width: 799px) {
+    #lg-bag {
+        display: none; /* Hide desktop bag in mobile view */
+    }
+    #mobile {
+        display: flex;
+        align-items: center;
+    }
+}
+}
+
+
