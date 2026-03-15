@@ -41,21 +41,15 @@
     <a href="index.html"><img src="img/new logos.png" class="logo" alt="BIFU LOGO"></a>
     <div>
 <ul id="navbar">
-    <li><a class="active" href="index.html">Home</a></li>
+    <li><a href="index.html">Home</a></li>
     <li><a href="shop.html">Autoshop</a></li>
-    <li><a href="feed.html">Feed</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Connect</a></li>
-
     <li class="guest-only"><a href="login.html">Login</a></li>
     <li class="guest-only"><a href="signup.html">Sign Up</a></li>
 
-<li class="user-only" style="display: none;">
-    <a href="/api/profile.php" id="auth-link"></a>
-</li>
-
-    <li id="lg-bag"><a href="cart.html"><i class="fas fa-cart-plus"></i></a></li>
-    <a href="#" id="close"><i class="fas fa-times"></i></a>
+    <li class="user-only" style="display: none;">
+        <a href="/api/profile.php" id="auth-link">
+            </a>
+    </li>
 </ul>
         
         </div>
@@ -568,33 +562,32 @@
 
 <script type="module" src="java.js"></script>
 
-    <script>
+<script>
 document.addEventListener("DOMContentLoaded", function() {
-    fetch('/api/check_auth.php')
-        .then(response => response.json())
-        .then(data => {
-            console.log("Auth Data:", data); 
-            if (data.loggedIn) {
-                // 1. Hide Login/Signup links
-                document.querySelectorAll('.guest-only').forEach(el => el.style.display = 'none');
-                
-                // 2. Target the Profile link
-                const userOnlyLi = document.querySelector('.user-only');
-                const authLink = document.getElementById('auth-link');
-                
-                if (userOnlyLi && authLink) {
-                    userOnlyLi.style.display = 'block';
+    // We wait 100ms to ensure the PHP session cookie is fully ready
+    setTimeout(() => {
+        fetch('/api/check_auth.php')
+            .then(response => response.json())
+            .then(data => {
+                console.log("Auth Check:", data); // Check your F12 console for this!
+                if (data.loggedIn) {
+                    // 1. Hide the Login/Signup buttons
+                    document.querySelectorAll('.guest-only').forEach(el => el.style.display = 'none');
                     
-                    /* --- THIS IS THE CHANGE --- */
-                    // We add "img/" before ${data.avatar} so the browser looks in the right folder
-                    authLink.innerHTML = `<img src="img/${data.avatar}" style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #ed1c24; vertical-align: middle; object-fit: cover;">`;
-                    /* --------------------------- */
+                    // 2. Show the Profile Picture
+                    const userOnlyLi = document.querySelector('.user-only');
+                    const authLink = document.getElementById('auth-link');
                     
-                    authLink.setAttribute('href', '/api/profile.php');
+                    if (userOnlyLi && authLink) {
+                        userOnlyLi.style.display = 'block';
+                        // IMPORTANT: We use the 'img/' folder path here
+                        authLink.innerHTML = `<img src="img/${data.avatar}" style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #ed1c24; vertical-align: middle; object-fit: cover;">`;
+                        authLink.href = "/api/profile.php";
+                    }
                 }
-            }
-        })
-        .catch(err => console.error("Auth check failed:", err));
+            })
+            .catch(err => console.error("Auth System Error:", err));
+    }, 100); 
 });
 
 
