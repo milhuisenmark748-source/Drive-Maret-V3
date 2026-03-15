@@ -1505,4 +1505,35 @@ if (actionBtn) {
 }
 
 
+document.addEventListener("DOMContentLoaded", function() {
+    // 1. Check login status
+    fetch('check_auth.php')
+        .then(response => response.json())
+        .then(data => {
+            const authLink = document.getElementById('auth-link');
+
+            if (data.loggedIn && authLink) {
+                // Change 'Login' text to the User's Profile Picture
+                authLink.innerHTML = `<img src="uploads/${data.avatar}" 
+                    style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #ed1c24; object-fit: cover; vertical-align: middle;">`;
+                
+                // Point the link to the profile page instead of login
+                authLink.setAttribute('href', 'profile.php');
+            }
+        })
+        .catch(err => console.error("Auth check failed:", err));
+
+    // 2. Navbar Toggle Logic (Keep your existing bar/close logic)
+    const bar = document.getElementById('bar');
+    const close = document.getElementById('close');
+    const nav = document.getElementById('navbar');
+
+    if (bar) {
+        bar.addEventListener('click', () => { nav.classList.add('active'); });
+    }
+    if (close) {
+        close.addEventListener('click', () => { nav.classList.remove('active'); });
+    }
+});
+
 
