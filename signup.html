@@ -6,6 +6,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Small style update for the upload box */
+        .upload-box {
+            background: #f9f9f9;
+            padding: 15px;
+            border: 1px dashed #ed1c24;
+            border-radius: 8px;
+            margin-bottom: 15px !important;
+        }
+        #navbar li img {
+            transition: 0.3s;
+        }
+        #navbar li img:hover {
+            border-color: #fff !important;
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
     <section id="header">
@@ -14,7 +31,7 @@
             <ul id="navbar">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="shoppage.html">Autoshop</a></li>
-                <li><a href="login.html">Login</a></li>
+                <li><a href="login.html" id="auth-link">Login</a></li>
                 <a href="#" id="close"><i class="fas fa-times"></i></a>
             </ul>
         </div>
@@ -34,9 +51,11 @@
             <input type="email" name="email" id="reg-email" placeholder="Email Address" required>
             <input type="text" name="username" id="reg-user" placeholder="Choose Username" required>
             
-            <div class="upload-box" style="margin: 10px 0; text-align: left;">
-                <label for="avatar" style="font-size: 13px; color: #555; display: block; margin-bottom: 5px;">Upload Profile Picture:</label>
-                <input type="file" name="avatar" id="avatar" accept="image/*" style="padding: 10px 0; border: none;">
+            <div class="upload-box">
+                <label for="avatar" style="font-size: 13px; color: #555; display: block; margin-bottom: 5px;">
+                    <i class="fas fa-camera"></i> Upload Profile Picture:
+                </label>
+                <input type="file" name="avatar" id="avatar" accept="image/*" style="padding: 5px 0; border: none; cursor: pointer;">
             </div>
 
             <input type="password" name="password" id="reg-pass" placeholder="Password" required>
@@ -113,40 +132,49 @@
     </footer>
 
     <script>
-        // Navbar Toggle Logic
+        // --- Navbar Toggle Logic ---
         const bar = document.getElementById('bar');
         const close = document.getElementById('close');
         const nav = document.getElementById('navbar');
 
         if (bar) {
-            bar.addEventListener('click', () => {
-                nav.classList.add('active');
-            })
+            bar.addEventListener('click', () => { nav.classList.add('active'); })
         }
 
         if (close) {
-            close.addEventListener('click', () => {
-                nav.classList.remove('active');
-            })
+            close.addEventListener('click', () => { nav.classList.remove('active'); })
         }
 
-        // Client-side validation: Passwords match & File size check
+        // --- AUTH CHECK: Turns "Login" into your Avatar ---
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('check_auth.php')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.loggedIn) {
+                        const authLink = document.getElementById('auth-link');
+                        if (authLink) {
+                            authLink.innerHTML = `<img src="uploads/${data.avatar}" style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #ed1c24; vertical-align: middle; object-fit: cover;">`;
+                            authLink.setAttribute('href', 'profile.php');
+                        }
+                    }
+                });
+        });
+
+        // --- Signup Validation ---
         const signupForm = document.getElementById('signup-form');
         signupForm.addEventListener('submit', (e) => {
             const pass = document.getElementById('reg-pass').value;
             const confirmPass = document.getElementById('reg-pass-confirm').value;
             const avatar = document.getElementById('avatar');
 
-            // 1. Password Match
             if (pass !== confirmPass) {
                 e.preventDefault();
                 alert("Passwords do not match!");
                 return;
             }
 
-            // 2. Optional: Limit file size to 2MB to keep your InfinityFree storage safe
             if (avatar.files.length > 0) {
-                const fileSize = avatar.files[0].size / 1024 / 1024; // in MB
+                const fileSize = avatar.files[0].size / 1024 / 1024;
                 if (fileSize > 2) {
                     e.preventDefault();
                     alert("Profile picture must be less than 2MB!");
