@@ -2,7 +2,8 @@
 include 'db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    // These names MUST match the "name" attribute in your HTML
+    $name = mysqli_real_escape_string($conn, $_POST['fullname']); 
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
