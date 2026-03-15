@@ -529,14 +529,14 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    fetch('check_auth.php')
+    fetch('check_auth.php') // This calls the file you just created
         .then(response => response.json())
         .then(data => {
             if (data.loggedIn) {
                 const navLinks = document.querySelectorAll('#navbar li a');
                 navLinks.forEach(link => {
-                    // This finds the Login link specifically
                     if (link.getAttribute('href') === 'login.html' || link.innerText.toLowerCase() === 'login') {
+                        // Replaces the "Login" text with the User's Avatar
                         link.innerHTML = `<img src="uploads/${data.avatar}" style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #ed1c24; vertical-align: middle; object-fit: cover;">`;
                         link.setAttribute('href', 'profile.php');
                     }
