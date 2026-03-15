@@ -3451,3 +3451,110 @@ img[src=""], img:not([src]) {
 @media (max-width: 799px) {
     #top-bar { display: none; }
 }
+
+
+/* --- TOP BAR DESIGN --- */
+#top-bar {
+    background: linear-gradient(90deg, #0f0f0f 0%, #1a1a1a 100%);
+    border-bottom: 2px solid #ed1c24; /* Velocity Red Accent Line */
+    padding: 12px 80px;
+    display: block;
+}
+
+.top-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Left Side Status */
+.status-badge {
+    color: #ed1c24;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-right: 20px;
+}
+
+.status-badge i {
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+.location {
+    color: #888;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+/* Right Side Modules */
+.top-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.v-divider {
+    width: 1px;
+    height: 20px;
+    background: rgba(255,255,255,0.1);
+}
+
+/* User & Cart Styling */
+#top-auth-link, .top-cart-module {
+    text-decoration: none;
+    color: #efefef;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s ease;
+}
+
+#top-auth-link:hover, .top-cart-module:hover {
+    color: #ed1c24;
+}
+
+/* Profile Image Glowing Border */
+#top-auth-link img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #ed1c24;
+    box-shadow: 0 0 10px rgba(237, 28, 36, 0.3);
+}
+
+/* Cart Icon Box */
+.cart-icon-box {
+    position: relative;
+    background: #252525;
+    padding: 8px;
+    border-radius: 8px;
+    color: #fff;
+}
+
+#cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ed1c24;
+    font-size: 9px;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+}
+
+/* HIDE ON MOBILE TO KEEP YOUR NAV SAFE */
+@media (max-width: 799px) {
+    #top-bar { display: none; }
+}
