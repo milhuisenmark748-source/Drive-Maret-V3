@@ -18,24 +18,21 @@
                 <a href="#" id="close"><i class="fas fa-times"></i></a>
             </ul>
         </div>
-    </div>
-    
-    <div id="mobile">
-        <a href="cart.html"><i class="fas fa-cart-plus"></i></a>
-        <i id="bar" class="fas fa-outdent"></i>
-    </div>
-
+        
+        <div id="mobile">
+            <a href="cart.html"><i class="fas fa-cart-plus"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
     </section>
 
-
     <section id="form-details" class="login-section">
-        <form id="signup-form">
+        <form id="signup-form" action="signup.php" method="POST">
             <span>START YOUR JOURNEY WITH BIFU</span>
             <h2>Create Account</h2>
-            <input type="text" id="reg-name" placeholder="Full Name" required>
-            <input type="email" id="reg-email" placeholder="Email Address" required>
-            <input type="text" id="reg-user" placeholder="Choose Username" required>
-            <input type="password" id="reg-pass" placeholder="Password" required>
+            <input type="text" name="fullname" id="reg-name" placeholder="Full Name" required>
+            <input type="email" name="email" id="reg-email" placeholder="Email Address" required>
+            <input type="text" name="username" id="reg-user" placeholder="Choose Username" required>
+            <input type="password" name="password" id="reg-pass" placeholder="Password" required>
             <input type="password" id="reg-pass-confirm" placeholder="Confirm Password" required>
             
             <button type="submit" class="normal login-btn">Register Now</button>
@@ -60,123 +57,83 @@
         </div>
     </section>
 
-
     <footer class="section-p1">
-    <div class="col">
-        <img class="logo-footer" src="img/logo red.png" alt="CARZ LOGO">
-        <h4>Contact</h4>
-        <p><strong>Address: </strong> 526, Darmapala Road, Colombo</p>
-        <p><strong>Phone: </strong> 0711236890</p>
-        <p><strong>Hours: </strong> 10.00 - 18.00, Mon - Sat</p>
-        <div class="follow">
-            <h4>Follow Us</h4>
-            <div class="icon">
-                <i class="fab fa-facebook-f"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-pinterest"></i>
-                <i class="fab fa-youtube"></i>
+        <div class="col">
+            <img class="logo-footer" src="img/logo red.png" alt="CARZ LOGO">
+            <h4>Contact</h4>
+            <p><strong>Address: </strong> 526, Darmapala Road, Colombo</p>
+            <p><strong>Phone: </strong> 0711236890</p>
+            <p><strong>Hours: </strong> 10.00 - 18.00, Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col">
-        <h4>About</h4>
-        <a href="about.html">About us</a>
-        <a href="#">Delivery Information</a>
-        <a href="about.html">Privacy Policy</a>
-        <a href="contact.html">Contact Us</a>
-    </div>
-    <div class="col">
-        <h4>My Account</h4>
-        <a href="login.html">Sign In</a>
-        <a href="#">View Cart</a>
-        <a href="#">My Wishlist</a>
-        <a href="#">Track My Order</a>
-        <a href="contact.html">Help</a>
-    </div>
-    <div class="col install">
-        <h4>Install App</h4>
-        <p>From App Store or Google Play</p>
-        <div class="row">
-            <img src="img/pay/app.jpg" alt="">
-            <img src="img/pay/play.jpg" alt="">
+        <div class="col">
+            <h4>About</h4>
+            <a href="about.html">About us</a>
+            <a href="#">Delivery Information</a>
+            <a href="about.html">Privacy Policy</a>
+            <a href="contact.html">Contact Us</a>
         </div>
-        <p>Secured Payment Gateways</p>
-        <img src="img/pay/pay.png" alt="">
-    </div>
-    <div class="copyright">
-        <p>© 2026, CARZ - The Global Vehicle Ecommerce Platform</p>
-    </div>
-</footer>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="login.html">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="contact.html">Help</a>
+        </div>
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="img/pay/app.jpg" alt="">
+                <img src="img/pay/play.jpg" alt="">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="img/pay/pay.png" alt="">
+        </div>
+        <div class="copyright">
+            <p>© 2026, CARZ - The Global Vehicle Ecommerce Platform</p>
+        </div>
+    </footer>
 
+    <script>
+        // Navbar Toggle Logic
+        const bar = document.getElementById('bar');
+        const close = document.getElementById('close');
+        const nav = document.getElementById('navbar');
 
-<script type="module">
-  // 1. Import Firebase
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
-  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-auth.js";
+        if (bar) {
+            bar.addEventListener('click', () => {
+                nav.classList.add('active');
+            })
+        }
 
-  // 2. Your Config
-  const firebaseConfig = {
-    apiKey: "AIzaSyBV6lGkHxwXMyvsGlga4_MWVs4BAGI5SGU",
-    authDomain: "wad---drivemarket.firebaseapp.com",
-    projectId: "wad---drivemarket",
-    storageBucket: "wad---drivemarket.firebasestorage.app",
-    messagingSenderId: "895979359305",
-    appId: "1:895979359305:web:684c43c2b0384308bc4398"
-  };
+        if (close) {
+            close.addEventListener('click', () => {
+                nav.classList.remove('active');
+            })
+        }
 
-  // 3. Initialize
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
+        // Simple Client-side validation to ensure passwords match before sending to PHP
+        const signupForm = document.getElementById('signup-form');
+        signupForm.addEventListener('submit', (e) => {
+            const pass = document.getElementById('reg-pass').value;
+            const confirmPass = document.getElementById('reg-pass-confirm').value;
 
-  // 4. Signup Action
-  const signupForm = document.getElementById('signup-form');
-  signupForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const email = document.getElementById('reg-email').value;
-    const pass = document.getElementById('reg-pass').value;
-    const confirmPass = document.getElementById('reg-pass-confirm').value;
-
-    if (pass !== confirmPass) {
-      alert("Passwords do not match!");
-      return;
-    }
-
-    createUserWithEmailAndPassword(auth, email, pass)
-      .then((userCredential) => {
-        alert("Account created! Welcome to CARZ.");
-        window.location.href = "login.html"; // Success redirect
-      })
-      .catch((error) => {
-        // This will tell you EXACTLY why it failed (e.g. Email already in use)
-        console.error(error);
-        alert("Error: " + error.message);
-      });
-  });
-</script>
-
-<script>
-    const bar = document.getElementById('bar');
-    const close = document.getElementById('close');
-    const nav = document.getElementById('navbar');
-
-    if (bar) {
-        bar.addEventListener('click', () => {
-            nav.classList.add('active');
-        })
-    }
-
-    if (close) {
-        close.addEventListener('click', () => {
-            nav.classList.remove('active');
-        })
-    }
-
-
-
-    
-</script>
-
+            if (pass !== confirmPass) {
+                e.preventDefault(); // Stop the form from submitting
+                alert("Passwords do not match!");
+            }
+        });
+    </script>
 </body>
 </html>
