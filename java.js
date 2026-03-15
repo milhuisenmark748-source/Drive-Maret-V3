@@ -1543,17 +1543,3 @@ document.addEventListener("DOMContentLoaded", function() {
         desktopCart.style.display = 'flex';
     }
 });
-
-// Function to update Navbar based on login status
-function updateNavStatus() {
-    const loginLink = document.querySelector('#login-nav a');
-    const isLoggedIn = localStorage.getItem('isLoggedIn'); // Assuming you set this on login
-
-    if (isLoggedIn && loginLink) {
-        loginLink.innerText = "Account"; // Or "Profile"
-        loginLink.href = "profile.html";
-    }
-}
-
-// Run this whenever any page loads
-document.addEventListener('DOMContentLoaded', updateNavStatus);
