@@ -26,12 +26,19 @@
     </section>
 
     <section id="form-details" class="login-section">
-        <form id="signup-form" action="signup.php" method="POST">
+        <form id="signup-form" action="signup.php" method="POST" enctype="multipart/form-data">
             <span>START YOUR JOURNEY WITH BIFU</span>
             <h2>Create Account</h2>
+            
             <input type="text" name="fullname" id="reg-name" placeholder="Full Name" required>
             <input type="email" name="email" id="reg-email" placeholder="Email Address" required>
             <input type="text" name="username" id="reg-user" placeholder="Choose Username" required>
+            
+            <div class="upload-box" style="margin: 10px 0; text-align: left;">
+                <label for="avatar" style="font-size: 13px; color: #555; display: block; margin-bottom: 5px;">Upload Profile Picture:</label>
+                <input type="file" name="avatar" id="avatar" accept="image/*" style="padding: 10px 0; border: none;">
+            </div>
+
             <input type="password" name="password" id="reg-pass" placeholder="Password" required>
             <input type="password" id="reg-pass-confirm" placeholder="Confirm Password" required>
             
@@ -123,15 +130,27 @@
             })
         }
 
-        // Simple Client-side validation to ensure passwords match before sending to PHP
+        // Client-side validation: Passwords match & File size check
         const signupForm = document.getElementById('signup-form');
         signupForm.addEventListener('submit', (e) => {
             const pass = document.getElementById('reg-pass').value;
             const confirmPass = document.getElementById('reg-pass-confirm').value;
+            const avatar = document.getElementById('avatar');
 
+            // 1. Password Match
             if (pass !== confirmPass) {
-                e.preventDefault(); // Stop the form from submitting
+                e.preventDefault();
                 alert("Passwords do not match!");
+                return;
+            }
+
+            // 2. Optional: Limit file size to 2MB to keep your InfinityFree storage safe
+            if (avatar.files.length > 0) {
+                const fileSize = avatar.files[0].size / 1024 / 1024; // in MB
+                if (fileSize > 2) {
+                    e.preventDefault();
+                    alert("Profile picture must be less than 2MB!");
+                }
             }
         });
     </script>
