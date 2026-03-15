@@ -1505,3 +1505,28 @@ if (actionBtn) {
 }
 
 
+// every page avatar displayed //
+
+document.addEventListener("DOMContentLoaded", function() {
+    // This calls your PHP file to check the session status
+    fetch('check_auth.php')
+        .then(response => response.json())
+        .then(data => {
+            if (data.loggedIn) {
+                // Look for the link with the id "auth-link"
+                const authLink = document.getElementById('auth-link');
+                
+                if (authLink) {
+                    // Swap "Login" text for the User's Avatar
+                    authLink.innerHTML = `
+                        <img src="uploads/${data.avatar}" 
+                        style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #ed1c24; vertical-align: middle; object-fit: cover;">
+                    `;
+                    // Redirect them to their profile details when clicked
+                    authLink.setAttribute('href', 'profile.php');
+                }
+            }
+        })
+        .catch(err => console.error("Session check failed:", err));
+});
+
