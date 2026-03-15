@@ -1506,14 +1506,20 @@ if (actionBtn) {
 
 document.addEventListener("DOMContentLoaded", function() {
     // --- 1. LOGIN & PROFILE IMAGE LOGIC ---
-    fetch('check_auth.php')
+    // Change: Added /api/ prefix for Vercel routing
+    fetch('/api/check_auth.php')
         .then(response => response.json())
         .then(data => {
             const authLink = document.getElementById('auth-link');
             if (data.loggedIn && authLink) {
-                // We use a specific size to ensure it doesn't push the cart away
-                authLink.innerHTML = `<img src="uploads/${data.avatar}" style="width: 30px; height: 30px; border-radius: 50%; border: 2px solid #ed1c24; object-fit: cover; vertical-align: middle;">`;
-                authLink.href = "profile.php";
+                // Change: Point to your static img folder instead of 'uploads' 
+                // since Vercel is read-only.
+                const avatarPath = `img/${data.avatar}`; 
+                
+                authLink.innerHTML = `<img src="${avatarPath}" style="width: 30px; height: 30px; border-radius: 50%; border: 2px solid #ed1c24; object-fit: cover; vertical-align: middle;">`;
+                
+                // Change: Point to the API-hosted profile file
+                authLink.href = "/api/profile.php";
             }
         })
         .catch(err => console.log("Browsing as guest"));

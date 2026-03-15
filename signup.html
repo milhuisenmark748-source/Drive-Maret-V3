@@ -55,7 +55,7 @@
 </section>
 
     <section id="form-details" class="login-section">
-        <form id="signup-form" action="signup.php" method="POST" enctype="multipart/form-data">
+        <form id="signup-form" action="/api/signup.php" method="POST" enctype="multipart/form-data">
             <span>START YOUR JOURNEY WITH BIFU</span>
             <h2>Create Account</h2>
             
@@ -159,14 +159,14 @@
 
         // --- AUTH CHECK: Turns "Login" into your Avatar ---
         document.addEventListener("DOMContentLoaded", function() {
-            fetch('check_auth.php')
+            fetch('/api/check_auth.php')
                 .then(response => response.json())
                 .then(data => {
                     if (data.loggedIn) {
                         const authLink = document.getElementById('auth-link');
                         if (authLink) {
-                            authLink.innerHTML = `<img src="uploads/${data.avatar}" style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #ed1c24; vertical-align: middle; object-fit: cover;">`;
-                            authLink.setAttribute('href', 'profile.php');
+                            authLink.innerHTML = `<img src="${data.avatar}" style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #ed1c24; vertical-align: middle; object-fit: cover;">`;
+                            authLink.setAttribute('href', '/api/profile.php');;
                         }
                     }
                 });
@@ -198,7 +198,7 @@
         <script>
 document.addEventListener("DOMContentLoaded", function() {
     // This background call checks if a session exists on the server
-    fetch('check_auth.php')
+    fetch('/api/check_auth.php')
         .then(response => response.json())
         .then(data => {
             if (data.loggedIn) {
@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     authLink.innerHTML = `<img src="uploads/${data.avatar}" style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #ed1c24; vertical-align: middle; object-fit: cover;">`;
                     
                     // Change the link so it goes to the profile details page
-                    authLink.setAttribute('href', 'profile.php');
+                    authLink.setAttribute('href', '/api/profile.php');;
                 }
             }
         })

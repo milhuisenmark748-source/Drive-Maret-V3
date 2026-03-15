@@ -38,7 +38,7 @@
 </section>
 
    <section id="form-details" class="login-section">
-    <form id="login-form" action="login.php" method="POST">
+    <form id="login-form" action="/api/login.php" method="POST">
         <span>EXOTIC CARS & EXCLUSIVE ACCESS</span>
         <h2>Member Login</h2>
         <div class="input-group">
@@ -140,27 +140,26 @@
 
     <script>
 document.addEventListener("DOMContentLoaded", function() {
-    // This background call checks if a session exists on the server
-    fetch('check_auth.php')
+    // Pointing to /api/ for Vercel compatibility
+    fetch('/api/check_auth.php') 
         .then(response => response.json())
         .then(data => {
             if (data.loggedIn) {
-                // Find the Login link in the navbar
-                // Make sure your <li><a href="login.html">Login</a></li> 
-                // has the id="auth-link" on every page!
                 const authLink = document.getElementById('auth-link');
                 
                 if (authLink) {
-                    // Replace "Login" with the circular avatar
-                    authLink.innerHTML = `<img src="uploads/${data.avatar}" style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #ed1c24; vertical-align: middle; object-fit: cover;">`;
+                    // We remove the "uploads/" prefix because in the cloud 
+                    // we usually store full URLs or use a different pathing
+                    authLink.innerHTML = `<img src="${data.avatar}" style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #ed1c24; vertical-align: middle; object-fit: cover;">`;
                     
-                    // Change the link so it goes to the profile details page
-                    authLink.setAttribute('href', 'profile.php');
+                    // Point to the PHP file inside the api folder
+                    authLink.setAttribute('href', '/api/profile.php');
                 }
             }
         })
         .catch(err => console.log("Auth check failed: ", err));
 });
+
 </script>
     
 </body>
