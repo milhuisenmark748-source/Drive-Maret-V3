@@ -1,21 +1,42 @@
-import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
+import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "https://esm.run/@google/generative-ai";
 
 const API_KEY = "AIzaSyAa4FliSKPQRs_5R5mc4CztfaC6QRrLsxc"; 
 const genAI = new GoogleGenerativeAI(API_KEY);
 
+// 1. Configure Safety Settings to allow detailed vehicle discussions
+const safetySettings = [
+    {
+        category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+        threshold: HarmBlockThreshold.BLOCK_NONE,
+    },
+    {
+        category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+        threshold: HarmBlockThreshold.BLOCK_NONE,
+    },
+    {
+        category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
+        threshold: HarmBlockThreshold.BLOCK_NONE,
+    },
+    {
+        category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+        threshold: HarmBlockThreshold.BLOCK_NONE,
+    },
+];
+
 const model = genAI.getGenerativeModel({ 
     model: "gemini-1.5-flash", 
-    systemInstruction: `You are the "AutoSource AI Specialist." You are a world-class automotive expert.
-    - Use Google Search: Always search for 2024-2026 models.
-    - Strict Restriction: Only discuss vehicles. If asked anything else, say: "I am specialized only in vehicle data."
-    - Tone: Professional and data-driven.
-    - Format: Use *Bold* for car names and bullet points for specs.`,
+    systemInstruction: `You are the "AutoSource AI Specialist." You are a world-class automotive expert based in Sri Lanka.
+    - Use Google Search: Always search for 2024-2026 models to provide accurate, up-to-date specs.
+    - Strict Restriction: Only discuss vehicles (cars, bikes, trucks). If asked anything else, say: "I am specialized only in vehicle data."
+    - Tone: Professional, technical, and data-driven.
+    - Format: Use *Bold* for car names and bullet points for technical specifications (Engine, HP, Torque, 0-100km/h).`,
+    safetySettings, // Apply the safety fix here
     tools: [{ googleSearch: {} }] 
 });
 
 const chat = model.startChat();
 
-// Toggle Function - Attached to window so HTML onclick can see it
+// Toggle Function
 window.toggleChat = function() {
     const chatbox = document.getElementById('ai-chatbox');
     if (chatbox.style.display === "none" || chatbox.style.display === "") {
@@ -33,15 +54,18 @@ async function sendMessage() {
     
     if (!userText) return;
 
-    // Use BACKTICKS (`) here
-    display.innerHTML += `<div style="margin-bottom:10px;"><b>You:</b> ${userText}</div>`;
+    // Display User Message
+    display.innerHTML += `<div style="margin-bottom:10px; text-align:right;">
+        <span style="background:#f1f1f1; padding:8px 12px; border-radius:15px; display:inline-block;">${userText}</span>
+    </div>`;
+    
     input.value = "";
     display.scrollTop = display.scrollHeight;
 
     try {
         const loadingId = "load-" + Date.now();
-        // Use BACKTICKS (`) here
-        display.innerHTML += `<div id="${loadingId}" style="color:#888; font-style:italic;">Searching vehicle database...</div>`;
+        display.innerHTML += `<div id="${loadingId}" style="color:#888; font-style:italic; margin-bottom:10px;">Searching vehicle database...</div>`;
+        display.scrollTop = display.scrollHeight;
 
         const result = await chat.sendMessage(userText);
         const response = await result.response;
@@ -50,14 +74,17 @@ async function sendMessage() {
         const loadingElement = document.getElementById(loadingId);
         if (loadingElement) loadingElement.remove();
 
-        // Use BACKTICKS (`) here
-        display.innerHTML += `<div style="margin-bottom:15px; color:#e60000; border-left: 3px solid #e60000; padding-left:10px;"><b>AI:</b> ${botText}</div>`;
+        // Display AI Response
+        display.innerHTML += `<div style="margin-bottom:15px; color:#333; border-left: 3px solid #e60000; padding-left:10px; line-height:1.5;">
+            <b>AI Specialist:</b><br>${botText.replace(/\n/g, '<br>')}
+        </div>`;
     } catch (error) {
-        display.innerHTML += `<div style="color:red;">Error: Check console for details.</div>`;
-        console.error(error);
+        // If it still blocks, show a clear error
+        display.innerHTML += `<div style="color:red; font-size:12px;">Error: ${error.message}. Please try a different query.</div>`;
+        console.error("Chat Error:", error);
     }
     display.scrollTop = display.scrollHeight;
 }
 
-// Attach to window so HTML button can see it
+// Attach to window for HTML access
 window.sendMessage = sendMessage;
