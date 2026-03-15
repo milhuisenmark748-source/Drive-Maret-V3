@@ -527,7 +527,24 @@
     </div>
 </footer>
 
-
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    fetch('check_auth.php')
+        .then(response => response.json())
+        .then(data => {
+            if (data.loggedIn) {
+                const navLinks = document.querySelectorAll('#navbar li a');
+                navLinks.forEach(link => {
+                    // This finds the Login link specifically
+                    if (link.getAttribute('href') === 'login.html' || link.innerText.toLowerCase() === 'login') {
+                        link.innerHTML = `<img src="uploads/${data.avatar}" style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #ed1c24; vertical-align: middle; object-fit: cover;">`;
+                        link.setAttribute('href', 'profile.php');
+                    }
+                });
+            }
+        });
+});
+</script>
 
 
 <script type="module" src="java.js"></script>
