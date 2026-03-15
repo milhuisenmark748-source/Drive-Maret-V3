@@ -990,6 +990,20 @@ footer .copyright{
     padding: 14px;
 }
 
+#bannerfeed{
+    background-image: url('img/banner/BLOGBANNER2.png');
+    height: 40vh;
+    background-size: cover;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 14px;
+}
+
+
+
+
+
 
 #bannerslpage{
     background-image: url('img/banner/Sri\ Lanka\ Autentics.jpg');
@@ -2794,6 +2808,32 @@ img[src=""], img:not([src]) {
     flex-direction: column;
     padding: 0;
 }
+
+/*Mobile Responsive for movie editon hero banner*/
+
+@media (max-width: 799px) {
+
+  #bannerfeed{
+    background-image: url('img/banner/banneefeedmob.jpg'); 
+    width: 100%;
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+    
+
+    height: auto;
+    aspect-ratio: 16 / 4; 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 0;
+}
+
+}
+
 
 
 /*Mobile Responsive for sl editon hero banner*/
