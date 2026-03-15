@@ -1504,36 +1504,38 @@ if (actionBtn) {
     // before the timeout starts, you can move this logic into a click listener.
 }
 
+
 function checkUserLogin() {
     fetch('/api/check_auth.php')
         .then(response => response.json())
         .then(data => {
             if (data.loggedIn) {
-                // 1. Hide Guest Elements
-                document.querySelectorAll('.guest-only').forEach(el => el.style.display = 'none');
-                
-                // 2. Show User Elements
-                document.querySelectorAll('.user-only').forEach(el => el.style.display = 'block');
+                // 1. Find all elements that should only show for guests and HIDE them
+                document.querySelectorAll('.guest-only').forEach(item => {
+                    item.style.display = 'none';
+                });
 
-                // 3. Update Main Navbar Avatar
+                // 2. Find all elements that should only show for users and SHOW them
+                document.querySelectorAll('.user-only').forEach(item => {
+                    item.style.display = 'block';
+                });
+
+                // 3. Put the user's avatar into the placeholder
                 const authLink = document.getElementById('auth-link');
-                // 1. For the Main Navbar
-        if (authLink) {
-        // Note the img/ added before ${data.avatar}
-        authLink.innerHTML = `<img src="img/${data.avatar}" style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #ed1c24; vertical-align: middle; object-fit: cover;">`;
-        authLink.href = "/api/profile.php";
-    }
+                if (authLink) {
+                    authLink.innerHTML = `<img src="${data.avatar}" style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #ed1c24; object-fit: cover; vertical-align: middle;">`;
+                }
 
-    // 2. For the Top Bar
-    if (topAuthLink) {
-        // Note the img/ added before ${data.avatar}
-        topAuthLink.innerHTML = `<img src="img/${data.avatar}" style="width: 20px; height: 20px; border-radius: 50%; vertical-align: middle; margin-right: 5px;"> <span>PROFILE</span>`;
-        topAuthLink.href = "/api/profile.php";
-}
+                // 4. Update the TOP BAR "LOGIN" text to "PROFILE"
+                const topAuthText = document.querySelector('#top-auth-link span');
+                if (topAuthText) {
+                    topAuthText.innerText = "PROFILE";
+                    document.getElementById('top-auth-link').href = "/api/profile.php";
+                }
             }
         })
-        .catch(err => console.error("Auth Check Error:", err));
+        .catch(err => console.log("Login check failed:", err));
 }
 
-// Make sure this runs on load
+// Run the function automatically whenever a page loads
 document.addEventListener("DOMContentLoaded", checkUserLogin);
