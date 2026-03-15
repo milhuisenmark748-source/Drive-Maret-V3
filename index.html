@@ -3,462 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>CARZ</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
- 
-Conversation with Gemini
-You said
-HOW TO ADD A CART ICON TO THE NAV BAR. ONLY FOR PC
-
-Gemini said
-To add a cart icon to your navigation bar specifically for the PC view, you need to ensure it is part of the main #navbar list and styled to be hidden on mobile while remaining visible on larger screens.
-
-1. Update the HTML Structure
-In your shoppage.html (or other pages), you already have a cart icon link inside the #navbar list. However, to ensure it behaves correctly as a "PC-only" element while having a separate mobile version, you can follow this structure:
-
-HTML
-<div>
-    <ul id="navbar">
-        <li><a href="index.html">Home</a></li>
-        <li><a class="active" href="shop.html">Autoshop</a></li>
-        <li><a href="feed.html">Feed</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Connect</a></li>
-        <li><a href="login.html">Sign In</a></li>
-        <li id="lg-bag"><a href="cart.html"><i class="fas fa-cart-plus"></i></a></li>
-        <i id="close" class="fas fa-times"></i>
-    </ul>
-</div>
-
-<div id="mobile">
-    <a href="cart.html"><i class="fas fa-cart-plus"></i></a>
-    <i id="bar" class="fas fa-bars"></i>
-</div>
-2. Update the CSS for PC View
-In your style.css, you can control the visibility of the bag icon using media queries. This ensures that the one inside the navigation bar only appears on larger screens.
-
-Add or update these rules in your style.css:
-
-CSS
-/* Styling for the PC Cart Icon within the Navbar */
-#navbar li #lg-bag {
-    display: block; /* Visible on desktop by default */
-}
-
-/* Hide the separate mobile container on desktop */
-#mobile {
-    display: none;
-    align-items: center;
-}
-
-/* --- Mobile Responsiveness (For screens 799px and smaller) --- */
-@media (max-width: 799px) {
-    #navbar {
-        /* Your existing sidebar styles */
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        /* ... other existing styles ... */
-    }
-
-    /* Hide the PC Cart icon when the mobile menu is active */
-    #lg-bag {
-        display: none !important;
-    }
-
-    /* Show the mobile-specific cart and hamburger menu */
-    #mobile {
-        display: flex;
-    }
-
-    #mobile i {
-        color: #fff; /* Matches your header text color */
-        font-size: 24px;
-        padding-left: 20px;
-    }
-}
-Why this works:
-Desktop View: The #mobile div is hidden, and the #lg-bag (the cart icon inside the navbar list) is visible.
-
-Mobile View: The media query triggers at 799px, hiding the desktop bag (#lg-bag) and showing the #mobile div which contains a standalone cart icon and the hamburger menu.
-
-You said
-I HAVE THE MOBILE ONE PLESE PROVIDE PCONLY
-
-Gemini said
-To add a cart icon that appears only on PC (and is hidden on mobile), you need to assign a specific ID to that navigation item and then use a Media Query in your CSS to hide it when the screen size gets smaller.
-
-1. Update the HTML
-In your shoppage.html (and other pages), wrap the cart icon <li> in an ID so we can target it specifically. I suggest using id="lg-bag" (short for large-screen bag).
-
-HTML
-<ul id="navbar">
-    <li><a href="index.html">Home</a></li>
-    <li><a class="active" href="shop.html">Autoshop</a></li>
-    <li><a href="feed.html">Feed</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Connect</a></li>
-    <li><a href="login.html">Sign In</a></li>
-    <li id="lg-bag"><a href="cart.html"><i class="fas fa-cart-plus"></i></a></li>
-    <i id="close" class="fas fa-times"></i>
-</ul>
-2. Update the CSS
-In your style.css, you need to ensure this icon stays visible on desktop but disappears once the mobile menu (hamburger) takes over.
-
-Add this to your CSS, ideally near your other navigation styles:
-
-CSS
-/* Default desktop behavior */
-#lg-bag {
-    display: block;
-}
-
-/* Hide for Mobile View (Screens 799px and smaller) */
-@media (max-width: 799px) {
-    #lg-bag {
-        display: none;
-    }
-}
-How this works with your existing code:
-On PC: The browser reads the default style and shows the cart icon inside your #navbar.
-
-On Mobile: When the screen width is 799px or less, the media query triggers display: none;. This prevents the cart icon from appearing twice (once in your sidebar and once in your top bar) or looking cluttered in the vertical mobile menu.
-
-The Mobile Icon: Since you already have a separate <div id="mobile"> containing a cart icon, that one will remain visible on small screens because it is not affected by the #lg-bag rule.
-
-You said
-HEARS THE THING I ALREADY LOG IN TO THE SYSTEM AND NAVIGATED THROUGH PAGES SO I WENT TO THE CONTACT PAGE IT SHOW SIGN IN. AND THE CART ALSO DISSPEARED
-
-Gemini said
-It looks like the issues you're seeing on the Contact page are because that specific HTML file hasn't been updated with the same navigation logic as your shoppage.html and cart.html.
-
-Since each page in your project is a separate HTML file, any changes to the Navbar (like adding the Cart icon or changing "Sign In" to "Profile") must be manually added to every page, or handled via JavaScript.
-
-Here is how to fix the Cart disappearing and the Sign In status specifically for your PC view:
-
-1. Fix the "Disappearing" Cart (PC Only)
-In your contact.html (and any other page where it's missing), ensure the cart <li> is inside the #navbar list and has the ID lg-bag.
-
-Update the Navbar in your HTML files:
-
-HTML
-<ul id="navbar">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="shop.html">Autoshop</a></li>
-    <li><a href="feed.html">Feed</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a class="active" href="contact.html">Connect</a></li>
-    <li id="login-nav"><a href="login.html">Sign In</a></li> <li id="lg-bag"><a href="cart.html"><i class="fas fa-cart-plus"></i></a></li>
-    
-    <i id="close" class="fas fa-times"></i>
-</ul>
-2. Fix the "Sign In" Status
-If you have "Logged in" on the Shop page but it says "Sign In" on the Contact page, it’s likely because the HTML is hardcoded to say "Sign In". You can use a small script in your java.js to check if a user is logged in (using localStorage) and update the text automatically across all pages.
-
-Add this to your java.js:
-
-JavaScript
-// Function to update Navbar based on login status
-function updateNavStatus() {
-    const loginLink = document.querySelector('#login-nav a');
-    const isLoggedIn = localStorage.getItem('isLoggedIn'); // Assuming you set this on login
-
-    if (isLoggedIn && loginLink) {
-        loginLink.innerText = "Account"; // Or "Profile"
-        loginLink.href = "profile.html";
-    }
-}
-
-// Run this whenever any page loads
-document.addEventListener('DOMContentLoaded', updateNavStatus);
-3. Ensure the CSS is hiding it on Mobile
-Check your style.css to make sure the lg-bag is hidden when the screen gets small, so it doesn't clash with your mobile menu:
-
-CSS
-/* PC View: Show the icon */
-#lg-bag {
-    display: block;
-}
-
-/* Mobile View: Hide the icon in the sidebar */
-@media (max-width: 799px) {
-    #lg-bag {
-        display: none !important;
-    }
-}
-Quick Checklist:
-Does contact.html have the FontAwesome link? Make sure the <head> of your contact page has the FontAwesome CDN, otherwise the cart icon won't render at all.
-
-Is the ID consistent? Ensure you use id="lg-bag" on every page so the CSS knows which one to hide on mobile.
-
-Would you like me to show you how to set the isLoggedIn variable in your login script so the "Sign In" text updates automatically?
-
-You said
-Does contact.html have the FontAwesome link?
-
-
-
-yEAR
-
-Gemini said
-Checking your files, no, contact.html is likely missing the link.
-
-In your shoppage.html and cart.html, you have this line in the <head>:
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
-
-If you didn't copy that exact line into the <head> of contact.html, the cart icon will be invisible because the browser doesn't know what fas fa-cart-plus means.
-
-How to fix both the Cart and the "Sign In" issue:
-1. Fix the Header in contact.html
-Open contact.html and ensure the top of the file looks exactly like this. Note the FontAwesome link and the ID on the Login/Cart items:
-
-HTML
-<head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
- <section id="header">
-    <a href="index.html"><img src="img/new logos.png" class="logo" alt=""></a>
-    <div>
-        <ul id="navbar">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shop.html">Autoshop</a></li>
-            <li><a href="feed.html">Feed</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a class="active" href="contact.html">Connect</a></li>
-            <li id="login-item"><a href="login.html">Sign In</a></li>
-            <li id="lg-bag"><a href="cart.html"><i class="fas fa-cart-plus"></i></a></li>
-            <i id="close" class="fas fa-times"></i>
-        </ul>
-    </div>
-    <div id="mobile">
-        <a href="cart.html"><i class="fas fa-cart-plus"></i></a>
-        <i id="bar" class="fas fa-bars"></i>
-    </div>
- </section>
-2. Make "Sign In" change to "Profile" (JavaScript)
-Since you said you "already logged in" but it still shows "Sign In," you need your java.js to update the text automatically. Add this to the bottom of your java.js:
-
-JavaScript
-document.addEventListener('DOMContentLoaded', () => {
-    // Check if the user is logged in (using the key you set during login)
-    const user = localStorage.getItem('isLoggedIn'); 
-    const loginNavItem = document.querySelector('#login-item切换 a');
-
-    if (user && loginNavItem) {
-        loginNavItem.innerHTML = "Profile"; // Changes text from Sign In to Profile
-        loginNavItem.href = "profile.html";  // Changes the link destination
-    }
-});
-3. Keep Cart "PC Only" (CSS)
-In your style.css, make sure this rule exists to hide the lg-bag on mobile so it doesn't look messy:
-
-CSS
-#lg-bag {
-    display: block; /* Visible on PC */
-}
-
-@media (max-width: 799px) {
-    #lg-bag {
-        display: none !important; /* Hidden on Mobile */
-    }
-}
-Would you like me to check your login script to see exactly what variable name you used for isLoggedIn?
-
-You said
-<html lang="en">
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta http-equiv="X-UA-Comptible" content="IE=edge">
-
-    <meta name="viewport" content="width-device-width,initial-scale=1.0">
-
-    <title>CARZ</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
-
-    <link rel="stylesheet" href="style.css">
-
-</head>
-
-
-
-U[DATE THIS
-
-Gemini said
-To update your contact.html so the Cart Icon stays visible on PC and the Sign In status updates automatically, use the code below.
-
-I have added the id="lg-bag" to your cart item and the id="login-nav" to your Sign In link so they work with your CSS and JavaScript.
-
-Updated contact.html Header
-HTML
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CARZ - Connect</title>
+    <title>CARZ | Global Vehicle Marketplace</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
- <section id="header">
-    <a href="index.html"><img src="img/new logos.png" class="logo" alt="CARZ Logo"></a>
 
-    <div>
-        <ul id="navbar">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shop.html">Autoshop</a></li>
-            <li><a href="feed.html">Feed</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a class="active" href="contact.html">Connect</a></li>
-            <li id="login-nav"><a href="login.html">Sign In</a></li>
-            <li id="lg-bag"><a href="cart.html"><i class="fas fa-cart-plus"></i></a></li>
-            <i id="close" class="fas fa-times"></i>
-        </ul>
-    </div>
-
-    <div id="mobile">
-        <a href="cart.html"><i class="fas fa-cart-plus"></i></a>
-        <i id="bar" class="fas fa-bars"></i>
-    </div>
- </section>
-
- <script src="java.js"></script>
-</body>
-</html>
-Essential CSS (Add to style.css)
-To make sure that #lg-bag is strictly for PC and doesn't appear inside the mobile sidebar menu:
-
-CSS
-/* Show on Desktop */
-#lg-bag {
-    display: block;
-}
-
-/* Hide on Mobile sidebar */
-@media (max-width: 799px) {
-    #lg-bag {
-        display: none !important;
-    }
-}
-Automatic "Sign In" to "Profile" (Add to java.js)
-Since you mentioned you already logged in, adding this to your java.js will ensure that when you navigate to the Contact page, it checks your login status and changes the text:
-
-JavaScript
-document.addEventListener('DOMContentLoaded', () => {
-    // Check if user is logged in (using your localStorage key)
-    const isLoggedIn = localStorage.getItem('isLoggedIn'); 
-    const loginLink = document.querySelector('#login-nav a');
-
-    if (isLoggedIn && loginLink) {
-        loginLink.innerText = "Profile"; // Changes 'Sign In' to 'Profile'
-        loginLink.href = "profile.html";  // Changes link to your profile page
-    }
-});
-You said
-OK JUST I HAVE ONE LAST IDEA .
-
-
-
-CREATE DOUBLE NAV BAR SITE LIKE THE IMAGE SO I WILL UPLOAD THE FIRST NAV BAR YOU NEED TO CREATE THE NAV BAR THAT HAS CURRENT PROFILE PICTURE, AND SOME ACCOUNT RELATED THINGS
-
-
-
-MY NAV BAR
-
-
-
-<section id="header">
-
-    <a href="index.html"><img src="img/new logos.png" class="logo" alt="BIFU LOGO"></a>
-
-    <div>
-
-        <ul id="navbar">
-
-            <li><a class="active" href="index.html">Home</a></li>
-
-            <li><a href="shoppage.html">Autoshop</a></li>
-
-            <li><a href="feed.html">Feed</a></li>
-
-            <li><a href="about.html">About</a></li>
-
-            <li><a href="contact.html">Connect</a></li>
-
-            <li id="auth-container"><a href="login.html">Sign In</a></li>
-
-            <li id="lg-bag"><a href="cart.html"><i class="fas fa-cart-plus"></i></a></li>
-
-            <a href="#" id="close"><i class="fas fa-times"></i></a>
-
-        </ul>
-
-
-
-NOTE : THIS IS ONLY FOR PC SO WE ARE KEEPING THAT MOBILE NAV THING AS IT IS . SO THIS NEED TO DISPLAY ON PC ONLY
-
-Gemini said
-That’s a great idea. A Double Nav Bar (often called a "Top Bar") looks very professional for an e-commerce site like CARZ. It separates the main navigation from user-specific actions like account settings and notifications.
-
-Since we are keeping the mobile view as it is, we will wrap this new bar in a pc-top-bar class and use CSS to hide it on screens smaller than 799px.
-
-1. The HTML (Add this above your <section id="header">)
-Place this right at the top of your <body>.
-
-HTML
-<div id="top-bar">
-    <div class="top-bar-container">
-        <div class="top-bar-left">
-            <span>Free Shipping on Pre-orders over $100k</span>
-        </div>
-        <div class="top-bar-right">
-            <a href="wishlist.html"><i class="far fa-heart"></i> Wishlist</a>
-            <a href="orders.html"><i class="fas fa-truck"></i> Track Order</a>
-            <div id="user-profile-nav">
-                <a href="profile.html">
-                    <span id="user-name">Guest</span>
-                    <img src="img/default-profile.png" alt="Profile" class="nav-profile-img">
-                </a>
+    <div id="top-bar">
+        <div class="top-bar-container">
+            <div class="top-bar-left">
+                <span>Free Shipping on Pre-orders over $100k</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="#"><i class="far fa-heart"></i> Wishlist</a>
+                <a href="#"><i class="fas fa-truck"></i> Track Order</a>
+                <div id="user-profile-nav">
+                    <a href="profile.html">
+                        <span id="user-name">Guest</span>
+                        <img src="img/default-profile.png" alt="Profile" class="nav-profile-img">
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<section id="header">
-    <a href="index.html"><img src="img/new logos.png" class="logo" alt="BIFU LOGO"></a>
-    <div>
-        <ul id="navbar">
-            <li><a class="active" href="index.html">Home</a></li>
-            <li><a href="shoppage.html">Autoshop</a></li>
-            <li><a href="feed.html">Feed</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Connect</a></li>
-            <li id="auth-container"><a href="login.html">Sign In</a></li>
-            <li id="lg-bag"><a href="cart.html"><i class="fas fa-cart-plus"></i></a></li>
-            <a href="#" id="close"><i class="fas fa-times"></i></a>
-        </ul>
-    </div>
+    <section id="header">
+        <a href="index.html"><img src="img/new logos.png" class="logo" alt="BIFU LOGO"></a>
+        
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="shoppage.html">Autoshop</a></li>
+                <li><a href="feed.html">Feed</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Connect</a></li>
+                <li id="auth-container"><a href="login.html">Sign In</a></li>
+                <li id="lg-bag"><a href="cart.html"><i class="fas fa-cart-plus"></i></a></li>
+                <a href="#" id="close"><i class="fas fa-times"></i></a>
+            </ul>
+        </div>
 
-    
-    <div id="mobile">
-        <a href="cart.html"><i class="fas fa-cart-plus"></i></a>
-        <i id="bar" class="fas fa-outdent"></i>
-    </div>
-</section>
+        <div id="mobile">
+            <a href="cart.html"><i class="fas fa-cart-plus"></i></a>
+            <i id="bar" class="fas fa-bars"></i>
+        </div>
+    </section>
+
+    <script src="java.js"></script>
 
     <section id="autoshop">
         </section>
