@@ -3,27 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vehicle Specialist AI</title>
+    <title>AI Vehicle Specialist | CARZ</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="ai-page">
 
-    <div id="ai-circle" onclick="toggleChat()">
-        <span style="color:white; font-weight:bold; font-family:Arial;">AI</span>
-    </div>
-
-    <div id="ai-chatbox">
-        <div id="chat-header">
-            <span>Vehicle Specialist</span>
-            <span onclick="toggleChat()" style="cursor:pointer;">×</span>
+    <section id="header">
+        <a href="index.html"><img src="img/logo.png" class="logo" alt="CARZ Logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Inventory</a></li>
+                <li><a class="active" href="ai.html">AI Specialist</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </div>
-        <div id="chat-display"></div>
-        <div id="chat-input-area">
-    <input type="text" id="user-input" placeholder="Enter vehicle name..." onkeypress="if(event.key === 'Enter') sendMessage()">
-    <button id="send-btn" onclick="sendMessage()">Send</button>
-</div>
-    </div>
+    </section>
 
-    <script type="module" src="chatbot.js"></script>
+    <section id="ai-hero">
+        <div class="hero-content">
+            <h4>2026 INTELLIGENCE</h4>
+            <h2>Meet Your <span>Vehicle Specialist</span></h2>
+            <p>Our AI is grounded in real-time Google Search data. Ask about pricing in Sri Lanka, <br>Japanese Domestic Market (JDM) specs, or the latest 2026 supercar releases.</p>
+            <div class="ai-features">
+                <span>✓ Live Market Prices</span>
+                <span>✓ Technical Engine Specs</span>
+                <span>✓ Sri Lankan Tax Estimates</span>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://widget.botsonic.com/widget.js"></script>
+    <script>
+      window.initBotsonic({
+        widgetId: "6122924c-0f43-41f0-b619-2353a4a0ae58",
+      });
+    </script>
+
 </body>
 </html>
