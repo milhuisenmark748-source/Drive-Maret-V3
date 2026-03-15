@@ -19,6 +19,63 @@ h2{
     color: black;
 }
 
+//DOUBLE NAV BAR ADJUSTMENTS//
+
+/* --- TOP BAR STYLING (PC ONLY) --- */
+#top-bar {
+    background-color: #088178; 
+    color: white;
+    padding: 10px 80px;
+    font-size: 13px;
+    display: block; /* Visible on PC by default */
+}
+
+.top-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.top-bar-right a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.nav-profile-img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 8px;
+    border: 1px solid white;
+    vertical-align: middle;
+}
+
+/* --- RESPONSIVE LOGIC --- */
+
+/* Hide Top Bar and PC Cart on Mobile */
+@media (max-width: 799px) {
+    #top-bar {
+        display: none !important;
+    }
+
+    #lg-bag {
+        display: none !important;
+    }
+
+    #header {
+        padding: 0 30px; /* Slimmer padding for mobile */
+    }
+}
+
+
 /*Main logo adjustments to the web */
 
 #header {
@@ -3264,4 +3321,120 @@ img[src=""], img:not([src]) {
 
 }
 
+
+}
+
+/* --- PREMIUM CARBON TOP BAR (PC ONLY) --- */
+#top-bar-custom {
+    /* Deep Carbon Fiber Gradient */
+    background: linear-gradient(180deg, #1a1a1a 0%, #050505 100%);
+    border-bottom: 2px solid #ed1c24; /* Velocity Red Racing Line */
+    padding: 12px 80px;
+    display: block; /* Hidden on mobile via media query below */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.top-bar-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Exact Left, Center, Right alignment */
+    align-items: center;
+}
+
+/* LEFT: System Status */
+.top-left-zone .live-indicator {
+    color: #ed1c24;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    font-family: 'Courier New', monospace;
+}
+
+.live-indicator i {
+    margin-right: 8px;
+    animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-red {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.1); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* CENTER: Branding Text */
+.top-center-zone {
+    text-align: center;
+}
+
+.top-center-zone p {
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* RIGHT: User Controls (Profile & Cart) */
+.top-right-zone {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 25px;
+}
+
+.divider {
+    width: 1px;
+    height: 15px;
+    background: #333;
+}
+
+#top-auth-link, .top-cart-link {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s ease;
+}
+
+#top-auth-link:hover, .top-cart-link:hover {
+    color: #ed1c24;
+}
+
+/* Profile Image Styling */
+#top-auth-link img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid #ed1c24;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(237, 28, 36, 0.4);
+}
+
+/* Cart Icon & Count Badge */
+.top-cart-link {
+    position: relative;
+}
+
+#cart-count {
+    background: #ed1c24;
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 7px;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    right: -12px;
+    font-weight: 900;
+    border: 2px solid #080808;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 799px) {
+    #top-bar-custom {
+        display: none; /* Keeps your mobile nav from getting cluttered */
+    }
 }

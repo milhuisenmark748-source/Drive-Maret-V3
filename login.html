@@ -9,33 +9,45 @@
 </head>
 <body>
     <section id="header">
-        <a href="index.html"><img src="img/new logos.png" class="logo" alt=""></a>
-        <div>
-            <ul id="navbar">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shoppage.html">Autoshop</a></li>
-                <li><a href="signup.html">Register</a></li>
-                <a href="#" id="close"><i class="fas fa-times"></i></a>
-            </ul>
-        </div>
+    <a href="index.html"><img src="img/new logos.png" class="logo" alt="BIFU LOGO"></a>
+    <div>
+        <ul id="navbar">
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="shop.html">Autoshop</a></li>
+            <li><a href="feed.html">Feed</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Connect</a></li>
 
-        <div id="mobile">
+            <li class="guest-only"><a href="login.html">Login</a></li>
+            <li class="guest-only"><a href="signup.html">Sign Up</a></li>
+
+            <li class="user-only" style="display: none;">
+                <a href="profile.php" id="auth-link">
+                    </a>
+            </li>
+
+            <li id="lg-bag"><a href="cart.html"><i class="fas fa-cart-plus"></i></a></li>
+            <a href="#" id="close"><i class="fas fa-times"></i></a>
+        </ul>
+    </div>
+    
+    <div id="mobile">
         <a href="cart.html"><i class="fas fa-cart-plus"></i></a>
-        <i id="bar" class="fas fa-bars"></i>
-
-    </section>
+        <i id="bar" class="fas fa-outdent"></i>
+    </div>
+</section>
 
    <section id="form-details" class="login-section">
-    <form id="login-form">
+    <form id="login-form" action="login.php" method="POST">
         <span>EXOTIC CARS & EXCLUSIVE ACCESS</span>
         <h2>Member Login</h2>
         <div class="input-group">
             <i class="fas fa-user"></i>
-            <input type="email" id="login-username" placeholder="Email Address" required>
+            <input type="email" name="email" id="login-username" placeholder="Email Address" required>
         </div>
         <div class="input-group">
             <i class="fas fa-lock"></i>
-            <input type="password" id="login-password" placeholder="Password" required>
+            <input type="password" name="password" id="login-password" placeholder="Password" required>
         </div>
         <button class="normal login-btn" type="submit">Login to Garage</button>
         <p>New to BIFU? <a href="signup.html">Create an Account</a></p>
@@ -107,48 +119,8 @@
     </div>
 </footer>
 
-
-<script type="module">
-  // 1. Import Firebase
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
-  import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-auth.js";
-
-  // 2. Your Firebase Configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyBV6lGkHxwXMyvsGlga4_MWVs4BAGI5SGU",
-    authDomain: "wad---drivemarket.firebaseapp.com",
-    projectId: "wad---drivemarket",
-    storageBucket: "wad---drivemarket.firebasestorage.app",
-    messagingSenderId: "895979359305",
-    appId: "1:895979359305:web:684c43c2b0384308bc4398"
-  };
-
-  // 3. Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-
-  // 4. Login Action
-  const loginForm = document.getElementById('login-form');
-  loginForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const email = document.getElementById('login-username').value;
-    const password = document.getElementById('login-password').value;
-
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        alert("Welcome back! Accessing your garage...");
-        window.location.href = "index.html"; // Redirect to homepage on success
-      })
-      .catch((error) => {
-        console.error(error);
-        // This will tell you if the password is wrong or the user doesn't exist
-        alert("Login failed: " + error.message);
-      });
-  });
-</script>
-
 <script>
+    // Navbar Toggle Logic
     const bar = document.getElementById('bar');
     const close = document.getElementById('close');
     const nav = document.getElementById('navbar');
@@ -164,11 +136,32 @@
             nav.classList.remove('active');
         })
     }
-
-
-
-    
 </script>
 
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    // This background call checks if a session exists on the server
+    fetch('check_auth.php')
+        .then(response => response.json())
+        .then(data => {
+            if (data.loggedIn) {
+                // Find the Login link in the navbar
+                // Make sure your <li><a href="login.html">Login</a></li> 
+                // has the id="auth-link" on every page!
+                const authLink = document.getElementById('auth-link');
+                
+                if (authLink) {
+                    // Replace "Login" with the circular avatar
+                    authLink.innerHTML = `<img src="uploads/${data.avatar}" style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #ed1c24; vertical-align: middle; object-fit: cover;">`;
+                    
+                    // Change the link so it goes to the profile details page
+                    authLink.setAttribute('href', 'profile.php');
+                }
+            }
+        })
+        .catch(err => console.log("Auth check failed: ", err));
+});
+</script>
+    
 </body>
 </html>

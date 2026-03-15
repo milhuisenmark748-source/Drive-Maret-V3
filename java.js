@@ -1504,4 +1504,50 @@ if (actionBtn) {
     // before the timeout starts, you can move this logic into a click listener.
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    // --- 1. LOGIN & PROFILE IMAGE LOGIC ---
+    fetch('check_auth.php')
+        .then(response => response.json())
+        .then(data => {
+            const authLink = document.getElementById('auth-link');
+            if (data.loggedIn && authLink) {
+                // We use a specific size to ensure it doesn't push the cart away
+                authLink.innerHTML = `<img src="uploads/${data.avatar}" style="width: 30px; height: 30px; border-radius: 50%; border: 2px solid #ed1c24; object-fit: cover; vertical-align: middle;">`;
+                authLink.href = "profile.php";
+            }
+        })
+        .catch(err => console.log("Browsing as guest"));
 
+    // --- 2. MOBILE MENU LOGIC ---
+    const bar = document.getElementById('bar');
+    const close = document.getElementById('close');
+    const nav = document.getElementById('navbar');
+
+    if (bar) {
+        bar.onclick = () => { nav.classList.add('active'); };
+    }
+    if (close) {
+        close.onclick = () => { nav.classList.remove('active'); };
+    }
+
+    // --- 3. SHOPPING CART "FORCE SHOW" ---
+    // This ensures the cart is never accidentally hidden by other scripts
+    const desktopCart = document.getElementById('lg-bag');
+    if (desktopCart) {
+        desktopCart.style.display = 'flex';
+    }
+});
+
+// Function to update Navbar based on login status
+function updateNavStatus() {
+    const loginLink = document.querySelector('#login-nav a');
+    const isLoggedIn = localStorage.getItem('isLoggedIn'); // Assuming you set this on login
+
+    if (isLoggedIn && loginLink) {
+        loginLink.innerText = "Account"; // Or "Profile"
+        loginLink.href = "profile.html";
+    }
+}
+
+// Run this whenever any page loads
+document.addEventListener('DOMContentLoaded', updateNavStatus);

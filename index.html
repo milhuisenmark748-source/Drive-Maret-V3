@@ -3,17 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>CARZ</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARZ | Global Vehicle Marketplace</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <section id="header">
-    <a href="index.html"><img src="img/new logos.png" class="logo" alt="BIFU LOGO"></a>
 
-    <script src="login and reg.js"></script>
+<div id="top-bar-custom">
+    <div class="top-bar-row">
+        
+        <div class="top-left-zone">
+            <span class="live-indicator"><i class="fas fa-satellite-dish"></i> SYSTEM LIVE</span>
+        </div>
+
+        <div class="top-center-zone">
+            <p>PREMIUM VEHICLE SOURCE // COLOMBO 07</p>
+        </div>
+
+        <div class="top-right-zone">
+            <div id="top-auth-container">
+                <a href="login.html" id="top-auth-link">
+                    <i class="fas fa-user-shield"></i> <span>LOGIN</span>
+                </a>
+            </div>
+            <div class="divider"></div>
+            <a href="cart.html" class="top-cart-link">
+                <i class="fas fa-shopping-bag"></i>
+                <span id="cart-count">0</span>
+            </a>
+        </div>
+
+    </div>
+</div>
+    
+   <section id="header">
+    <a href="index.html"><img src="img/new logos.png" class="logo" alt="BIFU LOGO"></a>
     <div>
         <ul id="navbar">
             <li><a class="active" href="index.html">Home</a></li>
@@ -25,12 +50,16 @@
             <li id="lg-bag"><a href="cart.html"><i class="fas fa-cart-plus"></i></a></li>
             <a href="#" id="close"><i class="fas fa-times"></i></a>
         </ul>
-    </div>
-    <div id="mobile">
+        
+        </div>
+
+            <div id="mobile">
         <a href="cart.html"><i class="fas fa-cart-plus"></i></a>
         <i id="bar" class="fas fa-outdent"></i>
     </div>
 </section>
+
+    <script src="java.js"></script>
 
     <section id="autoshop">
         </section>
@@ -530,9 +559,26 @@
 </footer>
 
 
-
-
 <script type="module" src="java.js"></script>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    fetch('check_auth.php') // This calls the file you just created
+        .then(response => response.json())
+        .then(data => {
+            if (data.loggedIn) {
+                const navLinks = document.querySelectorAll('#navbar li a');
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === 'login.html' || link.innerText.toLowerCase() === 'login') {
+                        // Replaces the "Login" text with the User's Avatar
+                        link.innerHTML = `<img src="uploads/${data.avatar}" style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #ed1c24; vertical-align: middle; object-fit: cover;">`;
+                        link.setAttribute('href', 'profile.php');
+                    }
+                });
+            }
+        });
+});
+</script>
 
 </body>
 </html>
