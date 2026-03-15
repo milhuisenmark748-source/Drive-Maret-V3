@@ -1,9 +1,8 @@
 <?php
-// Replace these with the details from your InfinityFree MySQL page
-$host = "sqlXXX.epizy.com"; // Your MySQL Hostname
-$user = "if0_XXXXXXX";      // Your MySQL Username
-$pass = "YourFTPPassword";  // Usually the same as your FTP password
-$db_name = "if0_XXXXXXX_carz_db"; // Your full Database Name
+$host = "sql203.infinityfree.com"; // From MySQL Host Name
+$user = "if0_41394406";           // From 'MySQL User Name
+$pass = "YOUR_VPANEL_PASSWORD";   // FTP password
+$db_name = "if0_41394406_bifuuserdatabase"; // From 'MySQL DB Name'
 
 $conn = new mysqli($host, $user, $pass, $db_name);
 
