@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Specialist AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="ai-circle" onclick="toggleChat()">
+        <span style="color:white; font-weight:bold; font-family:Arial;">AI</span>
+    </div>
+
+    <div id="ai-chatbox">
+        <div id="chat-header">
+            <span>Vehicle Specialist</span>
+            <span onclick="toggleChat()" style="cursor:pointer;">×</span>
+        </div>
+        <div id="chat-display"></div>
+        <div id="chat-input-area">
+            <input type="text" id="user-input" placeholder="Enter vehicle name...">
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+
+    <script type="module" src="chatbot.js"></script>
+</body>
+</html>

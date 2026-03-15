@@ -1503,3 +1503,5 @@ if (actionBtn) {
     // Example: If you want to trigger a visual state immediately on click 
     // before the timeout starts, you can move this logic into a click listener.
 }
+
+
