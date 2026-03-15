@@ -3285,4 +3285,23 @@ img[src=""], img:not([src]) {
     transform: scale(1.1);
 }
 
+// CART FIX PC//
+/* Force the desktop cart to stay visible even if the bar is full */
+#navbar #lg-bag {
+    display: flex !important;
+    align-items: center;
+    margin-left: 15px;
+}
 
+#navbar #lg-bag i {
+    font-size: 20px;
+    color: #1a1a1a;
+    visibility: visible !important;
+}
+
+/* Ensure the navbar doesn't wrap to a second line */
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
