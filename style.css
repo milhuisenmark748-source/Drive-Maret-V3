@@ -3558,3 +3558,101 @@ img[src=""], img:not([src]) {
 @media (max-width: 799px) {
     #top-bar { display: none; }
 }
+
+
+
+/* --- TOP BAR CUSTOM DESIGN --- */
+#top-bar-custom {
+    background: linear-gradient(180deg, #111111 0%, #080808 100%);
+    border-bottom: 2px solid #ed1c24; /* Red racing line */
+    padding: 10px 80px;
+    display: block; /* Desktop only */
+}
+
+.top-bar-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* SPLIT: Left, Center, Right */
+    align-items: center;
+}
+
+/* LEFT ZONE */
+.top-left-zone .live-indicator {
+    color: #ed1c24;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.live-indicator i {
+    margin-right: 5px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+/* CENTER ZONE */
+.top-center-zone {
+    text-align: center;
+}
+
+.top-center-zone p {
+    color: #888;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+/* RIGHT ZONE */
+.top-right-zone {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+.divider { width: 1px; height: 15px; background: #333; }
+
+#top-auth-link, .top-cart-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+#top-auth-link:hover, .top-cart-link:hover { color: #ed1c24; }
+
+/* Profile Image inside Top Bar */
+#top-auth-link img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid #ed1c24;
+    object-fit: cover;
+}
+
+/* Cart Icon with Red Badge */
+.top-cart-link { position: relative; }
+
+#cart-count {
+    background: #ed1c24;
+    font-size: 9px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    box-shadow: 0 0 8px rgba(237, 28, 36, 0.5);
+}
+
+/* HIDE ON MOBILE */
+@media (max-width: 799px) {
+    #top-bar-custom { display: none; }
+}
