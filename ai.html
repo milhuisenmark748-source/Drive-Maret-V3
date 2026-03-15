@@ -19,9 +19,9 @@
         </div>
         <div id="chat-display"></div>
         <div id="chat-input-area">
-            <input type="text" id="user-input" placeholder="Enter vehicle name...">
-            <button id="send-btn">Send</button>
-        </div>
+    <input type="text" id="user-input" placeholder="Enter vehicle name..." onkeypress="if(event.key === 'Enter') sendMessage()">
+    <button id="send-btn" onclick="sendMessage()">Send</button>
+</div>
     </div>
 
     <script type="module" src="chatbot.js"></script>

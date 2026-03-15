@@ -24,7 +24,6 @@ window.toggleChat = function() {
         chatbox.style.display = "none";
     }
 };
-
 // Send Message Function
 async function sendMessage() {
     const input = document.getElementById('user-input');
@@ -33,14 +32,15 @@ async function sendMessage() {
     
     if (!userText) return;
 
-    // Corrected with backticks ``
-    display.innerHTML += <div style="margin-bottom:10px;"><b>You:</b> ${userText}</div>;
+    // Use backticks (`) here so ${userText} works
+    display.innerHTML += `<div style="margin-bottom:10px;"><b>You:</b> ${userText}</div>`;
     input.value = "";
     display.scrollTop = display.scrollHeight;
 
     try {
         const loadingId = "load-" + Date.now();
-        display.innerHTML += <div id="${loadingId}" style="color:#888; font-style:italic;">Searching vehicle database...</div>;
+        // Use backticks (`) here so ${loadingId} works
+        display.innerHTML += `<div id="${loadingId}" style="color:#888; font-style:italic;">Searching vehicle database...</div>`;
 
         const result = await chat.sendMessage(userText);
         const response = await result.response;
@@ -49,15 +49,19 @@ async function sendMessage() {
         const loadingElement = document.getElementById(loadingId);
         if (loadingElement) loadingElement.remove();
 
-        display.innerHTML += <div style="margin-bottom:15px; color:#e60000; border-left: 3px solid #e60000; padding-left:10px;"><b>AI:</b> ${botText}</div>;
+        // Use backticks (`) here so ${botText} works
+        display.innerHTML += `<div style="margin-bottom:15px; color:#e60000; border-left: 3px solid #e60000; padding-left:10px;"><b>AI:</b> ${botText}</div>`;
     } catch (error) {
-        display.innerHTML += <div style="color:red;">Error: Check console for details.</div>;
+        display.innerHTML += `<div style="color:red;">Error: Check console for details.</div>`;
         console.error(error);
     }
     display.scrollTop = display.scrollHeight;
 }
 
-document.getElementById('send-btn').addEventListener('click', sendMessage);
-document.getElementById('user-input').addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') sendMessage();
+// Add event listener to the button after the DOM loads
+document.addEventListener('DOMContentLoaded', () => {
+    const sendBtn = document.getElementById('send-btn');
+    if (sendBtn) {
+        sendBtn.onclick = sendMessage;
+    }
 });
