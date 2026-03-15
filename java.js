@@ -1504,18 +1504,17 @@ if (actionBtn) {
     // before the timeout starts, you can move this logic into a click listener.
 }
 
-
 document.addEventListener("DOMContentLoaded", function() {
     fetch('check_auth.php')
         .then(response => response.json())
         .then(data => {
-            const bubbleLink = document.getElementById('floating-auth-link');
+            const authLink = document.getElementById('auth-link');
             
-            if (data.loggedIn && bubbleLink) {
-                // Replace the icon inside the bubble with the user's photo
-                bubbleLink.innerHTML = `<img src="uploads/${data.avatar}" alt="Profile">`;
-                bubbleLink.setAttribute('href', 'profile.php');
+            if (data.loggedIn && authLink) {
+                // Change "Sign In" text to the user's uploaded photo
+                authLink.innerHTML = `<img src="uploads/${data.avatar}" style="width: 30px; height: 30px; border-radius: 50%; border: 2px solid #ed1c24; object-fit: cover; vertical-align: middle;">`;
+                authLink.setAttribute('href', 'profile.php');
             }
         })
-        .catch(err => console.log("Session check failed."));
+        .catch(err => console.log("User is browsing as guest."));
 });
