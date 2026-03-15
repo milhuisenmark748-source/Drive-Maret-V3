@@ -3,44 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Vehicle Specialist | CARZ</title>
+    <title>WikiBot - AI Assistant</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="ai-page">
+<body>
 
-    <section id="header">
-        <a href="index.html"><img src="img/logo.png" class="logo" alt="CARZ Logo"></a>
-        <div>
-            <ul id="navbar">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html">Inventory</a></li>
-                <li><a class="active" href="ai.html">AI Specialist</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+<div class="chat-container">
+    <div class="chat-header">🌐 WikiBot Assistant</div>
+    <div id="chat-box">
+        <div class="message bot">
+            Hello! Type any topic (e.g., "SpaceX" or "History of Art") and I'll fetch the summary from Wikipedia for you.
         </div>
-    </section>
+    </div>
+    <div class="input-area">
+        <input type="text" id="user-input" placeholder="Ask me anything..." autocomplete="off">
+        <button id="send-btn">Send</button>
+    </div>
+</div>
 
-    <section id="ai-hero">
-        <div class="hero-content">
-            <h4>2026 INTELLIGENCE</h4>
-            <h2>Meet Your <span>Vehicle Specialist</span></h2>
-            <p>Our AI is grounded in real-time Google Search data. Ask about pricing in Sri Lanka, <br>Japanese Domestic Market (JDM) specs, or the latest 2026 supercar releases.</p>
-            <div class="ai-features">
-                <span>✓ Live Market Prices</span>
-                <span>✓ Technical Engine Specs</span>
-                <span>✓ Sri Lankan Tax Estimates</span>
-            </div>
-        </div>
-    </section>
-
-    <script src="https://widget.botsonic.com/widget.js"></script>
-    <script>
-      window.initBotsonic({
-        widgetId: "6122924c-0f43-41f0-b619-2353a4a0ae58",
-      });
-    </script>
-
+<script src="script.js"></script>
 </body>
 </html>

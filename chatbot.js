@@ -1,61 +1,61 @@
-// Botsonic Configuration
-const BOT_ID = "6122924c-0f43-41f0-b619-2353a4a0ae58";
-const API_TOKEN = "PASTE_YOUR_API_TOKEN_HERE"; // Get this from Botsonic Integrations tab
+const chatBox = document.getElementById('chat-box');
+const userInput = document.getElementById('user-input');
+const sendBtn = document.getElementById('send-btn');
 
-async function sendMessage() {
-    const input = document.getElementById('user-input');
-    const display = document.getElementById('chat-display');
-    const userText = input.value.trim();
+async function getWikiData(query) {
+    const endpoint = `https://en.wikipedia.org/w/api.php?action=opensearch&search=${encodeURIComponent(query)}&limit=1&namespace=0&format=json&origin=*`;
     
-    if (!userText) return;
-
-    // Display User Message
-    display.innerHTML += `<div style="margin-bottom:10px; text-align:right;">
-        <span style="background:#f1f1f1; padding:8px 12px; border-radius:15px; display:inline-block;">${userText}</span>
-    </div>`;
-    
-    input.value = "";
-    display.scrollTop = display.scrollHeight;
-
-    const loadingId = "load-" + Date.now();
-    display.innerHTML += `<div id="${loadingId}" style="color:#888; font-style:italic; margin-bottom:10px;">Searching vehicle database...</div>`;
-
     try {
-        const response = await fetch("https://api-bot.writesonic.com/v1/botsonic/generate", {
-            method: "POST",
-            headers: {
-                "accept": "application/json",
-                "content-type": "application/json",
-                "token": API_TOKEN
-            },
-            body: JSON.stringify({
-                "input_text": userText,
-                "chat_id": "user-session-123", // Can be any unique string
-                "bot_id": BOT_ID
-            })
-        });
-
+        const response = await fetch(endpoint);
         const data = await response.json();
-        // Botsonic usually returns an array of messages or a single string
-        const botText = data.answer || data.message || "I couldn't find details on that vehicle.";
-
-        document.getElementById(loadingId)?.remove();
-
-        // Display AI Response
-        display.innerHTML += `<div style="margin-bottom:15px; color:#333; border-left: 3px solid #e60000; padding-left:10px;">
-            <b>AI Specialist:</b><br>${botText}
-        </div>`;
+        
+        if (data[1] && data[1].length > 0) {
+            return {
+                title: data[1][0],
+                summary: data[2][0] || "No summary available.",
+                link: data[3][0]
+            };
+        }
+        return null;
     } catch (error) {
-        document.getElementById(loadingId)?.remove();
-        display.innerHTML += `<div style="color:red;">Error connecting to AutoSource servers.</div>`;
-        console.error("Botsonic Error:", error);
+        console.error("Fetch error:", error);
+        return "error";
     }
-    display.scrollTop = display.scrollHeight;
 }
 
-// Attach functions to window
-window.sendMessage = sendMessage;
-window.toggleChat = function() {
-    const chatbox = document.getElementById('ai-chatbox');
-    chatbox.style.display = (chatbox.style.display === "none" || chatbox.style.display === "") ? "flex" : "none";
-};
+function appendMessage(text, sender, link = null) {
+    const msgDiv = document.createElement('div');
+    msgDiv.classList.add('message', sender);
+    
+    let content = `<span>${text}</span>`;
+    if (link) {
+        content += `<a href="${link}" target="_blank" class="wiki-link">Read full article →</a>`;
+    }
+    
+    msgDiv.innerHTML = content;
+    chatBox.appendChild(msgDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+async function handleChat() {
+    const query = userInput.value.trim();
+    if (!query) return;
+
+    appendMessage(query, 'user');
+    userInput.value = '';
+
+    const result = await getWikiData(query);
+
+    if (result === "error") {
+        appendMessage("Connection error. Please check your internet.", 'bot');
+    } else if (result) {
+        appendMessage(result.summary, 'bot', result.link);
+    } else {
+        appendMessage("I couldn't find that on Wikipedia. Try another topic!", 'bot');
+    }
+}
+
+sendBtn.addEventListener('click', handleChat);
+userInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') handleChat();
+});
