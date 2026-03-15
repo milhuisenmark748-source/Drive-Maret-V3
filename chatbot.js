@@ -15,7 +15,7 @@ const model = genAI.getGenerativeModel({
 
 const chat = model.startChat();
 
-// Toggle Function
+// Toggle Function - Attached to window so HTML onclick can see it
 window.toggleChat = function() {
     const chatbox = document.getElementById('ai-chatbox');
     if (chatbox.style.display === "none" || chatbox.style.display === "") {
@@ -24,6 +24,7 @@ window.toggleChat = function() {
         chatbox.style.display = "none";
     }
 };
+
 // Send Message Function
 async function sendMessage() {
     const input = document.getElementById('user-input');
@@ -32,14 +33,14 @@ async function sendMessage() {
     
     if (!userText) return;
 
-    // Use backticks (`) here so ${userText} works
+    // Use BACKTICKS (`) here
     display.innerHTML += `<div style="margin-bottom:10px;"><b>You:</b> ${userText}</div>`;
     input.value = "";
     display.scrollTop = display.scrollHeight;
 
     try {
         const loadingId = "load-" + Date.now();
-        // Use backticks (`) here so ${loadingId} works
+        // Use BACKTICKS (`) here
         display.innerHTML += `<div id="${loadingId}" style="color:#888; font-style:italic;">Searching vehicle database...</div>`;
 
         const result = await chat.sendMessage(userText);
@@ -49,7 +50,7 @@ async function sendMessage() {
         const loadingElement = document.getElementById(loadingId);
         if (loadingElement) loadingElement.remove();
 
-        // Use backticks (`) here so ${botText} works
+        // Use BACKTICKS (`) here
         display.innerHTML += `<div style="margin-bottom:15px; color:#e60000; border-left: 3px solid #e60000; padding-left:10px;"><b>AI:</b> ${botText}</div>`;
     } catch (error) {
         display.innerHTML += `<div style="color:red;">Error: Check console for details.</div>`;
@@ -58,10 +59,5 @@ async function sendMessage() {
     display.scrollTop = display.scrollHeight;
 }
 
-// Add event listener to the button after the DOM loads
-document.addEventListener('DOMContentLoaded', () => {
-    const sendBtn = document.getElementById('send-btn');
-    if (sendBtn) {
-        sendBtn.onclick = sendMessage;
-    }
-});
+// Attach to window so HTML button can see it
+window.sendMessage = sendMessage;
