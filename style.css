@@ -3324,40 +3324,50 @@ img[src=""], img:not([src]) {
 
 }
 
-/* Styling for the PC Cart Icon within the Navbar */
-#navbar li #lg-bag {
-    display: block; /* Visible on desktop by default */
+/* Top Bar Styling */
+#top-bar {
+    background-color: #1a1a1a; /* Dark sleek background */
+    color: #fff;
+    padding: 10px 80px;
+    font-size: 13px;
+    display: block; /* Visible on PC */
 }
 
-/* Hide the separate mobile container on desktop */
-#mobile {
-    display: none;
+.top-bar-content {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
-/* --- Mobile Responsiveness (For screens 799px and smaller) --- */
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-actions a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.user-actions a:hover {
+    color: #ed1c24;
+}
+
+/* Profile Picture in Top Bar */
+#top-auth-container img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+/* HIDE TOP BAR ON MOBILE */
 @media (max-width: 799px) {
-    #navbar {
-        /* Your existing sidebar styles */
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        /* ... other existing styles ... */
-    }
-
-    /* Hide the PC Cart icon when the mobile menu is active */
-    #lg-bag {
-        display: none !important;
-    }
-
-    /* Show the mobile-specific cart and hamburger menu */
-    #mobile {
-        display: flex;
-    }
-
-    #mobile i {
-        color: #fff; /* Matches your header text color */
-        font-size: 24px;
-        padding-left: 20px;
+    #top-bar {
+        display: none;
     }
 }
