@@ -3328,3 +3328,29 @@ img[src=""], img:not([src]) {
     object-fit: cover;
 }
 
+
+/* Force the desktop cart to show */
+#lg-bag {
+    display: flex !important;
+    align-items: center;
+}
+
+#lg-bag i {
+    font-size: 20px;
+    color: #1a1a1a;
+}
+
+/* Ensure the Login/Avatar link is visible and aligned */
+#auth-link {
+    display: flex !important;
+    align-items: center;
+}
+
+/* If you have a profile image, make sure it has a size */
+#auth-link img {
+    width: 35px !important;
+    height: 35px !important;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
