@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CARZ</title>
+    <title>BIFU | Global Vehicle Marketplace</title>
+    <link rel="icon" type="image/png" href="img/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -325,17 +326,7 @@
     }
 </script>
 
-function preOrder(brand, model, price) {
-    const orderData = {
-        brand: brand,
-        model: model,
-        price: price
-    };
-    // Save to memory
-    localStorage.setItem('selectedCar', JSON.stringify(orderData));
-    // Redirect
-    window.location.href = "payment.html";
-}
+
 
 
 <script src="js/auth.js"></script>
