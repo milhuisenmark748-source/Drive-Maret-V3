@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CARZ - Join the Club</title>
+    <title>BIFU - Create Account</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
-    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <style>
-        /* Modern upload box styling */
+        /* Specific styling for the upload box */
         .upload-box {
             background: #1a1a1a;
             padding: 15px;
@@ -20,62 +20,76 @@
             background: #252525;
             border-style: solid;
         }
-        #navbar li img {
-            transition: 0.3s;
-        }
-        #navbar li img:hover {
-            border-color: #fff !important;
-            transform: scale(1.1);
-        }
     </style>
 </head>
 <body>
-  <section id="header">
-    <a href="index.html"><img src="img/new logos.png" class="logo" alt="BIFU LOGO"></a>
-    <div>
-        <ul id="navbar">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shop.html">Autoshop</a></li>
-            <li><a href="feed.html">Feed</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Connect</a></li>
 
-            <li class="guest-only"><a href="login.html">Login</a></li>
-            <li class="guest-only"><a class="active" href="signup.html">Sign Up</a></li>
+    <section id="header">
+        <a href="index.html"><img src="img/new logos.png" class="logo" alt="BIFU LOGO"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Autoshop</a></li>
+                <li><a href="feed.html">Feed</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Connect</a></li>
 
-            <li class="user-only" style="display: none;">
-                <a href="/api/profile.php" id="auth-link"></a>
-            </li>
+                <li class="guest-only"><a href="login.html">Login</a></li>
+                <li class="guest-only"><a class="active" href="signup.html">Sign Up</a></li>
 
-            <li id="lg-bag"><a href="cart.html"><i class="fas fa-cart-plus"></i></a></li>
-            <a href="#" id="close"><i class="fas fa-times"></i></a>
-        </ul>
-    </div>
-    
-    <div id="mobile">
-        <a href="cart.html"><i class="fas fa-cart-plus"></i></a>
-        <i id="bar" class="fas fa-outdent"></i>
-    </div>
-</section>
+                <li class="user-only" style="display: none;">
+                    <a href="profile.html" id="auth-link"></a>
+                </li>
+
+                <li id="lg-bag"><a href="cart.html"><i class="fas fa-cart-plus"></i></a></li>
+                <a href="#" id="close"><i class="fas fa-times"></i></a>
+            </ul>
+        </div>
+        
+        <div id="mobile">
+            <a href="cart.html"><i class="fas fa-cart-plus"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
 
     <section id="form-details" class="login-section">
-        <form id="signup-form" action="/api/signup.php" method="POST" enctype="multipart/form-data">
+        <form id="signup-form">
             <span>START YOUR JOURNEY WITH BIFU</span>
             <h2>Create Account</h2>
             
-            <input type="text" name="fullname" id="reg-name" placeholder="Full Name" required>
-            <input type="email" name="email" id="reg-email" placeholder="Email Address" required>
-            <input type="text" name="username" id="reg-user" placeholder="Choose Username" required>
+            <div id="alert" class="alert hidden" style="margin-bottom: 15px; font-weight: bold;"></div>
+
+            <div class="input-group">
+                <i class="fas fa-user-tag"></i>
+                <input type="text" id="reg-name" placeholder="Full Name" required>
+            </div>
+
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="reg-email" placeholder="Email Address" required>
+            </div>
+
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" id="reg-user" placeholder="Choose Username" required>
+            </div>
             
             <div class="upload-box">
                 <label for="avatar" style="font-size: 13px; color: #ccc; display: block; margin-bottom: 5px;">
                     <i class="fas fa-camera"></i> Upload Profile Picture:
                 </label>
-                <input type="file" name="avatar" id="avatar" accept="image/*" style="color: #888; border: none; cursor: pointer;">
+                <input type="file" id="avatar" accept="image/*" style="color: #888; border: none; cursor: pointer;">
             </div>
 
-            <input type="password" name="password" id="reg-pass" placeholder="Password" required>
-            <input type="password" id="reg-pass-confirm" placeholder="Confirm Password" required>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="reg-pass" placeholder="Password" required>
+            </div>
+
+            <div class="input-group">
+                <i class="fas fa-check-double"></i>
+                <input type="password" id="reg-pass-confirm" placeholder="Confirm Password" required>
+            </div>
             
             <button type="submit" class="normal login-btn">Register Now</button>
             <p>Already a member? <a href="login.html">Login here</a></p>
@@ -101,67 +115,23 @@
 
     <footer class="section-p1">
         <div class="col">
-            <img class="logo-footer" src="img/logo red.png" alt="CARZ LOGO">
-            <p>© 2026, CARZ - The Global Vehicle Ecommerce Platform</p>
+            <img class="logo-footer" src="img/logo red.png" alt="BIFU LOGO">
+            <p>© 2026, BIFU - The Global Vehicle Ecommerce Platform</p>
         </div>
     </footer>
 
-    <script src="java.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/navbar-handler.js"></script>
+    <script src="js/signup-handler.js"></script>
 
     <script>
-        // --- Navbar Toggle Logic ---
+        // --- Navbar Mobile Toggle ---
         const bar = document.getElementById('bar');
         const close = document.getElementById('close');
         const nav = document.getElementById('navbar');
 
         if (bar) { bar.addEventListener('click', () => { nav.classList.add('active'); }) }
         if (close) { close.addEventListener('click', () => { nav.classList.remove('active'); }) }
-
-        // --- Signup Validation ---
-        const signupForm = document.getElementById('signup-form');
-        signupForm.addEventListener('submit', (e) => {
-            const pass = document.getElementById('reg-pass').value;
-            const confirmPass = document.getElementById('reg-pass-confirm').value;
-            const avatar = document.getElementById('avatar');
-
-            if (pass !== confirmPass) {
-                e.preventDefault();
-                alert("Passwords do not match!");
-                return;
-            }
-
-            // Client-side file size check (2MB limit)
-            if (avatar.files.length > 0) {
-                const fileSize = avatar.files[0].size / 1024 / 1024;
-                if (fileSize > 2) {
-                    e.preventDefault();
-                    alert("Profile picture must be less than 2MB!");
-                }
-            }
-        });
-
-        // --- AUTH CHECK: Instant Navbar Update ---
-        document.addEventListener("DOMContentLoaded", function() {
-            fetch('/api/check_auth.php')
-                .then(res => res.json())
-                .then(data => {
-                    if (data.loggedIn) {
-                        // Hide Guest buttons
-                        document.querySelectorAll('.guest-only').forEach(el => el.style.display = 'none');
-                        
-                        // Show Profile Pic
-                        const userOnlyLi = document.querySelector('.user-only');
-                        const authLink = document.getElementById('auth-link');
-                        
-                        if (userOnlyLi && authLink) {
-                            userOnlyLi.style.display = 'block';
-                            // Point to the image path returned by the server
-                            authLink.innerHTML = `<img src="${data.avatar}" style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #ed1c24; vertical-align: middle; object-fit: cover;">`;
-                            authLink.href = "/api/profile.php";
-                        }
-                    }
-                });
-        });
     </script>
 </body>
 </html>

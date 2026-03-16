@@ -1,8 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CARZ</title>
+    <title>BIFU | Automotive Feed</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -10,15 +12,12 @@
 <body>
 <div id="top-bar-custom">
     <div class="top-bar-row">
-        
         <div class="top-left-zone">
             <span class="live-indicator"><i class="fas fa-satellite-dish"></i> SYSTEM LIVE</span>
         </div>
-
         <div class="top-center-zone">
             <p>PREMIUM VEHICLE SOURCE // COLOMBO 07</p>
         </div>
-
         <div class="top-right-zone">
             <div id="top-auth-container">
                 <a href="login.html" id="top-auth-link">
@@ -31,43 +30,38 @@
                 <span id="cart-count">0</span>
             </a>
         </div>
-
     </div>
 </div>
     
-   <section id="header">
+<section id="header">
     <a href="index.html"><img src="img/new logos.png" class="logo" alt="BIFU LOGO"></a>
     <div>
         <ul id="navbar">
-            <li><a  href="index.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="shoppage.html">Autoshop</a></li>
             <li><a class="active" href="feed.html">Feed</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Connect</a></li>
-            <li id="auth-container"><a href="login.html">Sign In</a></li>
+            
+            <li class="guest-only"><a href="login.html">Login</a></li>
+            <li class="guest-only"><a href="signup.html">Sign Up</a></li>
+            <li class="user-only" style="display: none;">
+                <a href="profile.html" id="auth-link"></a>
+            </li>
+
             <li id="lg-bag"><a href="cart.html"><i class="fas fa-cart-plus"></i></a></li>
             <a href="#" id="close"><i class="fas fa-times"></i></a>
         </ul>
-        
-        </div>
+    </div>
 
-            <div id="mobile">
+    <div id="mobile">
         <a href="cart.html"><i class="fas fa-cart-plus"></i></a>
         <i id="bar" class="fas fa-outdent"></i>
     </div>
 </section>
 
-
-    
-<script src="java.js"></script> 
-
-
-</section>
-
 <section id="bannerfeed">
- 
-</section>
-
+    </section>
 
 <section id="blog">
     <div class="blog-box">
@@ -77,67 +71,21 @@
         </div>
         <div class="blog-details">
             <h4>Bugatti Bolide : The Concept... Maybe Not!</h4>
-            <p>Back in 2020 famous hypercar make Bugatti unveiled something really special … La Bolide. A design exercise from the Bugatti Atelier to show what they could do if they had a brief to design the best, fastest, no-bars held hypercar that had to adhere to no regulations whatsoever … 
-                neither for the road nor for the track, the result was the most radical-looking Bugatti ever with a massive power output of 1825 hp. But.. </p>
+            <p>Back in 2020 famous hypercar make Bugatti unveiled something really special... La Bolide...</p>
             <a href="https://www.supercars.net/blog/all-brands/bugatti/bugatti-bolid-guide/" target="_blank">CONTINUE READING</a>
         </div>
     </div>
-
-    <div class="blog-box">
-        <div class="blog-img">
-            <h1>15/01</h1>
-            <img src="img/blog/feed2.jpg" alt="">
-        </div>
-        <div class="blog-details">
-            <h4>Rivian Automotive Expects to Ramp Up Deliveries in 2026</h4>
-            <p>Rivian Automotive told investors it expects to boost its production by around 50% this year after the company’s results blew past Wall Street estimates for the fourth quarter.
-                The electric car maker is targeting 62,000 to 67,000 vehicle deliveries in fiscal 2026, up from the 42,247 vehicles delivered in the prior year...</p>
-           <a href="https://www.msn.com/en-us/autos/electric-cars/rivian-automotive-expects-to-ramp-up-deliveries-in-2026/ar-AA1WePIQ" target="_blank">CONTINUE READING</a>
-        </div>
-    </div>
-
-    <div class="blog-box">
-        <div class="blog-img">
-            <h1>22/01</h1>
-            <img src="img/blog/feed3.jpg" alt="">
-        </div>
-        <div class="blog-details">
-            <h4>The U.S. Auto Industry’s 2026 Affordability Crisis</h4>
-            <p>The only consistency has been inconsistency for the U.S. automotive industry during the first half of this decade — a trend that’s 
-                expected to continue amid challenging market conditions in 2026..</p>
-            <a href="https://www.cnbc.com/2026/01/25/auto-industry-2026.html" target="_blank">CONTINUE READING</a>
-        </div>
-    </div>
-
-    <div class="blog-box">
-        <div class="blog-img">
-            <h1>05/02</h1>
-            <img src="img/blog/feed4.jpg" alt="">
-        </div>
-        <div class="blog-details">
-            <h4>Indonesian vehicle market up 7% in January</h4>
-            <p>New vehicle sales in Indonesia increased by 7% to 66,447 units in January 2026,
-                 up from 62,084 units a year earlier, according to wholesale data compiled by the local automotive industry association Gaikindo...</p>
-            <a href="https://www.just-auto.com/news/indonesian-vehicle-market-up-7-in-january/?cf-view" target="_blank">CONTINUE READING</a>
-        </div>
-    </div>
-
-</section>
-
+    </section>
 
 <section id="pagination" class="section-p1">
     <a href="feed.html">1</a>
 </section>
 
-
-
-</section>
 <section id="newsletter" class="section-p1 section-m1">
     <div class="newsntext">
-    <h4>Join With Us For Newsletter </h4>
-    <p>Check out Email updates about latest automobiles and <span>spacial deals</span></p>
+        <h4>Join With Us For Newsletter </h4>
+        <p>Check out Email updates about latest automobiles and <span>special deals</span></p>
     </div>
-
     <div class="form">
         <input type="text" placeholder="Email address">
         <button class="normal">Sign Up</button>
@@ -145,52 +93,14 @@
 </section>
 
 <footer class="section-p1">
-    <div class="col">
-        <img class="logo-footer" src="img/logo red.png" alt="CARZ LOGO">
-        <h4>Contact</h4>
-        <p><strong>Address: </strong> 526, Darmapala Road, Colombo</p>
-        <p><strong>Phone: </strong> 0711236890</p>
-        <p><strong>Hours: </strong> 10.00 - 18.00, Mon - Sat</p>
-        <div class="follow">
-            <h4>Follow Us</h4>
-            <div class="icon">
-                <i class="fab fa-facebook-f"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-pinterest"></i>
-                <i class="fab fa-youtube"></i>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <h4>About</h4>
-        <a href="about.html">About us</a>
-        <a href="#">Delivery Information</a>
-        <a href="about.html">Privacy Policy</a>
-        <a href="contact.html">Contact Us</a>
-    </div>
-    <div class="col">
-        <h4>My Account</h4>
-        <a href="login.html">Sign In</a>
-        <a href="#">View Cart</a>
-        <a href="#">My Wishlist</a>
-        <a href="#">Track My Order</a>
-        <a href="contact.html">Help</a>
-    </div>
-    <div class="col install">
-        <h4>Install App</h4>
-        <p>From App Store or Google Play</p>
-        <div class="row">
-            <img src="img/pay/app.jpg" alt="">
-            <img src="img/pay/play.jpg" alt="">
-        </div>
-        <p>Secured Payment Gateways</p>
-        <img src="img/pay/pay.png" alt="">
-    </div>
     <div class="copyright">
-        <p>© 2026, CARZ - The Global Vehicle Ecommerce Platform</p>
+        <p>© 2026, BIFU - The Global Vehicle Ecommerce Platform</p>
     </div>
 </footer>
+
+<script src="js/auth.js"></script>
+<script src="js/navbar-handler.js"></script>
+<script src="java.js"></script>
 
 <script>
     const bar = document.getElementById('bar');
@@ -198,44 +108,13 @@
     const nav = document.getElementById('navbar');
 
     if (bar) {
-        bar.addEventListener('click', () => {
-            nav.classList.add('active');
-        })
+        bar.addEventListener('click', () => { nav.classList.add('active'); })
     }
 
     if (close) {
-        close.addEventListener('click', () => {
-            nav.classList.remove('active');
-        })
+        close.addEventListener('click', () => { nav.classList.remove('active'); })
     }
 </script>
-
-
-        <script>
-document.addEventListener("DOMContentLoaded", function() {
-    // This background call checks if a session exists on the server
-    fetch('check_auth.php')
-        .then(response => response.json())
-        .then(data => {
-            if (data.loggedIn) {
-                // Find the Login link in the navbar
-                // Make sure your <li><a href="login.html">Login</a></li> 
-                // has the id="auth-link" on every page!
-                const authLink = document.getElementById('auth-link');
-                
-                if (authLink) {
-                    // Replace "Login" with the circular avatar
-                    authLink.innerHTML = `<img src="uploads/${data.avatar}" style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #ed1c24; vertical-align: middle; object-fit: cover;">`;
-                    
-                    // Change the link so it goes to the profile details page
-                    authLink.setAttribute('href', 'profile.php');
-                }
-            }
-        })
-        .catch(err => console.log("Auth check failed: ", err));
-});
-</script>
-
 
 </body>
 </html>

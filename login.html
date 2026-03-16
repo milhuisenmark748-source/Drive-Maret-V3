@@ -2,124 +2,120 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CARZ - Member Login</title>
+    <title>BIFU - Member Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Ensuring the active profile image looks premium */
-        #auth-link img {
-            transition: 0.3s;
-        }
-        #auth-link img:hover {
-            border-color: #fff !important;
-            transform: scale(1.1);
-        }
-    </style>
 </head>
 <body>
+
     <section id="header">
-    <a href="index.html"><img src="img/new logos.png" class="logo" alt="BIFU LOGO"></a>
-    <div>
-        <ul id="navbar">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shop.html">Autoshop</a></li>
-            <li><a href="feed.html">Feed</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Connect</a></li>
+        <a href="index.html"><img src="img/new logos.png" class="logo" alt="BIFU LOGO"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Autoshop</a></li>
+                <li><a href="feed.html">Feed</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Connect</a></li>
 
-            <li class="guest-only"><a class="active" href="login.html">Login</a></li>
-            <li class="guest-only"><a href="signup.html">Sign Up</a></li>
+                <li class="guest-only"><a class="active" href="login.html">Login</a></li>
+                <li class="guest-only"><a href="signup.html">Sign Up</a></li>
 
-            <li class="user-only" style="display: none;">
-                <a href="/api/profile.php" id="auth-link"></a>
-            </li>
+                <li class="user-only" style="display: none;">
+                    <a href="profile.html" id="auth-link"></a>
+                </li>
 
-            <li id="lg-bag"><a href="cart.html"><i class="fas fa-cart-plus"></i></a></li>
-            <a href="#" id="close"><i class="fas fa-times"></i></a>
-        </ul>
-    </div>
-    
-    <div id="mobile">
-        <a href="cart.html"><i class="fas fa-cart-plus"></i></a>
-        <i id="bar" class="fas fa-outdent"></i>
-    </div>
-</section>
-
-<section id="form-details" class="login-section">
-    <form id="login-form" action="/api/login.php" method="POST">
-        <span>EXOTIC CARS & EXCLUSIVE ACCESS</span>
-        <h2>Member Login</h2>
-        <div class="input-group">
-            <i class="fas fa-user"></i>
-            <input type="email" name="email" id="login-username" placeholder="Email Address" required>
+                <li id="lg-bag"><a href="cart.html"><i class="fas fa-cart-plus"></i></a></li>
+                <a href="#" id="close"><i class="fas fa-times"></i></a>
+            </ul>
         </div>
-        <div class="input-group">
-            <i class="fas fa-lock"></i>
-            <input type="password" name="password" id="login-password" placeholder="Password" required>
+        
+        <div id="mobile">
+            <a href="cart.html"><i class="fas fa-cart-plus"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
         </div>
-        <button class="normal login-btn" type="submit">Login to Garage</button>
-        <p>New to BIFU? <a href="signup.html">Create an Account</a></p>
-    </form>
-    
-    <div class="login-info">
-        <div class="info-box">
-            <i class="fas fa-key"></i>
-            <div>
-                <span>AUTHENTIC ACCESS</span>
-                <p>Log in to manage your vehicle pre-orders and track your delivery status.</p>
+    </section>
+
+    <section id="form-details" class="login-section">
+        <form id="login-form">
+            <span>EXOTIC CARS & EXCLUSIVE ACCESS</span>
+            <h2>Member Login</h2>
+            
+            <div id="alert" class="alert hidden" style="color: #ed1c24; margin-bottom: 15px; font-weight: bold;"></div>
+
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="email" id="login-username" placeholder="Email Address" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="login-password" placeholder="Password" required>
+            </div>
+            <button class="normal login-btn" type="submit">Login to Garage</button>
+            <p>New to BIFU? <a href="signup.html">Create an Account</a></p>
+        </form>
+        
+        <div class="login-info">
+            <div class="info-box">
+                <i class="fas fa-key"></i>
+                <div>
+                    <span>AUTHENTIC ACCESS</span>
+                    <p>Log in to manage your vehicle pre-orders and track your delivery status.</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <i class="fas fa-shield-alt"></i>
+                <div>
+                    <span>SECURE STORAGE</span>
+                    <p>Your data is stored locally with high-performance encryption standards.</p>
+                </div>
             </div>
         </div>
-        <div class="info-box">
-            <i class="fas fa-shield-alt"></i>
-            <div>
-                <span>SECURE DATABASE</span>
-                <p>Your data is protected with the same precision we use to tune our engines.</p>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
-<footer class="section-p1">
-    <div class="col">
-        <img class="logo-footer" src="img/logo red.png" alt="CARZ LOGO">
-        <p>© 2026, CARZ - The Global Vehicle Ecommerce Platform</p>
-    </div>
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo-footer" src="img/logo red.png" alt="BIFU LOGO">
+            <p>© 2026, BIFU - The Global Vehicle Ecommerce Platform</p>
+        </div>
     </footer>
 
-<script>
-    // --- Navbar Toggle Logic ---
-    const bar = document.getElementById('bar');
-    const close = document.getElementById('close');
-    const nav = document.getElementById('navbar');
+    <script src="js/auth.js"></script>
+    <script src="js/navbar-handler.js"></script>
 
-    if (bar) { bar.addEventListener('click', () => { nav.classList.add('active'); }) }
-    if (close) { close.addEventListener('click', () => { nav.classList.remove('active'); }) }
+    <script>
+        // --- Navbar Mobile Toggle ---
+        const bar = document.getElementById('bar');
+        const close = document.getElementById('close');
+        const nav = document.getElementById('navbar');
 
-    // --- AUTH CHECK: Instant Navbar Update ---
-    document.addEventListener("DOMContentLoaded", function() {
-        fetch('/api/check_auth.php') 
-            .then(response => response.json())
-            .then(data => {
-                if (data.loggedIn) {
-                    // 1. Hide Login/Signup links
-                    document.querySelectorAll('.guest-only').forEach(el => el.style.display = 'none');
-                    
-                    // 2. Show the Profile Avatar
-                    const userOnlyLi = document.querySelector('.user-only');
-                    const authLink = document.getElementById('auth-link');
-                    
-                    if (userOnlyLi && authLink) {
-                        userOnlyLi.style.display = 'block';
-                        // Using the avatar path directly from your database/session
-                        authLink.innerHTML = `<img src="${data.avatar}" style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #ed1c24; vertical-align: middle; object-fit: cover;">`;
-                        authLink.setAttribute('href', '/api/profile.php');
-                    }
+        if (bar) { bar.addEventListener('click', () => { nav.classList.add('active'); }) }
+        if (close) { close.addEventListener('click', () => { nav.classList.remove('active'); }) }
+
+        // --- Login Form Submission ---
+        const loginForm = document.getElementById('login-form');
+        const alertEl = document.getElementById('alert');
+
+        if (loginForm) {
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alertEl.classList.add('hidden');
+                
+                const email = document.getElementById('login-username').value;
+                const password = document.getElementById('login-password').value;
+
+                // Calls the function in auth.js
+                const result = loginUser({ email, password });
+
+                if (result.ok) {
+                    window.location.href = 'index.html';
+                } else {
+                    alertEl.textContent = result.message;
+                    alertEl.classList.remove('hidden');
                 }
-            })
-            .catch(err => console.log("Auth check failed: ", err));
-    });
-</script>
-    
+            });
+        }
+    </script>
 </body>
 </html>

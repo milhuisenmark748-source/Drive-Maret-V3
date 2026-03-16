@@ -46,7 +46,11 @@
             <li><a href="feed.html">Feed</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Connect</a></li>
-            <li id="auth-container"><a href="login.html">Sign In</a></li>
+            <li class="guest-only"><a href="login.html">Login</a></li>
+<li class="guest-only"><a href="signup.html">Sign Up</a></li>
+<li class="user-only" style="display: none;">
+    <a href="profile.html" id="auth-link"></a>
+</li>
             <li id="lg-bag"><a href="cart.html"><i class="fas fa-cart-plus"></i></a></li>
             <a href="#" id="close"><i class="fas fa-times"></i></a>
         </ul>
@@ -89,7 +93,9 @@
                 <h6>Pre-Order Price</h6>
                 <h4>$54,120</h4>
             </div>
-            <a href="#"><i class="fal fas fa-cart-plus"></i></a>
+            <a href="javascript:void(0)" onclick="event.stopPropagation(); handleAddToCart(48);">
+    <i class="fas fa-cart-plus"></i>
+</a>
         </div>
 
         <div class="pro" onclick="localStorage.setItem('carID', 56); window.location.href='sproduct.html';">
@@ -109,7 +115,9 @@
                 <h6>Pre-Order Price</h6>
                 <h4>$640,000</h4>
             </div>
-            <a href="#"><i class="fal fas fa-cart-plus"></i></a>
+            <a href="javascript:void(0)" onclick="event.stopPropagation(); handleAddToCart(48);">
+    <i class="fas fa-cart-plus"></i>
+</a>
         </div>
 
         <div class="pro" onclick="localStorage.setItem('carID', 61); window.location.href='sproduct.html';">
@@ -129,7 +137,9 @@
                 <h6>Pre-Order Price</h6>
                 <h4>$150,000</h4>
             </div>
-            <a href="#"><i class="fal fas fa-cart-plus"></i></a>
+            <a href="javascript:void(0)" onclick="event.stopPropagation(); handleAddToCart(48);">
+    <i class="fas fa-cart-plus"></i>
+</a>
         </div>
 
         <div class="pro" onclick="localStorage.setItem('carID', 62); window.location.href='sproduct.html';">
@@ -149,7 +159,9 @@
                 <h6>Pre-Order Price</h6>
                 <h4>$55,000</h4>
             </div>
-            <a href="#"><i class="fal fas fa-cart-plus"></i></a>
+            <a href="javascript:void(0)" onclick="event.stopPropagation(); handleAddToCart(48);">
+    <i class="fas fa-cart-plus"></i>
+</a>
         </div>
 
              <div class="pro" onclick="localStorage.setItem('carID', 65); window.location.href='sproduct.html';">
@@ -189,7 +201,9 @@
                 <h6>Pre-Order Price</h6>
                 <h4>$150,000</h4>
             </div>
-            <a href="#"><i class="fal fas fa-cart-plus"></i></a>
+            <a href="javascript:void(0)" onclick="event.stopPropagation(); handleAddToCart(48);">
+    <i class="fas fa-cart-plus"></i>
+</a>
         </div>
 
    <div class="pro" onclick="localStorage.setItem('carID', 64); window.location.href='sproduct.html';">
@@ -229,7 +243,9 @@
                 <h6>Pre-Order Price</h6>
                 <h4>$8,500</h4>
             </div>
-            <a href="#"><i class="fal fas fa-cart-plus"></i></a>
+            <a href="javascript:void(0)" onclick="event.stopPropagation(); handleAddToCart(48);">
+    <i class="fas fa-cart-plus"></i>
+</a>
         </div>
 
 <div class="pro" onclick="localStorage.setItem('carID', 63); window.location.href='sproduct.html';">
@@ -249,7 +265,9 @@
                 <h6>Pre-Order Price</h6>
                 <h4>$35,000</h4>
             </div>
-            <a href="#"><i class="fal fas fa-cart-plus"></i></a>
+            <a href="javascript:void(0)" onclick="event.stopPropagation(); handleAddToCart(48);">
+    <i class="fas fa-cart-plus"></i>
+</a>
         </div>
 
         <div class="pro" onclick="localStorage.setItem('carID', 60); window.location.href='sproduct.html';">
@@ -269,7 +287,9 @@
                 <h6>Pre-Order Price</h6>
                 <h4>$25,000</h4>
             </div>
-            <a href="#"><i class="fal fas fa-cart-plus"></i></a>
+            <a href="javascript:void(0)" onclick="event.stopPropagation(); handleAddToCart(48);">
+    <i class="fas fa-cart-plus"></i>
+</a>
         </div>
 
                 <div class="pro" onclick="localStorage.setItem('carID', 66); window.location.href='sproduct.html';">
@@ -309,7 +329,9 @@
                 <h6>Pre-Order Price</h6>
                 <h4>$120,000</h4>
             </div>
-            <a href="#"><i class="fal fas fa-cart-plus"></i></a>
+            <a href="javascript:void(0)" onclick="event.stopPropagation(); handleAddToCart(48);">
+    <i class="fas fa-cart-plus"></i>
+</a>
         </div>
 
     </div>
@@ -407,30 +429,9 @@
     }
 </script>
 
-    <script>
-document.addEventListener("DOMContentLoaded", function() {
-    // This background call checks if a session exists on the server
-    fetch('check_auth.php')
-        .then(response => response.json())
-        .then(data => {
-            if (data.loggedIn) {
-                // Find the Login link in the navbar
-                // Make sure your <li><a href="login.html">Login</a></li> 
-                // has the id="auth-link" on every page!
-                const authLink = document.getElementById('auth-link');
-                
-                if (authLink) {
-                    // Replace "Login" with the circular avatar
-                    authLink.innerHTML = `<img src="uploads/${data.avatar}" style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #ed1c24; vertical-align: middle; object-fit: cover;">`;
-                    
-                    // Change the link so it goes to the profile details page
-                    authLink.setAttribute('href', 'profile.php');
-                }
-            }
-        })
-        .catch(err => console.log("Auth check failed: ", err));
-});
-</script>
+<script src="js/auth.js"></script>
+<script src="js/navbar-handler.js"></script>
+<script src="java.js"></script>
 
 </body>
 </html>

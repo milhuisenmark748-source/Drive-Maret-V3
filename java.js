@@ -1537,5 +1537,106 @@ function checkUserLogin() {
         .catch(err => console.log("Login check failed:", err));
 }
 
+//The fuction is controlling the add to cart part (check user registed or not)
+
 // Run the function automatically whenever a page loads
 document.addEventListener("DOMContentLoaded", checkUserLogin);
+
+
+// Function to handle adding items to cart
+function handleAddToCart(carID) {
+    // 1. Check if user is logged in using your existing auth.js logic
+    const user = getCurrentUser(); 
+
+    if (!user) {
+        // 2. If not logged in, alert them and redirect
+        alert("You must be logged in to add vehicles to your cart.");
+        window.location.href = 'login.html';
+        return;
+    }
+
+    // 3. If logged in, proceed with your existing cart logic
+    console.log("Adding car " + carID + " to cart...");
+    // Your existing code to push to cart array/localStorage goes here
+}
+
+function handleCheckout() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+    }
+
+    // 1. Calculate the Grand Total of all items in the cart
+    let grandTotal = 0;
+    cart.forEach(item => {
+        // Clean the price string (remove $ and commas) and add to total
+        let cleanPrice = item.price.toString().replace(/[$,]/g, "");
+        grandTotal += parseFloat(cleanPrice);
+    });
+
+    // 2. Prepare the data for the gateway
+    const orderData = {
+        itemCount: cart.length,
+        totalMarketPrice: grandTotal,
+        // We can still show the first car's name as a reference
+        mainModel: cart[0].brand + " " + cart[0].name 
+    };
+
+    // 3. Save and redirect
+    localStorage.setItem('selectedCar', JSON.stringify(orderData));
+    window.location.href = "paymentgateway.html";
+}
+
+//update the cart quantity //
+
+function updateCartCountUI() {
+    // 1. Get the current cart from storage
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+    // 2. Calculate total items (sum of quantities)
+    const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+    
+    // 3. Target both the desktop and mobile cart count spans
+    const cartCounts = document.querySelectorAll('#cart-count');
+    
+    cartCounts.forEach(el => {
+        el.innerText = totalItems;
+    });
+}
+
+// Run this immediately when any page loads
+document.addEventListener('DOMContentLoaded', updateCartCountUI);
+
+
+//Details on payment gateway//
+
+function buyNow(brand, model, fullPrice) {
+    // We calculate a 10% Pre-order deposit
+    const deposit = fullPrice * 0.10;
+    
+    const carData = {
+        brand: brand,
+        model: model,
+        price: fullPrice,
+        preOrderPrice: deposit
+    };
+
+    // Save this to the browser's memory
+    localStorage.setItem('selectedCar', JSON.stringify(carData));
+    
+    // Move to the payment page
+    window.location.href = "payment.html";
+}
+
+function preOrder(brand, model, price) {
+    const orderData = {
+        brand: brand,
+        model: model,
+        price: price
+    };
+    // Save to memory
+    localStorage.setItem('selectedCar', JSON.stringify(orderData));
+    // Redirect
+    window.location.href = "payment.html";
+}

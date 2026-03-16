@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIFU Payment Gateway</title>
+    <style>
+        :root {
+            --blue-accent: #0052ff;
+            --bg-light: #f4f7fa;
+            --text-dark: #1e263e;
+            --text-muted: #718096;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            /* Moves the box to the left so the background character stays visible */
+            justify-content: flex-start; 
+            align-items: center;
+            background: url('img/banner/payban.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Inter', -apple-system, sans-serif;
+            padding-left: 8%;
+        }
+
+        /* Glassmorphism Effect for the Main Box */
+        .gateway-box {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            width: 95%;
+            max-width: 850px;
+            border-radius: 24px;
+            display: flex;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .form-side { flex: 1.4; padding: 40px; }
+
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+        .brand-logo { color: var(--blue-accent); font-weight: 800; font-size: 1.4rem; }
+        .timer { background: #1a202c; color: white; padding: 4px 10px; border-radius: 6px; font-family: monospace; }
+
+        .input-group { margin-bottom: 24px; position: relative; }
+        label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--text-dark); margin-bottom: 8px; }
+        
+        input {
+            width: 100%;
+            padding: 14px;
+            border: 1.5px solid var(--border-color);
+            border-radius: 12px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            transition: all 0.2s;
+        }
+
+        input:focus { outline: none; border-color: var(--blue-accent); box-shadow: 0 0 0 4px rgba(0,82,255,0.1); }
+        .row { display: flex; gap: 20px; }
+
+        .pay-now-btn {
+            width: 100%;
+            background: var(--blue-accent);
+            color: white;
+            border: none;
+            padding: 18px;
+            border-radius: 14px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .pay-now-btn:active { transform: scale(0.98); }
+
+        /* Right Side: Order Summary */
+        .summary-side {
+            flex: 1;
+            background: rgba(248, 250, 252, 0.5);
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            border-left: 1px solid var(--border-color);
+        }
+
+        /* Virtual Card with Image Background */
+        .virtual-card {
+            background-image: url('img/paymentgateway/creditcardtex.jpg'); 
+            background-size: cover;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+            position: relative;
+            color: white; /* Changed to white for better contrast on textures */
+            aspect-ratio: 1.586 / 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-top { display: flex; justify-content: space-between; align-items: center; }
+        .chip { width: 40px; }
+        .contactless { width: 25px; filter: invert(1); }
+        .card-number-display {
+        font-size: 1.1rem; /* Slightly smaller default */
+        letter-spacing: 2px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: white;
+            
+            white-space: nowrap;     
+            overflow: hidden;        
+            display: block;          
+            width: 100%;
+            text-align: center;
+            transition: font-size 0.2s ease;
+        }
+        .card-footer { display: flex; justify-content: space-between; align-items: flex-end; }
+        .brand-logo-img { height: 35px; }
+
+        .info-row { display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 0.9rem; color: var(--text-muted); }
+        .total-row { margin-top: 20px; padding-top: 20px; border-top: 1px dashed #cbd5e0; font-weight: 800; color: var(--text-dark); font-size: 1.2rem; }
+
+@media (max-width: 768px) {
+    body {
+        justify-content: center;
+        align-items: flex-start; /* Aligns box to top to save bottom space */
+        padding: 20px;
+        /* Ensures the character at the bottom of payban.jpg is visible */
+        padding-bottom: 280px; 
+        background-attachment: scroll;
+    }
+
+    .gateway-box {
+        flex-direction: column;
+        width: 100%;
+        max-width: 380px; /* Slimmer box for mobile */
+        margin-top: 10px;
+        border-radius: 18px;
+    }
+
+    .form-side, .summary-side {
+        padding: 20px; /* Tighter padding to reduce vertical height */
+    }
+
+    .header {
+        margin-bottom: 20px;
+    }
+
+    .brand-logo {
+        font-size: 1.1rem;
+    }
+
+    .virtual-card {
+        /* Scale down the card so it doesn't take up too much vertical room */
+        transform: scale(0.85);
+        margin: -15px 0 10px 0; 
+        width: 100%;
+    }
+
+    .order-info {
+        font-size: 0.85rem;
+    }
+
+    /* Make the Pay Now button slightly smaller for mobile */
+    .pay-now-btn {
+        padding: 14px;
+        font-size: 1rem;
+    }
+
+    /* Ensure the 24-digit card number fits on one line */
+    .card-number-display {
+        font-size: 0.85rem !important;
+        white-space: nowrap;
+    }
+}
+
+/* Default Background (for PC) */
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* This is your PC image */
+    background: url('img/banner/payban.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Inter', sans-serif;
+    padding-left: 8%;
+}
+
+/* Mobile Specific Background */
+@media (max-width: 768px) {
+    body {
+        /* Replace 'mobile-payban.jpg' with your vertical-optimized image */
+        background: url('img/banner/paybanformobile.jpg') no-repeat center bottom;
+        background-size: cover;
+        
+        justify-content: center;
+        padding-left: 0;
+        padding-top: 20px;
+        /* Adds space at the bottom so the character is visible below the box */
+        padding-bottom: 350px; 
+        align-items: flex-start;
+    }
+
+    .gateway-box {
+        flex-direction: column;
+        width: 90%;
+        max-width: 380px;
+    }
+
+    @media (max-width: 768px) {
+    /* ... existing mobile styles ... */
+
+    .virtual-card {
+        /* Fix the aspect ratio to maintain card shape on small screens */
+        aspect-ratio: 1.586 / 1; 
+        width: 100%;
+        max-width: 320px; /* Limits size to prevent stretching */
+        margin: 0 auto 20px auto; /* Centers the card */
+        padding: 15px; /* Tighter padding for mobile */
+        transform: scale(1); /* Reset scaling if you used it before */
+        background-size: 100% 100%; /* Ensures the black texture fills the box */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .card-top img.chip {
+        width: 35px; /* Smaller chip for mobile */
+    }
+
+    .card-top img.contactless {
+        width: 20px;
+    }
+
+    .card-number-display {
+        font-size: 1rem !important; /* Forces readable font on one line */
+        letter-spacing: 1px;
+        margin: 10px 0;
+    }
+
+    .card-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    .card-footer img.brand-logo-img {
+        height: 25px; /* Smaller Mastercard logo */
+    }
+}
+}
+    </style>
+</head>
+<body>
+
+<div class="gateway-box">
+    <div class="form-side">
+        <div class="header">
+            <div class="brand-logo">PAY WITH BIFU</div>
+            <div class="timer" id="timer">10 : 00</div>
+        </div>
+
+        <div class="input-group">
+            <label>Card Number</label>
+            <input type="text" id="card-input" placeholder="XXXX - XXXX - XXXX - XXXX" maxlength="25">
+        </div>
+
+        <div class="row">
+            <div class="input-group" style="flex: 1;">
+                <label>CVV Number</label>
+                <input type="text" placeholder="446" maxlength="3">
+            </div>
+            <div class="input-group" style="flex: 1;">
+                <label>Expiry Date</label>
+                <input type="text" placeholder="10 / 24" maxlength="5">
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" placeholder="••••••••">
+        </div>
+
+        <button class="pay-now-btn">Pay Now</button>
+    </div>
+
+    <div class="summary-side">
+        <div class="virtual-card">
+            <div class="card-top">
+                <img src="img/paymentgateway/chip.png" class="chip" alt="chip">
+                <img src="img/paymentgateway/contactless-payment-black-icon-transparent-background-701751695036512vnqjswust5-removebg-preview.png" class="contactless" alt="wifi">
+            </div>
+            <div class="card-number-display" id="card-number-display">•••• •••• •••• 3456</div>
+            <div class="card-footer">
+                <div>
+                    <div style="font-size: 0.6rem; opacity: 0.8;">EXPIRES</div>
+                    <div id="expiry-display">09 / 24</div>
+                </div>
+                <img src="img/paymentgateway/MasterCard_early_1990s_logo.png" id="card-brand-logo" class="brand-logo-img" alt="logo">
+            </div>
+        </div>
+
+        <div class="order-info">
+            <div class="info-row"><span>Vehicle</span> <b id="sum-name">---</b></div>
+            <div class="info-row"><span>Market Price</span> <b id="sum-market" style="text-decoration: line-through;">$0</b></div>
+            <div class="info-row" style="color: #2ecc71;"><span>Pre-Order Deposit (10%)</span> <b id="sum-deposit">$0</b></div>
+            <div class="info-row"><span>VAT (20%)</span> <b id="sum-vat">$0</b></div>
+            
+            <div class="total-row info-row">
+                <span>Total to Pay</span>
+                <span id="sum-total" style="color: var(--blue-accent);">$0.00</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 1. DATA LOADING LOGIC
+document.addEventListener("DOMContentLoaded", function() {
+    const data = localStorage.getItem('selectedCar');
+    
+    if (data) {
+        const order = JSON.parse(data);
+        
+        // Fix the 'undefined' name and show item count
+        const displayName = (order.brand ? order.brand + " " : "") + order.mainModel;
+        document.getElementById('sum-name').innerText = 
+            order.itemCount > 1 ? `${displayName} + ${order.itemCount - 1} more` : displayName;
+
+        // Ensure we are working with numbers
+        const marketPrice = parseFloat(order.totalMarketPrice) || 0;
+        
+        // 1. Calculate 10% Deposit
+        const deposit = marketPrice * 0.10; 
+        
+        // 2. Calculate 20% VAT on the DEPOSIT only
+        const vat = deposit * 0.20;        
+        
+        // 3. Final Total
+        const totalToPay = deposit + vat;
+
+        // Update the HTML elements with formatting
+        document.getElementById('sum-market').innerText = "$" + marketPrice.toLocaleString();
+        document.getElementById('sum-deposit').innerText = "$" + deposit.toLocaleString();
+        document.getElementById('sum-vat').innerText = "$" + vat.toLocaleString();
+        document.getElementById('sum-total').innerText = "$" + totalToPay.toLocaleString();
+    }
+});
+</script>
+
+</body>
+</html>

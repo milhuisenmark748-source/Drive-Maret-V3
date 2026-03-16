@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIFU | My Garage Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #profile-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .profile-card {
+            background: #1a1a1a;
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid #333;
+            width: 100%;
+            max-width: 400px;
+        }
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #ed1c24;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        .logout-btn {
+            background-color: #ed1c24;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 700;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        .logout-btn:hover {
+            background-color: #bf161b;
+        }
+    </style>
+</head>
+<body>
+
+    <section id="header">
+        <a href="index.html"><img src="img/new logos.png" class="logo" alt="BIFU LOGO"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Autoshop</a></li>
+                <li class="user-only" style="display: none;"><a class="active" href="profile.html" id="auth-link"></a></li>
+                <li id="lg-bag"><a href="cart.html"><i class="fas fa-cart-plus"></i></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="profile-box">
+        <div class="profile-card">
+            <div id="user-info">
+                </div>
+            <button class="logout-btn" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i> LOGOUT FROM BIFU
+            </button>
+        </div>
+    </section>
+
+    <script src="js/auth.js"></script>
+    <script src="js/navbar-handler.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = getCurrentUser();
+
+            // Redirect to login if someone tries to visit profile without logging in
+            if (!user) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // Display user data
+            const userInfo = document.getElementById('user-info');
+            userInfo.innerHTML = `
+                <img src="${user.avatar || 'img/default-avatar.png'}" class="profile-img">
+                <h2 style="color: white; margin-bottom: 5px;">${user.fullname}</h2>
+                <p style="color: #ed1c24; font-weight: bold; margin-bottom: 15px;">@${user.username}</p>
+                <p style="color: #888;">Email: ${user.email}</p>
+            `;
+        });
+    </script>
+</body>
+</html>
