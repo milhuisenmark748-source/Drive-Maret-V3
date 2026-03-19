@@ -909,6 +909,18 @@ footer .copyright{
 }
 
 
+#bannercontact{
+    background-image: url('img/banner/contactpageban.png');
+    height: 40vh;
+    background-size: cover;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 14px;
+}
+
+
+
 
 #bannerslpage{
     background-image: url('img/banner/Sri\ Lanka\ Autentics.jpg');
@@ -930,6 +942,18 @@ footer .copyright{
     flex-direction: column;
     padding: 14px;
 }
+
+
+#bannerabout{
+    background-image: url('img/banner/Join\ Team.jpg');
+    height: 40vh;
+    background-size: cover;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 14px;
+}
+
 
 
 
@@ -2673,6 +2697,32 @@ img[src=""], img:not([src]) {
 
 }
 
+
+
+/*Mobile Responsive for contact hero banner*/
+
+@media (max-width: 799px) {
+
+  #bannercontact{
+    background-image: url('img/banner/contactpagebanmob.jpg'); 
+    width: 100%;
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+    
+
+    height: auto;
+    aspect-ratio: 16 / 9; 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 0;
+}
+
+}
 
 
 /*Mobile Responsive for sl editon hero banner*/
@@ -6114,7 +6164,7 @@ img[src=""], img:not([src]) {
     
 
     height: auto;
-    aspect-ratio: 16 / 4; 
+    aspect-ratio: 16 / 9; 
     
     display: flex;
     justify-content: center;
@@ -6139,7 +6189,7 @@ img[src=""], img:not([src]) {
     
 
     height: auto;
-    aspect-ratio: 16 / 4; 
+    aspect-ratio: 16 / 9; 
     
     display: flex;
     justify-content: center;
@@ -6163,7 +6213,7 @@ img[src=""], img:not([src]) {
     
 
     height: auto;
-    aspect-ratio: 16 / 4; 
+    aspect-ratio: 16 / 9; 
     
     display: flex;
     justify-content: center;
@@ -6188,7 +6238,7 @@ img[src=""], img:not([src]) {
     
 
     height: auto;
-    aspect-ratio: 16 / 4; 
+    aspect-ratio: 16 / 9; 
     
     display: flex;
     justify-content: center;
@@ -6211,7 +6261,7 @@ img[src=""], img:not([src]) {
     
 
     height: auto;
-    aspect-ratio: 16 / 4; 
+    aspect-ratio: 16 / 9; 
     
     display: flex;
     justify-content: center;
@@ -6221,7 +6271,6 @@ img[src=""], img:not([src]) {
     padding: 0;
 }
 
-/*Mobile Responsive for movie editon hero banner*/
 
 @media (max-width: 799px) {
 
@@ -6234,7 +6283,7 @@ img[src=""], img:not([src]) {
     
 
     height: auto;
-    aspect-ratio: 16 / 4; 
+    aspect-ratio: 16 / 9; 
     
     display: flex;
     justify-content: center;
@@ -6244,6 +6293,29 @@ img[src=""], img:not([src]) {
     padding: 0;
 }
 
+}
+
+
+@media (max-width: 799px) {
+    #bannerabout {
+        background-image: url('img/banner/aboutmob.jpg'); 
+        width: 100%;
+        
+
+        background-size: cover; 
+        background-position: center;
+
+
+        aspect-ratio: 16 / 9; 
+
+
+        min-height: 300px; 
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
 }
 
 
@@ -6261,7 +6333,7 @@ img[src=""], img:not([src]) {
     
 
     height: auto;
-    aspect-ratio: 16 / 4; 
+    aspect-ratio: 16 / 9; 
     
     display: flex;
     justify-content: center;
@@ -6630,7 +6702,7 @@ img[src=""], img:not([src]) {
     
  
     height: auto;
-    aspect-ratio: 16 / 4; 
+    aspect-ratio: 16 / 9; 
     
     display: flex;
     justify-content: center;
