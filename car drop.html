@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIFU | Premium Imports</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', sans-serif;
+            overflow: hidden;
+            background: linear-gradient(135deg, #e0e0e0 0%, #e2ebf0 100%);
+            background-attachment: fixed;
+        }
+
+        #hero-spatial-full {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* --- THE GLASS FRAME --- */
+        .full-rounded-glass {
+            width: 100%;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative; /* Crucial for clipping the cars inside */
+            
+            /* THIS PREVENTS CARS FROM FALLING OUTSIDE THE ROUNDED CORNERS */
+            overflow: hidden; 
+            
+            background: rgba(255, 255, 255, 0.45); 
+            backdrop-filter: blur(50px) saturate(160%);
+            -webkit-backdrop-filter: blur(50px) saturate(160%);
+            
+            border-radius: 80px; 
+            border: 1.5px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
+            
+            text-align: center;
+            z-index: 5;
+        }
+
+        /* --- THE CAR RAIN (NOW INSIDE THE GLASS) --- */
+        #car-rain-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1; /* Sits behind text, but inside the glass container */
+            pointer-events: none;
+        }
+
+/* 1. Solid Box Setup */
+.falling-car {
+    position: absolute;
+    top: -350px; /* Start higher to prevent snapping in */
+    width: 280px;
+    height: auto;
+    opacity: 1; /* Keep it 100% solid, no fading */
+    pointer-events: none;
+    filter: blur(3px) drop-shadow(0 15px 25px rgba(0,0,0,0.3));
+    
+    /* Use 'will-change' for smoother GPU rendering */
+    will-change: transform;
+    animation: cinematicDrop linear infinite;
+}
+
+/* 2. THE SMOOTH LOOP (No Opacity Changes) */
+@keyframes cinematicDrop {
+    0% { 
+        transform: translateY(0) rotate(0deg); 
+    }
+    100% { 
+        /* Ensure it falls completely past the 90vh glass height */
+        transform: translateY(130vh) rotate(10deg); 
+    }
+}
+
+.hero-content {
+    /* ... your other styles ... */
+    transform: translateY(-100px); /* This nudges the entire text/button group up */
+}
+
+/* 3. NEGATIVE DELAYS (This removes the "starting gap") */
+/* The negative values make the cars look like they've been falling forever */
+.car-1 { left: 5%;  animation-duration: 7s;  animation-delay: -1s; }
+.car-2 { left: 25%; animation-duration: 10s; animation-delay: -5s; filter: blur(5px); }
+.car-3 { left: 50%; animation-duration: 8s;  animation-delay: -3s; }
+.car-4 { left: 75%; animation-duration: 11s; animation-delay: -8s; filter: blur(4px); }
+.car-5 { left: 92%; animation-duration: 9s;  animation-delay: -2s; }
+
+        /* --- CONTENT STYLING --- */
+    /* TITLE IMAGE REPLACEMENT */
+/* 1. RESET THE PARENT (Important) */
+.hero-content {
+    /* Remove any transform or translateY from here */
+    position: relative;
+    z-index: 10;
+}
+
+/* 2. MOVE ONLY THE TITLE IMAGE UP */
+.hero-title-img {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    display: block;
+    
+    /* Pulls just the image UP toward the top of the glass */
+    /* If it's still too low, change -150px to -200px */
+    margin: -150px auto 0 auto; 
+    
+    position: relative;
+    z-index: 15;
+}
+
+/* 3. PULL THE SUBTEXT UP TO THE IMAGE */
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: #424245;
+    
+    /* Pulls the text UP to close the gap with the image */
+    margin-top: 10px; 
+    
+    /* Keeps a nice gap between the text and the buttons */
+    margin-bottom: 50px; 
+    
+    font-weight: 500;
+}
+
+        /* BUTTONS */
+        .hero-btns { display: flex; gap: 20px; justify-content: center; }
+        
+        .main-btn {
+            text-decoration: none;
+            background: #970202;
+            color: white;
+            padding: 18px 48px;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: transform 0.3s, 0.3s;
+        }
+        
+        .main-btn:hover {
+            background: #970202;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(8, 129, 120, 0.2);
+        }
+
+        .sec-btn {
+            text-decoration: none;
+            background: rgba(0, 0, 0, 0.05);
+            color: #1d1d1f;
+            padding: 18px 48px;
+            border-radius: 50px;
+            font-weight: 700;
+            border: 1.5px solid rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        .sec-btn:hover {
+            background: rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    
+
+    <section id="hero-spatial-full">
+        
+        <div class="full-rounded-glass">
+            
+            <div id="car-rain-wrapper">
+                <img src="car drop/box.png" class="falling-car car-1" alt="Car 1">
+                <img src="car drop/box.png" class="falling-car car-2" alt="Car 2">>
+                <img src="car drop/box2.png" class="falling-car car-4" alt="Car 4">
+                <img src="car drop/box.png" class="falling-car car-5" alt="Car 5">
+            </div>
+
+            <div class="hero-content">
+    <img src="img/text2.png" class="hero-title-img" alt="BUILD IT FOR YOU">
+    
+    <p class="hero-subtitle">Premium JDM & Supercar imports, curated for Colombo.</p>
+    
+    <div class="hero-btns">
+        <a href="shop.html" class="main-btn">Explore Shop</a>
+        <a href="contact.html" class="sec-btn">Connect Now</a>
+    </div>
+</div>
+
+
+
+    </section>
+
+</body>
+</html>
